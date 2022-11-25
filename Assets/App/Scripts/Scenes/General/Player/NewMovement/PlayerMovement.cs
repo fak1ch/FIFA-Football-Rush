@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
-        _moveInput = _inputSystem.MoveInput.normalized;
+        _moveInput = _inputSystem.MoveInput;
     }
 
     private void GroundedCheck()
@@ -52,14 +52,14 @@ public class PlayerMovement : MonoBehaviour
     
     private void SmoothMove()
     {
-        float endValue = _inputSystem.IsMoveInputChanged ? _maxMoveSpeed : 0; 
+        float endValue = _inputSystem.IsMouseDown ? _maxMoveSpeed : 0; 
         
         _currentMoveSpeed = Mathf.Lerp(_currentMoveSpeed, endValue, Time.deltaTime * _smoothMoveMultiplier);
     }
     
     protected virtual void MovePlayer()
     {
-        _moveDirection = _bodyOrientation.forward * _moveInput.y + _bodyOrientation.right * _moveInput.x;
+        _moveDirection = _bodyOrientation.forward + _bodyOrientation.right * _moveInput.x;
 
         Vector3 offset = _moveDirection * (_currentMoveSpeed * Time.deltaTime);
         
