@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b1fcd2d1633442596f431dd641b491c, type: 3}
+  m_Name: Scenes
+  m_EditorClassIdentifier: 
+  scenes:
+  - sceneEnumEnum: 0
+    sceneName: Playground
+    scene: {fileID: 102900000, guid: 707acc8dffb72b144bb1ffbe1c965f3d, type: 3}
+  - sceneEnumEnum: 1
+    sceneName: LevelSaveCapybara
+    scene: {fileID: 102900000, guid: 6033d1db2d753a648be0bedfa992cb17, type: 3}
+  - sceneEnumEnum: 2
+    sceneName: SelectLevel
+    scene: {fileID: 102900000, guid: b6b70623abc07c148ad50de6e66b5011, type: 3}
+  - sceneEnumEnum: 3
+    sceneName: NewMainMenu
+    scene: {fileID: 102900000, guid: 5d337e2ebeb50f9459eaf403d22fe147, type: 3}
+  - sceneEnumEnum: 4
+    sceneName: EscapeTheRoom
+    scene: {fileID: 102900000, guid: 4f7a1263a54273e458c358d22edaea2f, type: 3}
