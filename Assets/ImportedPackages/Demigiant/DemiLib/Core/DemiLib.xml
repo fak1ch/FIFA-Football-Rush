@@ -42,7 +42,7 @@
         </member>
         <member name="T:DG.DemiLib.DeInputUtils">
             <summary>
-            Various Input utils
+            Various MoveInput utils
             </summary>
         </member>
         <member name="M:DG.DemiLib.DeInputUtils.IsNumKeyDown">

@@ -1,7 +1,6 @@
 ﻿using System;
-using UnityEngine;
 
-namespace App.Scripts.Scenes.LevelScene.Mechanics.PoolContainer
+namespace App.Scripts.General.Pool
 {
     [Serializable]
     public class PoolObjectInformation<T>

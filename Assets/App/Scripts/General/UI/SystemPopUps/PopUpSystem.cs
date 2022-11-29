@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using App.Scripts.General.Pool;
 using App.Scripts.General.Singleton;
 using App.Scripts.General.SystemPopUps.PopUps;
-using App.Scripts.Scenes.LevelScene.Mechanics.PoolContainer;
 using UnityEngine;
 
 namespace App.Scripts.General.PopUpSystemSpace
