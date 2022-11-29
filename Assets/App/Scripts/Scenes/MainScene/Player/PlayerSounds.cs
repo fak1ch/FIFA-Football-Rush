@@ -8,17 +8,6 @@ namespace StarterAssets
     public class PlayerSounds : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSourceJump;
-        [SerializeField] private PlayerMovement _playerMovement;
-
-        private void OnEnable()
-        {
-            _playerMovement.OnJump += PlayJumpSound;
-        }
-
-        private void OnDisable()
-        {
-            _playerMovement.OnJump -= PlayJumpSound;
-        }
 
         private void PlayJumpSound()
         {
