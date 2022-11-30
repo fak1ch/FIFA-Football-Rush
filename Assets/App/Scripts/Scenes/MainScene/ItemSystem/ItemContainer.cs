@@ -49,11 +49,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
         
         public void RemoveSomePickableItems(int value)
         {
-            if (value < _activePickableItems.Count)
+            if (_activePickableItems.Count < value)
             {
                 value = _activePickableItems.Count;
             }
-            
+
             for (int i = 0; i < value; i++)
             {
                 RemoveOnePickableItem();

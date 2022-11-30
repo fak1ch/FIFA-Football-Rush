@@ -7,13 +7,22 @@ namespace StarterAssets.InputSystems
     {
         [SerializeField] private float _sensitivity = 1;
         
+        [Space(10)]
+        [SerializeField] private float _targetScreenWidth = 768;
+        [SerializeField] private Canvas _canvas;
+        
         private Vector2 _moveInput;
-
         private Vector2 _lastFrameMousePosition;
         private Vector2 _currentFrameMousePosition;
+        private float _screenMultiplier;
         
         public Vector2 MoveInput { get; private set; }
         public bool IsMouseDown { get; private set; }
+
+        private void Start()
+        {
+            _screenMultiplier = _targetScreenWidth/ _canvas.pixelRect.width;
+        }
 
         private void Update()
         {
@@ -32,7 +41,7 @@ namespace StarterAssets.InputSystems
                 Vector2 deltaPosition = _currentFrameMousePosition - _lastFrameMousePosition;
                 deltaPosition *= _sensitivity;
 
-                MoveInput = deltaPosition;
+                MoveInput = deltaPosition * _screenMultiplier;
             }
             
             if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -41,11 +50,6 @@ namespace StarterAssets.InputSystems
             }
             
             _lastFrameMousePosition = _currentFrameMousePosition;
-        }
-
-        public void SetMoveInput(Vector2 vector)
-        {
-            
         }
     }
 }
