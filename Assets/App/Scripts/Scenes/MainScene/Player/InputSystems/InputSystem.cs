@@ -1,15 +1,22 @@
 ﻿using System;
+using App.Scripts.Scenes;
 using UnityEngine;
 
 namespace StarterAssets.InputSystems
 {
+    [Serializable]
+    public class InputSystemConfig
+    {
+        public float sensitivity = 0.1f;
+        public float targetScreenWidth = 768;
+    }
+    
     public class InputSystem : MonoBehaviour
     {
-        [SerializeField] private float _sensitivity = 1;
-        
-        [Space(10)]
-        [SerializeField] private float _targetScreenWidth = 768;
+        [SerializeField] private GameConfigScriptableObject _gameConfig;
         [SerializeField] private Canvas _canvas;
+
+        private InputSystemConfig _config;
         
         private Vector2 _moveInput;
         private Vector2 _lastFrameMousePosition;
@@ -21,7 +28,8 @@ namespace StarterAssets.InputSystems
 
         private void Start()
         {
-            _screenMultiplier = _targetScreenWidth/ _canvas.pixelRect.width;
+            _config = _gameConfig.inputSystemConfig;
+            _screenMultiplier = _config.targetScreenWidth/ _canvas.pixelRect.width;
         }
 
         private void Update()
@@ -39,7 +47,7 @@ namespace StarterAssets.InputSystems
                 _currentFrameMousePosition = Input.mousePosition;
 
                 Vector2 deltaPosition = _currentFrameMousePosition - _lastFrameMousePosition;
-                deltaPosition *= _sensitivity;
+                deltaPosition *= _config.sensitivity;
 
                 MoveInput = deltaPosition * _screenMultiplier;
             }

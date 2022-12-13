@@ -5,13 +5,19 @@ using UnityEngine;
 
 namespace App.Scripts.Scenes.General.ItemSystem
 {
+    [Serializable]
+    public class ItemContainerConfig
+    {
+        public PoolData<PickableItem> poolData;
+        public float offsetY = 0.7f;
+    }
+    
     public class ItemContainer : MonoBehaviour
     {
-        [SerializeField] private PoolData<PickableItem> _poolData;
+        [SerializeField] private Transform _containerForPool;
+        [SerializeField] private GameConfigScriptableObject _gameConfig;
 
-        [Space(10)] 
-        [SerializeField] private float _offsetY = 0.7f;
-        
+        private ItemContainerConfig _config;
         private ObjectPool<PickableItem> _itemsPool;
         private Stack<PickableItem> _activePickableItems;
 
@@ -19,26 +25,29 @@ namespace App.Scripts.Scenes.General.ItemSystem
         
         private void Start()
         {
-            _itemsPool = new ObjectPool<PickableItem>(_poolData);
+            _config = _gameConfig.itemContainerConfig;
+            _config.poolData.container = _containerForPool;
+            _itemsPool = new ObjectPool<PickableItem>(_config.poolData);
             _activePickableItems = new Stack<PickableItem>();
         }
 
         public void AddOnePickableItem(PickableItem pickableItem)
         {
-            pickableItem.transform.SetParent(_poolData.container);
-            pickableItem.transform.localPosition = new Vector3(0, _activePickableItems.Count * _offsetY, 0);
+            pickableItem.transform.SetParent(_config.poolData.container);
+            pickableItem.transform.localPosition = new Vector3(
+                0, _activePickableItems.Count * _config.offsetY, 0);
             _activePickableItems.Push(pickableItem);
             
             pickableItem.gameObject.SetActive(true);
         }
 
-        private void RemoveOnePickableItem()
+        private void RemoveLastPickableItem()
         {
             PickableItem pickableItem = _activePickableItems.Pop();
             pickableItem.gameObject.SetActive(false);
             _itemsPool.ReturnElementToPool(pickableItem);
         }
-
+        
         public void AddSomePickableItems(int value)
         {
             for (int i = 0; i < value; i++)
@@ -56,7 +65,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
             for (int i = 0; i < value; i++)
             {
-                RemoveOnePickableItem();
+                RemoveLastPickableItem();
             }
         }
     }
