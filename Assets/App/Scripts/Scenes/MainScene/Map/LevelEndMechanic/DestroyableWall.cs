@@ -11,19 +11,19 @@ namespace App.Scripts.Scenes.General.Map
 
         [Space(10)]
         [SerializeField] private ParticleSystem _destroyEffect;
-        [SerializeField] private CollisionEnterTrigger _collisionEnterTrigger;
+        [SerializeField] private CollisionObject _collisionObject;
         [SerializeField] private TextMeshProUGUI _itemsCountForDestroyText;
 
         private void OnEnable()
         {
             _itemsCountForDestroyText.text = _itemsCountForDestroy.ToString();
             
-            _collisionEnterTrigger.OnCollisionEnterAction += CheckCollisionWithPlayer;
+            _collisionObject.CollisionEnter += CheckCollisionWithPlayer;
         }
 
         private void OnDisable()
         {
-            _collisionEnterTrigger.OnCollisionEnterAction -= CheckCollisionWithPlayer;
+            _collisionObject.CollisionEnter -= CheckCollisionWithPlayer;
         }
 
         private void CheckCollisionWithPlayer(Collision collision)
@@ -43,7 +43,7 @@ namespace App.Scripts.Scenes.General.Map
         
         private void DestroyWall()
         {
-            _collisionEnterTrigger.gameObject.SetActive(false);
+            _collisionObject.gameObject.SetActive(false);
             _destroyEffect.gameObject.SetActive(true);
             _destroyEffect.DORestart();
         }

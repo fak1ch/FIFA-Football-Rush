@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.Scenes.General.ItemSystem;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -8,57 +9,55 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
     [Serializable]
     public class MainItemConfig
     {
-        public Vector3 endLocalPosition;
+        public Vector3 endWorldPosition;
         public Vector3 gameOverNewVelocity;
         public float moveDurationSec = 2;
         public Ease moveEase = Ease.InQuad;
     }
     
+    [Serializable]
+    public class MainItemViewConfig
+    {  
+        public GameConfigScriptableObject gameConfig;
+        public TextMeshProUGUI itemsCountText;
+
+        [HideInInspector]
+        public Rigidbody rigidbody;
+        [HideInInspector]
+        public PickableItem pickableItem;
+    }
+    
     public class MainItem : MonoBehaviour
     {
-        [SerializeField] private GameConfigScriptableObject _gameConfig;
-        [SerializeField] private TextMeshProUGUI _itemsCountText;
-
-        [Space(10)] 
-        [SerializeField] private Rigidbody _rigidbody;
-
         private MainItemConfig _config;
+        private MainItemViewConfig _viewConfig;
         
-        private Vector3 _startLocalPosition;
         private Tween _moveTween;
         private bool _isGameOver = false;
         private int _currentItemsCount = 0;
 
         public int CurrentItemsCount => _currentItemsCount;
-        
-        private void Start()
+
+        public void Initialize(MainItemViewConfig viewConfig)
         {
-            _config = _gameConfig.mainItemConfig;
-            _startLocalPosition = transform.localPosition;
+            _viewConfig = viewConfig;
+            _config = _viewConfig.gameConfig.mainItemConfig;
+            _viewConfig.pickableItem.SetActiveCollider(true);
+            _viewConfig.pickableItem.enabled = false;
         }
 
-        public void AddItemsCount(int value)
+        public void AddPickableItem()
         {
-            _currentItemsCount += value;
-            _itemsCountText.text = _currentItemsCount.ToString();
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                StartMove();
-            }
+            _currentItemsCount++;
+            _viewConfig.itemsCountText.text = _currentItemsCount.ToString();
         }
 
         public void StartMove()
         {
             _moveTween?.Kill();
 
-            transform.localPosition = _startLocalPosition;
-
-            _moveTween = transform.DOLocalMove(_config.endLocalPosition, _config.moveDurationSec)
-                .SetEase(_config.moveEase);
+            _moveTween = transform.DOMove(_config.endWorldPosition, _config.moveDurationSec)
+                .SetEase(_config.moveEase).OnComplete(StartGameOverAnimation);
         }
 
         public void StartGameOverAnimation()
@@ -67,8 +66,8 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
             _isGameOver = true;
 
             _moveTween?.Kill();
-            _rigidbody.velocity = _config.gameOverNewVelocity;
-            _rigidbody.useGravity = true;
+            _viewConfig.rigidbody.velocity = _config.gameOverNewVelocity;
+            _viewConfig.rigidbody.useGravity = true;
         }
         
         private void OnDestroy()

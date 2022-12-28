@@ -10,6 +10,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
     {
         public PoolData<PickableItem> poolData;
         public float offsetY = 0.7f;
+        public int visibleItemCount = 15;
     }
     
     public class ItemContainer : MonoBehaviour
@@ -19,31 +20,51 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
         private ItemContainerConfig _config;
         private ObjectPool<PickableItem> _itemsPool;
-        private Stack<PickableItem> _activePickableItems;
+        private Stack<PickableItem> _pickableItems;
 
-        public int CurrentPickableItems => _activePickableItems.Count;
+        public int CurrentPickableItems => _pickableItems.Count;
+        public bool IsNextItemVisible => CurrentPickableItems <= _config.visibleItemCount;
         
         private void Start()
         {
             _config = _gameConfig.itemContainerConfig;
             _config.poolData.container = _containerForPool;
             _itemsPool = new ObjectPool<PickableItem>(_config.poolData);
-            _activePickableItems = new Stack<PickableItem>();
+            _pickableItems = new Stack<PickableItem>();
         }
 
-        public void AddOnePickableItem(PickableItem pickableItem)
+        public bool IsItemByIndexVisible(int indexInContainer)
         {
-            pickableItem.transform.SetParent(_config.poolData.container);
-            pickableItem.transform.localPosition = new Vector3(
-                0, _activePickableItems.Count * _config.offsetY, 0);
-            _activePickableItems.Push(pickableItem);
+            return indexInContainer <= _config.visibleItemCount 
+                   && indexInContainer <= _pickableItems.Count;
+        }
+        
+        public Vector3 GetLocalPositionToNextItem()
+        {
+            float itemsCount = IsNextItemVisible ? _pickableItems.Count : _config.visibleItemCount;
             
-            pickableItem.gameObject.SetActive(true);
+            return new Vector3(0, itemsCount * _config.offsetY, 0);
         }
 
-        private void RemoveLastPickableItem()
+        public void AddPickableItemWithoutTeleport(PickableItem pickableItem)
         {
-            PickableItem pickableItem = _activePickableItems.Pop();
+            _pickableItems.Push(pickableItem);
+            pickableItem.ItemIndexInContainer = _pickableItems.Count;
+            pickableItem.transform.SetParent(_config.poolData.container);
+        }
+        
+        private void AddPickableItem(PickableItem pickableItem)
+        {
+            Vector3 newLocalPosition = GetLocalPositionToNextItem();
+            
+            AddPickableItemWithoutTeleport(pickableItem);
+
+            pickableItem.transform.localPosition = newLocalPosition;
+            pickableItem.gameObject.SetActive(IsNextItemVisible);
+        }
+
+        public void RemovePickableItem(PickableItem pickableItem)
+        {
             pickableItem.gameObject.SetActive(false);
             _itemsPool.ReturnElementToPool(pickableItem);
         }
@@ -52,21 +73,26 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             for (int i = 0; i < value; i++)
             {
-                AddOnePickableItem(_itemsPool.GetElement());
+                AddPickableItem(_itemsPool.GetElement());
             }
         }
         
         public void RemoveSomePickableItems(int value)
         {
-            if (_activePickableItems.Count < value)
+            if (_pickableItems.Count < value)
             {
-                value = _activePickableItems.Count;
+                value = _pickableItems.Count;
             }
 
             for (int i = 0; i < value; i++)
             {
-                RemoveLastPickableItem();
+                RemovePickableItem(GetPickableItem());
             }
+        }
+        
+        public PickableItem GetPickableItem()
+        {
+            return _pickableItems.Pop();
         }
     }
 }

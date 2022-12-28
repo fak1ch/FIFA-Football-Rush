@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsCountForDestroy: 10
   _destroyEffect: {fileID: 3592866020213259776}
-  _collisionEnterTrigger: {fileID: 3592866021277993379}
+  _collisionObject: {fileID: 3592866021277993379}
   _itemsCountForDestroyText: {fileID: 739442497}
 --- !u!1 &3592866020213259778
 GameObject:
@@ -344,7 +344,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5210,7 +5210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3592866021277993389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e2ae5e82eb456d835f18ce611a4609, type: 3}
+  m_Script: {fileID: 11500000, guid: 7df0efda1255412184eb85d43814d615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!33 &3592866021277993377

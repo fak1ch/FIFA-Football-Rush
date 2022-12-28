@@ -1,21 +1,19 @@
-﻿using UnityEngine;
+﻿using StarterAssets;
+using UnityEngine;
 
 namespace App.Scripts.Scenes.General.ItemSystem
 {
-    public class ItemChanger : MonoBehaviour
+    public abstract class ItemChanger : MonoBehaviour
     {
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out ItemContainer itemContainer))
+            if (collision.gameObject.TryGetComponent(out Player player))
             {
-                ChangeItemCount(itemContainer);
+                ChangeItemCount(player.GetPlayerItemContainer);
                 gameObject.SetActive(false);
             }
         }
 
-        protected virtual void ChangeItemCount(ItemContainer itemContainer)
-        {
-            
-        }
+        protected abstract void ChangeItemCount(ItemContainer itemContainer);
     }
 }

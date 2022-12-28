@@ -15,5 +15,7 @@ namespace App.Scripts.Scenes
         public ItemContainerConfig itemContainerConfig;
         public StickmanViewConfig stickmanViewConfig;
         public ForwardSmoothMovementConfig forwardSmoothMovementConfig;
+        public LevelEndSceneConfig levelEndSceneConfig;
+        public PickableItemConfig pickableItemConfig;
     }
 }

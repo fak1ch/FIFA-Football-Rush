@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   mainItemConfig:
-    endLocalPosition: {x: 0, y: 3, z: 540}
+    endWorldPosition: {x: 0, y: 0, z: 0}
     gameOverNewVelocity: {x: 0, y: 5, z: 0}
     moveDurationSec: 6
     moveEase: 5
@@ -26,6 +26,7 @@ MonoBehaviour:
       container: {fileID: 0}
       prefab: {fileID: 2323988853793782158, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
     offsetY: 0.7
+    visibleItemCount: 15
   stickmanViewConfig:
     rotateSpeed: 10
     angleMultiplier: 16
@@ -37,3 +38,9 @@ MonoBehaviour:
   forwardSmoothMovementConfig:
     maxMoveSpeed: 7
     smoothMoveMultiplier: 3
+  levelEndSceneConfig:
+    delayBetweenTransferItems: 1
+    itemLocalMoveDuration: 1
+  pickableItemConfig:
+    animationDuration: 1
+    ease: 7

@@ -408,9 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0f9441c2854a77bf78465d5172829a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
-  _itemsCountText: {fileID: 5829838337542454351}
-  _rigidbody: {fileID: 9074522161495151510}
 --- !u!135 &5829838339259140621
 SphereCollider:
   m_ObjectHideFlags: 0
