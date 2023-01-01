@@ -18,15 +18,15 @@ namespace App.Scripts.Scenes.General.Map
         {
             _itemsCountForDestroyText.text = _itemsCountForDestroy.ToString();
             
-            _collisionObject.CollisionEnter += CheckCollisionWithPlayer;
+            _collisionObject.CollisionEnter += HandleCollision;
         }
 
         private void OnDisable()
         {
-            _collisionObject.CollisionEnter -= CheckCollisionWithPlayer;
+            _collisionObject.CollisionEnter -= HandleCollision;
         }
 
-        private void CheckCollisionWithPlayer(Collision collision)
+        private void HandleCollision(Collision collision)
         {
             if (collision.gameObject.TryGetComponent(out MainItem mainItem))
             {

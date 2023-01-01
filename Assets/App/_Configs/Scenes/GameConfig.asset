@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   mainItemConfig:
-    endWorldPosition: {x: 0, y: 0, z: 0}
+    endWorldPosition: {x: 0, y: 4, z: 540}
     gameOverNewVelocity: {x: 0, y: 5, z: 0}
-    moveDurationSec: 6
-    moveEase: 5
+    moveDurationSec: 9
+    moveEase: 6
+    scaleValueForOnePickableItem: 1
   inputSystemConfig:
     sensitivity: 0.1
     targetScreenWidth: 768
@@ -38,9 +39,16 @@ MonoBehaviour:
   forwardSmoothMovementConfig:
     maxMoveSpeed: 7
     smoothMoveMultiplier: 3
-  levelEndSceneConfig:
-    delayBetweenTransferItems: 1
-    itemLocalMoveDuration: 1
   pickableItemConfig:
-    animationDuration: 1
-    ease: 7
+    localMoveAnimationDuration: 1
+    localMoveEase: 0
+    offsetY: 1
+    jumpToUpDuration: 0.5
+    jumpToDownDuration: 0.5
+    jumpToUpEase: 6
+    jumpToDownEase: 5
+  levelEndItemsTransferConfig:
+    timeForTransferItems: 3
+    delayBetweenMainItemStartMove: 1
+    itemLocalMoveDuration: 1
+    itemLocalMoveEase: 0

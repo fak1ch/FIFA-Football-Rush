@@ -11,12 +11,18 @@ namespace App.Scripts.Scenes.General.Map
         
         private void Start()
         {
-            _positionOffset = transform.position - _target.transform.position;
+            SetupTarget(_target);
         }
 
         private void Update()
         {
             transform.position = _positionOffset + _target.transform.position;
+        }
+
+        public void SetupTarget(Transform target)
+        {
+            _target = target;
+            _positionOffset = transform.position - _target.transform.position;
         }
     }
 }

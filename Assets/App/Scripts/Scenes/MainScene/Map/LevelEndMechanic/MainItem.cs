@@ -13,6 +13,9 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         public Vector3 gameOverNewVelocity;
         public float moveDurationSec = 2;
         public Ease moveEase = Ease.InQuad;
+
+        [Space(10)]
+        public float scaleValueForOnePickableItem = 0.01f;
     }
     
     [Serializable]
@@ -42,8 +45,6 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         {
             _viewConfig = viewConfig;
             _config = _viewConfig.gameConfig.mainItemConfig;
-            _viewConfig.pickableItem.SetActiveCollider(true);
-            _viewConfig.pickableItem.enabled = false;
         }
 
         public void AddPickableItem()
@@ -70,9 +71,18 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
             _viewConfig.rigidbody.useGravity = true;
         }
         
+        public void ScaleMainItem()
+        {
+            AddPickableItem();
+
+            float value = _config.scaleValueForOnePickableItem;
+            Vector3 addScaleValue = new Vector3(value, value, value);
+            transform.localScale += addScaleValue;
+        }
+        
         private void OnDestroy()
         {
-            _moveTween.Kill();
+            _moveTween?.Kill();
         }
     }
 }

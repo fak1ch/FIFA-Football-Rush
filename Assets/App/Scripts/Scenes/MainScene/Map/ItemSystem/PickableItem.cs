@@ -7,8 +7,16 @@ namespace App.Scripts.Scenes.General.ItemSystem
     [Serializable]
     public class PickableItemConfig
     {
-        public float animationDuration;
-        public Ease ease;
+        public float localMoveAnimationDuration;
+        public Ease localMoveEase;
+
+        [Header("Jump Animation")] 
+        [Space(10)] 
+        public float offsetY;
+        public float jumpToUpDuration;
+        public float jumpToDownDuration;
+        public Ease jumpToUpEase;
+        public Ease jumpToDownEase;
     }
     
     public class PickableItem : MonoBehaviour
@@ -19,13 +27,34 @@ namespace App.Scripts.Scenes.General.ItemSystem
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private Tween _localMoveTween;
+        private Sequence _jumpSequence;
         private PickableItemConfig _config;
 
-        public int ItemIndexInContainer { get; set; }
+        private int _indexInContainer;
+        private Vector3 _startLocalPosition;
+        private Vector3 _endLocalPosition;
+        private bool _picked = false;
+
+        public int ItemIndexInContainer
+        {
+            get => _indexInContainer;
+
+            set
+            {
+                _jumpSequence?.Kill();
+                _indexInContainer = value;
+                _picked = true;
+            }
+        }
 
         private void Start()
         {
             _config = _gameConfig.pickableItemConfig;
+
+            if (_picked == false)
+            {
+                StartJumpAnimation();
+            }
         }
 
         public void LocalMoveToPosition(Vector3 newLocalPosition, float animationDuration, Ease ease)
@@ -37,12 +66,32 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
         public void LocalMoveToPosition(Vector3 newLocalPosition)
         {
-            LocalMoveToPosition(newLocalPosition, _config.animationDuration, _config.ease);
+            LocalMoveToPosition(newLocalPosition, _config.localMoveAnimationDuration, _config.localMoveEase);
+        }
+        
+        private void StartJumpAnimation()
+        {
+            _startLocalPosition = transform.localPosition;
+            _endLocalPosition = _startLocalPosition;
+            _endLocalPosition.y += _config.offsetY;
+            
+            _jumpSequence = DOTween.Sequence();
+            _jumpSequence.Append(transform.DOLocalMove(_endLocalPosition, _config.jumpToUpDuration)
+                .SetEase(_config.jumpToUpEase));
+            _jumpSequence.Append(transform.DOLocalMove(_startLocalPosition, _config.jumpToDownDuration)
+                .SetEase(_config.jumpToDownEase));
+            _jumpSequence.OnComplete(() => _jumpSequence.Restart());
         }
         
         public void SetActiveCollider(bool value)
         {
             _boxCollider.enabled = value;
+        }
+
+        private void OnDestroy()
+        {
+            _localMoveTween?.Kill();
+            _jumpSequence?.Kill();
         }
     }
 }
