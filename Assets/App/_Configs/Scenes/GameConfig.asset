@@ -42,7 +42,7 @@ MonoBehaviour:
   pickableItemConfig:
     localMoveAnimationDuration: 1
     localMoveEase: 0
-    offsetY: 1
+    offsetY: 0.5
     jumpToUpDuration: 0.5
     jumpToDownDuration: 0.5
     jumpToUpEase: 6

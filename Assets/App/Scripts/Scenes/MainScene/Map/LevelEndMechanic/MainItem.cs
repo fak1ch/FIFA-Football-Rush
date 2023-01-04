@@ -23,11 +23,6 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
     {  
         public GameConfigScriptableObject gameConfig;
         public TextMeshProUGUI itemsCountText;
-
-        [HideInInspector]
-        public Rigidbody rigidbody;
-        [HideInInspector]
-        public PickableItem pickableItem;
     }
     
     public class MainItem : MonoBehaviour
@@ -36,21 +31,17 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         private MainItemViewConfig _viewConfig;
         
         private Tween _moveTween;
+        private PickableItem _pickableItem;
         private bool _isGameOver = false;
         private int _currentItemsCount = 0;
 
         public int CurrentItemsCount => _currentItemsCount;
 
-        public void Initialize(MainItemViewConfig viewConfig)
+        public void Initialize(MainItemViewConfig viewConfig, PickableItem pickableItem)
         {
             _viewConfig = viewConfig;
             _config = _viewConfig.gameConfig.mainItemConfig;
-        }
-
-        public void AddPickableItem()
-        {
-            _currentItemsCount++;
-            _viewConfig.itemsCountText.text = _currentItemsCount.ToString();
+            _pickableItem = pickableItem;
         }
 
         public void StartMove()
@@ -58,7 +49,12 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
             _moveTween?.Kill();
 
             _moveTween = transform.DOMove(_config.endWorldPosition, _config.moveDurationSec)
-                .SetEase(_config.moveEase).OnComplete(StartGameOverAnimation);
+                .SetEase(_config.moveEase).OnComplete(StartLevelPassedAnimation);
+        }
+
+        private void StartLevelPassedAnimation()
+        {
+            _pickableItem.SetActiveGravity(true);
         }
 
         public void StartGameOverAnimation()
@@ -67,17 +63,23 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
             _isGameOver = true;
 
             _moveTween?.Kill();
-            _viewConfig.rigidbody.velocity = _config.gameOverNewVelocity;
-            _viewConfig.rigidbody.useGravity = true;
         }
+        
+        
         
         public void ScaleMainItem()
         {
-            AddPickableItem();
+            UpdateView();
 
             float value = _config.scaleValueForOnePickableItem;
             Vector3 addScaleValue = new Vector3(value, value, value);
             transform.localScale += addScaleValue;
+        }
+        
+        public void UpdateView()
+        {
+            _currentItemsCount++;
+            _viewConfig.itemsCountText.text = _currentItemsCount.ToString();
         }
         
         private void OnDestroy()

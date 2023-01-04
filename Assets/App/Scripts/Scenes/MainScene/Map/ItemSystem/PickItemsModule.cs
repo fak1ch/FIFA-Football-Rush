@@ -22,7 +22,6 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             if (collision.gameObject.TryGetComponent(out PickableItem pickableItem))
             {
-                pickableItem.SetActiveCollider(false);
                 pickableItem.OnLocalMoveAnimationComplete += FinalizePickableItem;
                 pickableItem.LocalMoveToPosition(_itemContainer.GetLocalPositionToNextItem());
                 

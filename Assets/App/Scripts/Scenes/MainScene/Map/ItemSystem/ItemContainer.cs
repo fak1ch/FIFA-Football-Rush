@@ -48,10 +48,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
         public void AddPickableItemWithoutTeleport(PickableItem pickableItem)
         {
+            pickableItem.SetActiveGravity(false);
+            pickableItem.SetActiveCollider(false);
             _pickableItems.Push(pickableItem);
             pickableItem.ItemIndexInContainer = _pickableItems.Count;
             pickableItem.transform.SetParent(_config.poolData.container);
-            pickableItem.SetActiveCollider(false);
         }
         
         private void AddPickableItem(PickableItem pickableItem)

@@ -1322,7 +1322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4999709
+      value: 4.48
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1454,7 +1454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2741,7 +2741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4999709
+      value: 5.19
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6422,7 +6422,7 @@ MonoBehaviour:
   _startPointForMainItem: {fileID: 1853605925}
   _mainItemViewConfig:
     gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
-    itemsCountText: {fileID: 35271257}
+    itemsCountText: {fileID: 1906214388}
     rigidbody: {fileID: 0}
     pickableItem: {fileID: 0}
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}

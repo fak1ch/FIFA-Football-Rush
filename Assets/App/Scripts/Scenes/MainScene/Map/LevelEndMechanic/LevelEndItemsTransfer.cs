@@ -30,7 +30,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         private LevelEndItemsTransferConfig _config;
         private MainItem _mainItem;
 
-        private int _itemsWhichMoveToStart;
+        private int _itemsWhichMoveToMainItem;
         private float _delayBetweenTransferItems;
         
         public void StartTransferItems()
@@ -38,24 +38,20 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             _config = _gameConfig.levelEndItemsTransferConfig;
             
             PickableItem pickableItem = _itemContainer.GetPickableItem();
-            pickableItem.SetActiveCollider(true);
             pickableItem.gameObject.SetActive(true);
+            pickableItem.SetActiveCollider(true);
             MovePickableItemToStartPoint(pickableItem, false);
-
-            _mainItemViewConfig.pickableItem = pickableItem;
-            _mainItemViewConfig.rigidbody = pickableItem.AddComponent<Rigidbody>();
-            _mainItemViewConfig.rigidbody.useGravity = false;
-            //_mainItemViewConfig.rigidbody.isKinematic = true;
+            
             _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
-            _mainItem.Initialize(_mainItemViewConfig);
+            _mainItem.Initialize(_mainItemViewConfig, pickableItem);
+            _mainItem.UpdateView();
 
             StartCoroutine(TransferItemsFromContainerToMainItem());
         }
         
         private IEnumerator TransferItemsFromContainerToMainItem()
         {
-            _itemsWhichMoveToStart = _itemContainer.CurrentPickableItems;
-            _delayBetweenTransferItems = _config.timeForTransferItems / _itemsWhichMoveToStart;
+            _delayBetweenTransferItems = _config.timeForTransferItems / _itemContainer.CurrentPickableItems;
             
             while (_itemContainer.CurrentPickableItems > 0)
             {
@@ -63,10 +59,12 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
                 pickableItem.gameObject.SetActive(true);
                 MovePickableItemToStartPoint(pickableItem);
 
+                _itemsWhichMoveToMainItem++;
+                
                 yield return new WaitForSecondsRealtime(_delayBetweenTransferItems);
             }
 
-            if (_itemsWhichMoveToStart > 0) yield return null;
+            if (_itemsWhichMoveToMainItem > 0) yield return null;
 
             yield return new WaitForSecondsRealtime(_config.delayBetweenMainItemStartMove);
             
@@ -87,7 +85,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
 
         private void SwitchOffPickableItem(PickableItem pickableItem)
         {
-            _itemsWhichMoveToStart--;
+            _itemsWhichMoveToMainItem--;
             
             pickableItem.OnLocalMoveAnimationComplete -= SwitchOffPickableItem;
             pickableItem.gameObject.SetActive(false);

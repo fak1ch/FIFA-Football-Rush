@@ -23,7 +23,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
     {
         public event Action<PickableItem> OnLocalMoveAnimationComplete;
 
-        [SerializeField] private BoxCollider _boxCollider;
+        [SerializeField] private Collider _collider;
+        [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private Tween _localMoveTween;
@@ -53,7 +54,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
             if (_picked == false)
             {
-                StartJumpAnimation();
+                //StartJumpAnimation();
             }
         }
 
@@ -83,9 +84,15 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _jumpSequence.OnComplete(() => _jumpSequence.Restart());
         }
         
+        public void SetActiveGravity(bool value)
+        {
+            _rigidbody.useGravity = value;
+            _rigidbody.velocity = Vector3.zero;
+        }
+
         public void SetActiveCollider(bool value)
         {
-            _boxCollider.enabled = value;
+            _collider.enabled = value;
         }
 
         private void OnDestroy()
