@@ -37,7 +37,7 @@ MonoBehaviour:
     rightSpeedMultiplier: 0.45
     maxSpeed: 3
   forwardSmoothMovementConfig:
-    maxMoveSpeed: 7
+    maxMoveSpeed: 50
     smoothMoveMultiplier: 3
   pickableItemConfig:
     localMoveAnimationDuration: 1
@@ -52,3 +52,7 @@ MonoBehaviour:
     delayBetweenMainItemStartMove: 1
     itemLocalMoveDuration: 1
     itemLocalMoveEase: 0
+  stickmanGoalkeeperConfig:
+    delayUntilJump: 0.25
+    forceUp: 2000
+    forceSide: 500

@@ -1,5 +1,6 @@
 ﻿using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.LevelEndMechanic;
+using App.Scripts.Scenes.General.Map.Stickmans;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using StarterAssets.Animations;
 using StarterAssets.InputSystems;
@@ -18,5 +19,6 @@ namespace App.Scripts.Scenes
         public ForwardSmoothMovementConfig forwardSmoothMovementConfig;
         public PickableItemConfig pickableItemConfig;
         public LevelEndItemsTransferConfig levelEndItemsTransferConfig;
+        public StickmanGoalkeeperConfig stickmanGoalkeeperConfig;
     }
 }
