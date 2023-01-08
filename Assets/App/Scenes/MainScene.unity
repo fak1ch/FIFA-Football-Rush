@@ -1384,15 +1384,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7167275
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3.32
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.824936
+      value: 25.38
       objectReference: {fileID: 0}
     - target: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6423,8 +6423,6 @@ MonoBehaviour:
   _mainItemViewConfig:
     gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
     itemsCountText: {fileID: 1906214388}
-    rigidbody: {fileID: 0}
-    pickableItem: {fileID: 0}
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
 --- !u!114 &1665021566
 MonoBehaviour:
@@ -8522,7 +8520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2193423312873541145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.67, y: 0.26, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8539,7 +8537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203676652234163423}
   m_Layer: 0
-  m_Name: Bone.13
+  m_Name: RLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8555,7 +8553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2443505413059149186}
   m_Layer: 0
-  m_Name: Bone.00
+  m_Name: LLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
