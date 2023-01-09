@@ -9,8 +9,9 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
     [Serializable]
     public class MainItemConfig
     {
-        public Vector3 endWorldPosition;
+        public float endWorldZ;
         public Vector3 gameOverNewVelocity;
+        public Vector3 startVelocity;
         public float moveDurationSec = 2;
         public Ease moveEase = Ease.InQuad;
 
@@ -48,8 +49,11 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         {
             _moveTween?.Kill();
 
-            _moveTween = transform.DOMove(_config.endWorldPosition, _config.moveDurationSec)
+            _moveTween = transform.DOMoveZ(_config.endWorldZ, _config.moveDurationSec)
                 .SetEase(_config.moveEase).OnComplete(StartLevelPassedAnimation);
+            
+            _pickableItem.SetActiveGravity(true);
+            _pickableItem.SetRigidbodyVelocity(_config.startVelocity);
         }
 
         private void StartLevelPassedAnimation()
@@ -63,9 +67,10 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
             _isGameOver = true;
 
             _moveTween?.Kill();
+
+            _pickableItem.SetRigidbodyVelocity(_config.gameOverNewVelocity);
+            _pickableItem.SetActiveGravity(true);
         }
-        
-        
         
         public void ScaleMainItem()
         {

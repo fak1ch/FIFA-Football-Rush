@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   mainItemConfig:
-    endWorldPosition: {x: 0, y: 4, z: 540}
+    endWorldZ: 540
     gameOverNewVelocity: {x: 0, y: 5, z: 0}
+    startVelocity: {x: 0, y: 7, z: 0}
     moveDurationSec: 9
     moveEase: 6
     scaleValueForOnePickableItem: 1
@@ -37,16 +38,11 @@ MonoBehaviour:
     rightSpeedMultiplier: 0.45
     maxSpeed: 3
   forwardSmoothMovementConfig:
-    maxMoveSpeed: 50
+    maxMoveSpeed: 7
     smoothMoveMultiplier: 3
   pickableItemConfig:
     localMoveAnimationDuration: 1
     localMoveEase: 0
-    offsetY: 0.5
-    jumpToUpDuration: 0.5
-    jumpToDownDuration: 0.5
-    jumpToUpEase: 6
-    jumpToDownEase: 5
   levelEndItemsTransferConfig:
     timeForTransferItems: 3
     delayBetweenMainItemStartMove: 1

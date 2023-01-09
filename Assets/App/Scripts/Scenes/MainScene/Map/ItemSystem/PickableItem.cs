@@ -9,14 +9,6 @@ namespace App.Scripts.Scenes.General.ItemSystem
     {
         public float localMoveAnimationDuration;
         public Ease localMoveEase;
-
-        [Header("Jump Animation")] 
-        [Space(10)] 
-        public float offsetY;
-        public float jumpToUpDuration;
-        public float jumpToDownDuration;
-        public Ease jumpToUpEase;
-        public Ease jumpToDownEase;
     }
     
     public class PickableItem : MonoBehaviour
@@ -28,34 +20,15 @@ namespace App.Scripts.Scenes.General.ItemSystem
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private Tween _localMoveTween;
-        private Sequence _jumpSequence;
         private PickableItemConfig _config;
 
         private int _indexInContainer;
-        private Vector3 _startLocalPosition;
-        private Vector3 _endLocalPosition;
-        private bool _picked = false;
 
-        public int ItemIndexInContainer
-        {
-            get => _indexInContainer;
-
-            set
-            {
-                _jumpSequence?.Kill();
-                _indexInContainer = value;
-                _picked = true;
-            }
-        }
+        public int ItemIndexInContainer { get; set; }
 
         private void Start()
         {
             _config = _gameConfig.pickableItemConfig;
-
-            if (_picked == false)
-            {
-                //StartJumpAnimation();
-            }
         }
 
         public void LocalMoveToPosition(Vector3 newLocalPosition, float animationDuration, Ease ease)
@@ -69,25 +42,14 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             LocalMoveToPosition(newLocalPosition, _config.localMoveAnimationDuration, _config.localMoveEase);
         }
-        
-        private void StartJumpAnimation()
-        {
-            _startLocalPosition = transform.localPosition;
-            _endLocalPosition = _startLocalPosition;
-            _endLocalPosition.y += _config.offsetY;
-            
-            _jumpSequence = DOTween.Sequence();
-            _jumpSequence.Append(transform.DOLocalMove(_endLocalPosition, _config.jumpToUpDuration)
-                .SetEase(_config.jumpToUpEase));
-            _jumpSequence.Append(transform.DOLocalMove(_startLocalPosition, _config.jumpToDownDuration)
-                .SetEase(_config.jumpToDownEase));
-            _jumpSequence.OnComplete(() => _jumpSequence.Restart());
-        }
-        
+
         public void SetActiveGravity(bool value)
         {
             _rigidbody.useGravity = value;
             _rigidbody.velocity = Vector3.zero;
+            
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity = Vector3.zero;
         }
 
         public void SetActiveCollider(bool value)
@@ -95,10 +57,14 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _collider.enabled = value;
         }
 
+        public void SetRigidbodyVelocity(Vector3 newVelocity)
+        {
+            _rigidbody.velocity = newVelocity;
+        }
+
         private void OnDestroy()
         {
             _localMoveTween?.Kill();
-            _jumpSequence?.Kill();
         }
     }
 }
