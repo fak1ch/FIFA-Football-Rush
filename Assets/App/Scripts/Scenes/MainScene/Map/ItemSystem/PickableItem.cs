@@ -62,6 +62,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _rigidbody.velocity = newVelocity;
         }
 
+        public void SetInterpolation(RigidbodyInterpolation value)
+        {
+            _rigidbody.interpolation = value;
+        }
+        
         private void OnDestroy()
         {
             _localMoveTween?.Kill();

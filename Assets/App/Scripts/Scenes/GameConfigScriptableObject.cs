@@ -1,7 +1,7 @@
 ﻿using App.Scripts.Scenes.General.ItemSystem;
-using App.Scripts.Scenes.General.LevelEndMechanic;
 using App.Scripts.Scenes.General.Map.Stickmans;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
+using App.Scripts.Scenes.MainScene.Map.Stickmans;
 using StarterAssets.Animations;
 using StarterAssets.InputSystems;
 using StarterAssets.NewMovement;
@@ -20,5 +20,6 @@ namespace App.Scripts.Scenes
         public PickableItemConfig pickableItemConfig;
         public LevelEndItemsTransferConfig levelEndItemsTransferConfig;
         public StickmanGoalkeeperConfig stickmanGoalkeeperConfig;
+        public JointDeactivatorConfig goalkeeperJointDeactivatorConfig;
     }
 }

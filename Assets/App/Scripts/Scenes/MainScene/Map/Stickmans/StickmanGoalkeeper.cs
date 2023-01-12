@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using App.Scripts.General.Utils;
-using App.Scripts.Scenes.General.LevelEndMechanic;
+using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
+using App.Scripts.Scenes.MainScene.Map.Stickmans;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace App.Scripts.Scenes.General.Map.Stickmans
 {
@@ -19,6 +19,7 @@ namespace App.Scripts.Scenes.General.Map.Stickmans
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private Rigidbody _rigidbody;
+        [SerializeField] private JointDeactivator _jointDeactivator;
         [SerializeField] private Trigger _trigger;
         
         [Space(10)]
@@ -41,17 +42,19 @@ namespace App.Scripts.Scenes.General.Map.Stickmans
         {
             _jumpTriggerHash = Animator.StringToHash("JumpTrigger");
             _config = _gameConfig.stickmanGoalkeeperConfig;
+            _rigidbody.maxAngularVelocity = Mathf.Infinity;
         }
 
         private IEnumerator StartJumpAnimationRoutine()
         {
             _animator.SetTrigger(_jumpTriggerHash);
+            _jointDeactivator.SetActiveJoints(false);
 
             yield return new WaitForSeconds(_config.delayUntilJump);
 
             int multiplier = MathUtils.IsProbability(50) ? 1 : -1;
             float forceSide = _config.forceSide * multiplier;
-            
+
             _rigidbody.AddForce(new Vector3(forceSide, _config.forceUp, 0));
         }
 

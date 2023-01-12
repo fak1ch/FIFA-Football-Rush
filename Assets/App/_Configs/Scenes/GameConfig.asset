@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   mainItemConfig:
-    endWorldZ: 540
     gameOverNewVelocity: {x: 0, y: 5, z: 0}
-    startVelocity: {x: 0, y: 7, z: 0}
-    moveDurationSec: 9
-    moveEase: 6
-    scaleValueForOnePickableItem: 1
+    startVelocity: {x: 0, y: 7.7, z: 60}
   inputSystemConfig:
     sensitivity: 0.1
     targetScreenWidth: 768
@@ -49,6 +45,8 @@ MonoBehaviour:
     itemLocalMoveDuration: 1
     itemLocalMoveEase: 0
   stickmanGoalkeeperConfig:
-    delayUntilJump: 0.25
-    forceUp: 2000
-    forceSide: 500
+    delayUntilJump: 0.5
+    forceUp: 300
+    forceSide: 100
+  goalkeeperJointDeactivatorConfig:
+    positionSpringMinValue: 200

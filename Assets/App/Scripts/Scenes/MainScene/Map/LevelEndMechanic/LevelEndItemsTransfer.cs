@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using App.Scripts.Scenes.General.ItemSystem;
-using App.Scripts.Scenes.General.LevelEndMechanic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
@@ -35,16 +33,22 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         
         public void StartTransferItems()
         {
-            _config = _gameConfig.levelEndItemsTransferConfig;
+            if (_itemContainer.CurrentPickableItems <= 0)
+            {
+                Debug.Log("Game Over");
+                return;
+            }
             
+            _config = _gameConfig.levelEndItemsTransferConfig;
+
             PickableItem pickableItem = _itemContainer.GetPickableItem();
             pickableItem.gameObject.SetActive(true);
             pickableItem.SetActiveCollider(true);
             MovePickableItemToStartPoint(pickableItem, false);
             
             _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
-            _mainItem.Initialize(_mainItemViewConfig, pickableItem);
-            _mainItem.UpdateView();
+            _mainItem.Initialize(_gameConfig, pickableItem);
+            pickableItem.gameObject.AddComponent<MainItemView>().Initialize(_mainItemViewConfig, _mainItem);
 
             StartCoroutine(TransferItemsFromContainerToMainItem());
         }
@@ -61,12 +65,12 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
 
                 _itemsWhichMoveToMainItem++;
                 
-                yield return new WaitForSecondsRealtime(_delayBetweenTransferItems);
+                yield return new WaitForSeconds(_delayBetweenTransferItems);
             }
 
             if (_itemsWhichMoveToMainItem > 0) yield return null;
 
-            yield return new WaitForSecondsRealtime(_config.delayBetweenMainItemStartMove);
+            yield return new WaitForSeconds(_config.delayBetweenMainItemStartMove);
             
             _cameraTargetSetuper.SetupTarget(_mainItem.transform);
             _mainItem.StartMove();
@@ -90,7 +94,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             pickableItem.OnLocalMoveAnimationComplete -= SwitchOffPickableItem;
             pickableItem.gameObject.SetActive(false);
             
-            _mainItem.ScaleMainItem();
+            _mainItem.UpdateView();
         }
     }
 }

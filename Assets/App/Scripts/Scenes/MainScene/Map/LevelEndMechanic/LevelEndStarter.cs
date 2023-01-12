@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections;
-using App.Scripts.Scenes.General.ItemSystem;
-using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
+﻿using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using Cinemachine;
-using DG.Tweening;
 using StarterAssets;
 using StarterAssets.Animations;
 using StarterAssets.NewMovement;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.General.LevelEndMechanic

@@ -7,6 +7,6 @@ namespace StarterAssets
     {
         [SerializeField] private ItemContainer _playerItemContainer;
 
-        public ItemContainer GetPlayerItemContainer => _playerItemContainer;
+        public ItemContainer PlayerItemContainer => _playerItemContainer;
     }
 }
