@@ -15,6 +15,11 @@ namespace StarterAssets.Animations
         public float thresholdInputX;
         public float minAngleY;
         public float maxAngleY;
+        
+        [Space(10)]
+        public float groundedOffset;
+        public float groundedRadius;
+        public LayerMask groundLayers;
 
         [Space(10)]
         public float rightSpeedMultiplier;
@@ -23,6 +28,8 @@ namespace StarterAssets.Animations
 
     public class StickmanView : MonoBehaviour
     {
+        public event Action OnJump;
+        
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private StickmanViewConfig _config;
 
@@ -34,6 +41,8 @@ namespace StarterAssets.Animations
         private float _currentSpeed;
         private Vector2 _targetForward;
         private bool _isCanMove = true;
+        
+        public bool IsGrounded { get; private set; }
 
         private void Start()
         {
@@ -53,6 +62,7 @@ namespace StarterAssets.Animations
             RotateStickman(newAngleY);
             SmoothMove();
             MoveStickman();
+            GroundedCheck();
         }
 
         private void RotateStickman(float targetYRotation)
@@ -77,7 +87,13 @@ namespace StarterAssets.Animations
             float percent = MathUtils.GetPercent(0, _forwardSmoothMovement.MaxMoveSpeed,
                 _forwardSmoothMovement.CurrentMoveSpeed);
 
-            _currentSpeed = _config.maxSpeed * percent * Time.deltaTime * _deltaMouseX;
+            _currentSpeed = _config.maxSpeed * percent * Time.deltaTime * _deltaMouseX * _config.rightSpeedMultiplier;
+        }
+        
+        private void GroundedCheck()
+        {
+            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _config.groundedOffset, transform.position.z);
+            IsGrounded = Physics.CheckSphere(spherePosition, _config.groundedRadius, _config.groundLayers, QueryTriggerInteraction.Ignore);
         }
         
         public void SetCanMove(bool value)

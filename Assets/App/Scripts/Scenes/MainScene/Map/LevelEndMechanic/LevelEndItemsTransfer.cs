@@ -20,6 +20,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         [SerializeField] private ItemContainer _itemContainer;
         [SerializeField] private CameraTargetSetuper _cameraTargetSetuper;
         [SerializeField] private Transform _startPointForMainItem;
+        [SerializeField] private WallsContainer _wallsContainer;
         
         [Space(10)]
         [SerializeField] private MainItemViewConfig _mainItemViewConfig;
@@ -43,7 +44,6 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
 
             PickableItem pickableItem = _itemContainer.GetPickableItem();
             pickableItem.gameObject.SetActive(true);
-            pickableItem.SetActiveCollider(true);
             MovePickableItemToStartPoint(pickableItem, false);
             
             _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
@@ -73,6 +73,8 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             yield return new WaitForSeconds(_config.delayBetweenMainItemStartMove);
             
             _cameraTargetSetuper.SetupTarget(_mainItem.transform);
+            _wallsContainer.Initialize(_mainItem);
+            
             _mainItem.StartMove();
         }
         

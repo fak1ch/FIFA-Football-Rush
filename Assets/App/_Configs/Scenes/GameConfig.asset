@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   mainItemConfig:
-    gameOverNewVelocity: {x: 0, y: 5, z: 0}
-    startVelocity: {x: 0, y: 7.7, z: 60}
+    gameOverNewVelocity: {x: 0, y: 10, z: 0}
+    startVelocity: {x: 0, y: 9.5, z: 67.5}
   inputSystemConfig:
     sensitivity: 0.1
     targetScreenWidth: 768
@@ -27,11 +27,16 @@ MonoBehaviour:
     visibleItemCount: 15
   stickmanViewConfig:
     rotateSpeed: 10
-    angleMultiplier: 16
+    angleMultiplier: 18
     thresholdInputX: 0.1
     minAngleY: -85
     maxAngleY: 85
-    rightSpeedMultiplier: 0.45
+    groundedOffset: 0
+    groundedRadius: 0
+    groundLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    rightSpeedMultiplier: 1.2
     maxSpeed: 3
   forwardSmoothMovementConfig:
     maxMoveSpeed: 7
@@ -46,7 +51,7 @@ MonoBehaviour:
     itemLocalMoveEase: 0
   stickmanGoalkeeperConfig:
     delayUntilJump: 0.5
-    forceUp: 300
-    forceSide: 100
+    forceUp: 250
+    forceForward: 250
   goalkeeperJointDeactivatorConfig:
     positionSpringMinValue: 200

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6229595174017721325}
   - component: {fileID: 2323988853793782158}
   - component: {fileID: 9009814175495748993}
-  - component: {fileID: 5940382361936168269}
+  - component: {fileID: 4272883467803200738}
   m_Layer: 0
   m_Name: PickableItem
   m_TagString: Untagged
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 9009814175495748993}
-  _rigidbody: {fileID: 5940382361936168269}
+  _rigidbody: {fileID: 4272883467803200738}
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
 --- !u!135 &9009814175495748993
 SphereCollider:
@@ -115,7 +115,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.0010953521
   m_Center: {x: 0, y: 5.8207657e-11, z: -0.00000034831461}
---- !u!54 &5940382361936168269
+--- !u!54 &4272883467803200738
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

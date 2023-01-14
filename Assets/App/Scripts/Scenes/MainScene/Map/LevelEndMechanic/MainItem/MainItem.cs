@@ -32,8 +32,10 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
 
         public void StartMove()
         {
+            _pickableItem.SetActiveCollider(true);
             _pickableItem.SetActiveGravity(true);
             _pickableItem.SetInterpolation(RigidbodyInterpolation.Interpolate);
+            //_pickableItem.SetCollisionDetection(CollisionDetectionMode.Continuous);
             _pickableItem.SetRigidbodyVelocity(_config.startVelocity);
         }
 
@@ -54,7 +56,6 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             _isGameOver = true;
 
             _pickableItem.SetRigidbodyVelocity(_config.gameOverNewVelocity);
-            _pickableItem.SetActiveGravity(true);
         }
     }
 }

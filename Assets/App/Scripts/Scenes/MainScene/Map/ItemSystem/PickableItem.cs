@@ -66,6 +66,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             _rigidbody.interpolation = value;
         }
+
+        public void SetCollisionDetection(CollisionDetectionMode collisionDetectionMode)
+        {
+            _rigidbody.collisionDetectionMode = collisionDetectionMode;
+        }
         
         private void OnDestroy()
         {

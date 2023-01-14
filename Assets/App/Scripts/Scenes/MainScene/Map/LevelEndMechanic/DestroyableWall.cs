@@ -11,39 +11,53 @@ namespace App.Scripts.Scenes.General.Map
 
         [Space(10)]
         [SerializeField] private ParticleSystem _destroyEffect;
+        [SerializeField] private CollisionObject _collisionObject;
         [SerializeField] private Trigger _trigger;
+        [SerializeField] private Collider _collider;
         [SerializeField] private TextMeshProUGUI _itemsCountForDestroyText;
+
+        #region Events
 
         private void OnEnable()
         {
             _itemsCountForDestroyText.text = _itemsCountForDestroy.ToString();
             
+            _collisionObject.CollisionEnter += HandleCollisionEnter;
             _trigger.TriggerEnter += HandleTriggerEnter;
         }
 
         private void OnDisable()
         {
+            _collisionObject.CollisionEnter -= HandleCollisionEnter;
             _trigger.TriggerEnter -= HandleTriggerEnter;
         }
 
-        private void HandleTriggerEnter(Collider collider)
+        #endregion
+
+        public void Initialize(MainItem mainItem)
         {
-            if (collider.TryGetComponent(out MainItem mainItem))
+            _collider.isTrigger = mainItem.CurrentItemsCount >= _itemsCountForDestroy;
+        }
+
+        private void HandleTriggerEnter(Collider target)
+        {
+            if (target.TryGetComponent(out MainItem mainItem))
             {
-                if (mainItem.CurrentItemsCount >= _itemsCountForDestroy)
-                {
-                    DestroyWall();
-                }
-                else
-                {
-                    mainItem.StartGameOverAnimation();
-                }
+                DestroyWall();
+            }
+        }
+        
+        private void HandleCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.TryGetComponent(out MainItem mainItem))
+            {
+                mainItem.StartGameOverAnimation();
             }
         }
         
         private void DestroyWall()
         {
-            _trigger.gameObject.SetActive(false);
+            _collisionObject.gameObject.SetActive(false);
             _destroyEffect.gameObject.SetActive(true);
             _destroyEffect.DORestart();
         }

@@ -294,7 +294,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsCountForDestroy: 10
   _destroyEffect: {fileID: 3592866020213259776}
-  _trigger: {fileID: 6033991225215881589}
+  _collisionObject: {fileID: 1089241108814999774}
+  _trigger: {fileID: 3529917924795582804}
+  _collider: {fileID: 3592866021277993376}
   _itemsCountForDestroyText: {fileID: 739442497}
 --- !u!1 &3592866020213259778
 GameObject:
@@ -5178,7 +5180,8 @@ GameObject:
   - component: {fileID: 3592866021277993377}
   - component: {fileID: 3592866021277993378}
   - component: {fileID: 3592866021277993376}
-  - component: {fileID: 6033991225215881589}
+  - component: {fileID: 1089241108814999774}
+  - component: {fileID: 3529917924795582804}
   m_Layer: 0
   m_Name: MeshObject
   m_TagString: Untagged
@@ -5259,12 +5262,24 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3592866021277993389}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6033991225215881589
+--- !u!114 &1089241108814999774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592866021277993389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df0efda1255412184eb85d43814d615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3529917924795582804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

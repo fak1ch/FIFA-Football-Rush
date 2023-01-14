@@ -12,7 +12,7 @@ namespace App.Scripts.Scenes.General.Map.Stickmans
     {
         public float delayUntilJump = 0.25f;
         public float forceUp;
-        public float forceSide;
+        public float forceForward;
     }
     
     public class StickmanGoalkeeper : MonoBehaviour
@@ -52,10 +52,7 @@ namespace App.Scripts.Scenes.General.Map.Stickmans
 
             yield return new WaitForSeconds(_config.delayUntilJump);
 
-            int multiplier = MathUtils.IsProbability(50) ? 1 : -1;
-            float forceSide = _config.forceSide * multiplier;
-
-            _rigidbody.AddForce(new Vector3(forceSide, _config.forceUp, 0));
+            _rigidbody.AddForce(new Vector3(0, _config.forceUp, -_config.forceForward));
         }
 
         private void HandleTriggerEnter(Collider collider)

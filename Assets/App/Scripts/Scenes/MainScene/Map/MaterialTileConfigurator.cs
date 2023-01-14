@@ -5,12 +5,13 @@ namespace App.Scripts.Scenes.General
 {
     public class MaterialTileConfigurator : MonoBehaviour
     {
-        [SerializeField] private float _tileYMultiplier;
+        [SerializeField] private Vector2 _tilingMultiplier;
         [SerializeField] private Material _material;
 
         private void Start()
         {
-            _material.mainTextureScale = new Vector2(1, transform.localScale.z * _tileYMultiplier);
+            _material.mainTextureScale = 
+                new Vector2(transform.localScale.x, transform.localScale.z) * _tilingMultiplier;
         }
     }
 }
