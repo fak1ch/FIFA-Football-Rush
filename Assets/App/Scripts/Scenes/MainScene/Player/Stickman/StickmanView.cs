@@ -40,7 +40,7 @@ namespace StarterAssets.Animations
         private float _deltaMouseX;
         private float _currentSpeed;
         private Vector2 _targetForward;
-        private bool _isCanMove = true;
+        private bool _isCanMove = false;
         
         public bool IsGrounded { get; private set; }
 

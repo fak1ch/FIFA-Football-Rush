@@ -9,8 +9,7 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
 {
     public class LevelEndStarter : MonoBehaviour
     {
-        [SerializeField] private StickmanView _stickmanView;
-        [SerializeField] private ForwardSmoothMovement _forwardSmoothMovement;
+        [SerializeField] private Player _player;
         [SerializeField] private CinemachineVirtualCamera _followMainItemCamera;
         [SerializeField] private CollisionObject _collisionObject;
         [SerializeField] private LevelEndItemsTransfer _levelEndItemsTransfer;
@@ -30,9 +29,8 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         private void StartLevelEndAnimation()
         {
             _followMainItemCamera.gameObject.SetActive(true);
-            _stickmanView.SetCanMove(false);
-            _forwardSmoothMovement.SetCanMove(false);
-            
+            _player.SetPlayerCanMove(false);
+
             _levelEndItemsTransfer.StartTransferItems();
         }
 

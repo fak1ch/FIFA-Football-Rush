@@ -7,7 +7,7 @@ namespace App.Scripts.General.Utils
 {
     public class DebugUtils : MonoSingleton<DebugUtils>
     {
-        [SerializeField] private MainSettingsScriptableObject _mainSettingsConfig;
+        [SerializeField] private GameSettingsScriptableObject gameSettingsConfig;
         
         [Space(10)]
         [SerializeField] private TextMeshProUGUI _customConsoleText;
@@ -22,13 +22,13 @@ namespace App.Scripts.General.Utils
 
         private void Start()
         {
-            _customConsoleGameObject.SetActive(_mainSettingsConfig.OnCustomConsole);
-            _fpsTextGameObject.SetActive(_mainSettingsConfig.OnFpsRenderer);
+            _customConsoleGameObject.SetActive(gameSettingsConfig.onCustomConsole);
+            _fpsTextGameObject.SetActive(gameSettingsConfig.onFpsRenderer);
         }
 
         private void Update()
         {
-            if (!_mainSettingsConfig.OnFpsRenderer) return;
+            if (!gameSettingsConfig.onFpsRenderer) return;
             
             _time -= Time.deltaTime;
             if (_time <= 0)
@@ -41,7 +41,7 @@ namespace App.Scripts.General.Utils
         
         public void Log(string text)
         {
-            if (!_mainSettingsConfig.OnCustomConsole) return;
+            if (!gameSettingsConfig.onCustomConsole) return;
             
             _customConsoleText.text += "\n" + text;
             Debug.Log(text);

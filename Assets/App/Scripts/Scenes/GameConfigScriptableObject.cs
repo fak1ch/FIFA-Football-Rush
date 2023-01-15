@@ -1,5 +1,6 @@
 ﻿using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map.Stickmans;
+using App.Scripts.Scenes.MainScene.Map.Level;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
 using StarterAssets.Animations;
@@ -21,5 +22,6 @@ namespace App.Scripts.Scenes
         public LevelEndItemsTransferConfig levelEndItemsTransferConfig;
         public StickmanGoalkeeperConfig stickmanGoalkeeperConfig;
         public JointDeactivatorConfig goalkeeperJointDeactivatorConfig;
+        public CoinConfig coinConfig;
     }
 }

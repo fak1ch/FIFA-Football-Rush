@@ -55,3 +55,8 @@ MonoBehaviour:
     forceForward: 250
   goalkeeperJointDeactivatorConfig:
     positionSpringMinValue: 200
+  coinConfig:
+    endLocalPositionOffset: {x: 0, y: 0.5, z: 0}
+    moveDuration: 2
+    endLocalEulerAngles: {x: 0, y: 360, z: 0}
+    rotateDuration: 4

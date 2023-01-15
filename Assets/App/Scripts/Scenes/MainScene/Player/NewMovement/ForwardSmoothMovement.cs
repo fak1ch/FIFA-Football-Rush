@@ -20,7 +20,7 @@ namespace StarterAssets.NewMovement
         [Space(10)] 
         [SerializeField] private InputSystem _inputSystem;
 
-        private bool _isCanMove = true;
+        private bool _isCanMove = false;
         
         public float CurrentMoveSpeed { get; private set; }
         public float MaxMoveSpeed => _config.maxMoveSpeed;
