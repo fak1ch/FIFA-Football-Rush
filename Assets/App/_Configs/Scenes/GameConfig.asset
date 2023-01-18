@@ -15,6 +15,10 @@ MonoBehaviour:
   mainItemConfig:
     gameOverNewVelocity: {x: 0, y: 10, z: 0}
     startVelocity: {x: 0, y: 9.5, z: 67.5}
+  mainItemViewConfig:
+    scaleValueForOnePickableItem: 0.017
+    massValueForOnePickableItem: 0.01
+    cinemachineDistanceForOnePickableItemValue: 0.005
   inputSystemConfig:
     sensitivity: 0.1
     targetScreenWidth: 768
@@ -39,7 +43,7 @@ MonoBehaviour:
     rightSpeedMultiplier: 1.2
     maxSpeed: 3
   forwardSmoothMovementConfig:
-    maxMoveSpeed: 7
+    maxMoveSpeed: 5
     smoothMoveMultiplier: 3
   pickableItemConfig:
     localMoveAnimationDuration: 1

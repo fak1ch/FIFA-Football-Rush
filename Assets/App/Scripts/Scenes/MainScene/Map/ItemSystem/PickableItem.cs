@@ -72,6 +72,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _rigidbody.collisionDetectionMode = collisionDetectionMode;
         }
         
+        public void AddMass(float value)
+        {
+            _rigidbody.mass += value;
+        }
+        
         private void OnDestroy()
         {
             _localMoveTween?.Kill();

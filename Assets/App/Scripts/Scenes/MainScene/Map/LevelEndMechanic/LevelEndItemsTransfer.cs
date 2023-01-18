@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using App.Scripts.Scenes.General.ItemSystem;
+using Cinemachine;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
@@ -23,7 +25,10 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         [SerializeField] private WallsContainer _wallsContainer;
         
         [Space(10)]
-        [SerializeField] private MainItemViewConfig _mainItemViewConfig;
+        [SerializeField] private CinemachineVirtualCamera _mainItemCamera;
+        [SerializeField] private TextMeshProUGUI _itemsCountText;
+        
+        [Space(10)]
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private LevelEndItemsTransferConfig _config;
@@ -44,11 +49,13 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
 
             PickableItem pickableItem = _itemContainer.GetPickableItem();
             pickableItem.gameObject.SetActive(true);
+            pickableItem.SetActiveCollider(true);
             MovePickableItemToStartPoint(pickableItem, false);
             
             _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
             _mainItem.Initialize(_gameConfig, pickableItem);
-            pickableItem.gameObject.AddComponent<MainItemView>().Initialize(_mainItemViewConfig, _mainItem);
+            pickableItem.gameObject.AddComponent<MainItemView>().Initialize(_gameConfig.mainItemViewConfig,
+                _mainItem, _mainItemCamera, _itemsCountText, pickableItem);
 
             StartCoroutine(TransferItemsFromContainerToMainItem());
         }

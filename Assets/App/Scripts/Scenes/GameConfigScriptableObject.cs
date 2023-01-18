@@ -1,5 +1,6 @@
 ﻿using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map.Stickmans;
+using App.Scripts.Scenes.MainScene.Map;
 using App.Scripts.Scenes.MainScene.Map.Level;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
@@ -14,6 +15,7 @@ namespace App.Scripts.Scenes
     public class GameConfigScriptableObject : ScriptableObject
     {
         public MainItemConfig mainItemConfig;
+        public MainItemViewConfig mainItemViewConfig;
         public InputSystemConfig inputSystemConfig;
         public ItemContainerConfig itemContainerConfig;
         public StickmanViewConfig stickmanViewConfig;
