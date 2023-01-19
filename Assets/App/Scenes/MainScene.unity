@@ -886,6 +886,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6229595174017721331, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
   m_PrefabInstance: {fileID: 183550087}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &197743538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197743539}
+  m_Layer: 0
+  m_Name: Clouds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197743539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197743538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742293077}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &205816931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7300,6 +7331,8 @@ GameObject:
   - component: {fileID: 1665021565}
   - component: {fileID: 1665021566}
   - component: {fileID: 1665021568}
+  - component: {fileID: 1665021570}
+  - component: {fileID: 1665021571}
   - component: {fileID: 1665021567}
   m_Layer: 0
   m_Name: Controllers
@@ -7469,6 +7502,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1929228614}
   _mainMenuUI: {fileID: 1195576411}
+--- !u!114 &1665021570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665021559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637c38041f95416c8bfdc4e4facf1a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
+  _cloudPrefabs:
+  - {fileID: 7933267641070891523, guid: 3fcb6405391c4ec488e54f1819baaf15, type: 3}
+  - {fileID: 3166525476179668136, guid: b296faf0996d9ef4faab150dd608cb9e, type: 3}
+  - {fileID: 2196065704363460873, guid: 07ccaf208af9d1348a540ffcd42ca5ec, type: 3}
+  _cloudContainer: {fileID: 197743539}
+--- !u!114 &1665021571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665021559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a9642df7ad435c8d965acc33bd3e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
+  _gameEvents: {fileID: 1665021569}
+  _player: {fileID: 1929228614}
 --- !u!114 &1704217525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3592866021500943884, guid: 8ab1e7f43264a2e448abb4d2553e2f55, type: 3}
@@ -7656,6 +7722,7 @@ Transform:
   - {fileID: 1514313497}
   - {fileID: 1438993145}
   - {fileID: 1395512472340481048}
+  - {fileID: 197743539}
   m_Father: {fileID: 1979911499}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9445,6 +9512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 1058008354}
+  _gameEvents: {fileID: 0}
 --- !u!54 &1085756750256183896
 Rigidbody:
   m_ObjectHideFlags: 0

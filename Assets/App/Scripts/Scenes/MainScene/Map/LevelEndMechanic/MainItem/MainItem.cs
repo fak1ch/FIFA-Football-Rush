@@ -17,7 +17,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         
         private MainItemConfig _config;
 
-        private PickableItem _pickableItem;
+        private PickableItem _pickableItem; 
         private bool _isGameOver = false;
 
         public int CurrentItemsCount { get; private set;  } = 0;
@@ -37,11 +37,6 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             _pickableItem.SetInterpolation(RigidbodyInterpolation.Interpolate);
             _pickableItem.SetCollisionDetection(CollisionDetectionMode.Continuous);
             _pickableItem.SetRigidbodyVelocity(_config.startVelocity);
-        }
-
-        public void StartLevelPassedAnimation()
-        {
-            Debug.Log("Level Passed");
         }
 
         public void UpdateView()

@@ -2,10 +2,6 @@
 {
     public enum SceneEnum 
     {
-        Playground,
-        LevelSaveCapybara,
-        SelectLevel,
-        NewMainMenu,
-        EscapeTheRoom,
+        MainScene,
     }
 }

@@ -64,3 +64,8 @@ MonoBehaviour:
     moveDuration: 2
     endLocalEulerAngles: {x: 0, y: 360, z: 0}
     rotateDuration: 4
+  cloudsGeneratorConfig:
+    leftBottomRectanglePoint: {x: -15, y: 7, z: 3}
+    rightTopRectanglePoint: {x: 15, y: 11, z: 566.01}
+    minDistanceBetweenClouds: 100
+    cloudsCount: 20

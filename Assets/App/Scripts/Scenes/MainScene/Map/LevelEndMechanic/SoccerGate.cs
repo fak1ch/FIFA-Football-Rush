@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.Scenes.General;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
@@ -6,6 +7,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
     public class SoccerGate : MonoBehaviour
     {
         [SerializeField] private Trigger _trigger;
+        [SerializeField] private GameEvents _gameEvents;
 
         private void OnEnable()
         {
@@ -21,7 +23,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         {
             if (inputCollider.TryGetComponent(out MainItem mainItem))
             {
-                mainItem.StartLevelPassedAnimation();
+                _gameEvents.EndLevelWithWin();
             }
         }
     }

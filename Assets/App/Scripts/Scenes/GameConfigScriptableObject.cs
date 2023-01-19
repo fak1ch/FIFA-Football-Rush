@@ -1,6 +1,7 @@
 ﻿using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map.Stickmans;
 using App.Scripts.Scenes.MainScene.Map;
+using App.Scripts.Scenes.MainScene.Map.CloudsSystem;
 using App.Scripts.Scenes.MainScene.Map.Level;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
@@ -25,5 +26,7 @@ namespace App.Scripts.Scenes
         public StickmanGoalkeeperConfig stickmanGoalkeeperConfig;
         public JointDeactivatorConfig goalkeeperJointDeactivatorConfig;
         public CoinConfig coinConfig;
+        public CloudsGeneratorConfig cloudsGeneratorConfig;
+        public BottomDieZoneConfig bottomDieZoneConfig;
     }
 }
