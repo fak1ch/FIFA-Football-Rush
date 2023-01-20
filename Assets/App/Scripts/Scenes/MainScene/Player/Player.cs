@@ -7,11 +7,11 @@ namespace StarterAssets
 {
     public class Player : MonoBehaviour
     {
-        [SerializeField] private ItemContainer _playerItemContainer;
+        [SerializeField] private ItemContainer _itemContainer;
         [SerializeField] private StickmanView _stickmanView;
         [SerializeField] private ForwardSmoothMovement _forwardSmoothMovement;
 
-        public ItemContainer PlayerItemContainer => _playerItemContainer;
+        public ItemContainer ItemContainer => _itemContainer;
 
         public void SetPlayerCanMove(bool value)
         {

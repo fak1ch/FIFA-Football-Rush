@@ -9,7 +9,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             if (collision.gameObject.TryGetComponent(out Player player))
             {
-                ChangeItemCount(player.PlayerItemContainer);
+                ChangeItemCount(player.ItemContainer);
                 gameObject.SetActive(false);
             }
         }

@@ -79,7 +79,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
             }
         }
         
-        public void RemoveSomePickableItems(int value)
+        public int RemoveSomePickableItems(int value)
         {
             if (_pickableItems.Count < value)
             {
@@ -90,6 +90,15 @@ namespace App.Scripts.Scenes.General.ItemSystem
             {
                 RemovePickableItem(GetPickableItem());
             }
+
+            return value;
+        }
+
+        public void RemoveSomePickableItemsWithAnimation(int value)
+        {
+            int removedItems = RemoveSomePickableItems(value);
+            
+            
         }
         
         public PickableItem GetPickableItem()

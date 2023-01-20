@@ -60,7 +60,7 @@ MonoBehaviour:
   goalkeeperJointDeactivatorConfig:
     positionSpringMinValue: 200
   coinConfig:
-    endLocalPositionOffset: {x: 0, y: 0.5, z: 0}
+    endLocalPositionOffset: {x: 0, y: 0.1, z: 0}
     moveDuration: 2
     endLocalEulerAngles: {x: 0, y: 360, z: 0}
     rotateDuration: 4
@@ -69,3 +69,60 @@ MonoBehaviour:
     rightTopRectanglePoint: {x: 15, y: 11, z: 566.01}
     minDistanceBetweenClouds: 100
     cloudsCount: 20
+  bottomDieZoneConfig:
+    dieYValue: -2
+  trapConfigs:
+    bombConfig:
+      damageInPickableItems: 0
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 360, z: 0}
+        rotateDuration: 7
+        ease: 1
+    horizontalSawConfig:
+      damageInPickableItems: 1
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 360, z: 0}
+        rotateDuration: 3
+        ease: 1
+    horizontalSawCircleConfig:
+      damageInPickableItems: 0
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 360, z: 0}
+        rotateDuration: 5
+        ease: 1
+    verticalSawConfig:
+      damageInPickableItems: 1
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 0, z: 360}
+        rotateDuration: 3
+        ease: 1
+      infinityLocalMoveXConfig:
+        startX: -2.35
+        endX: 2.35
+        duration: 2
+        ease: 7
+    justSawConfig:
+      damageInPickableItems: 1
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 0, z: -360}
+        rotateDuration: 3
+        ease: 1
+    spikeConfig:
+      damageInPickableItems: 1
+    spikesCylinderConfig:
+      damageInPickableItems: 1
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 0, z: -360}
+        rotateDuration: 3
+        ease: 1
+    spikesCylinderLogConfig:
+      damageInPickableItems: 1
+      infinityLocalRotationConfig:
+        endLocalEulerAngles: {x: 0, y: 0, z: -360}
+        rotateDuration: 2
+        ease: 4
+      infinityLocalMoveXConfig:
+        startX: -2.5
+        endX: 2.5
+        duration: 2
+        ease: 4

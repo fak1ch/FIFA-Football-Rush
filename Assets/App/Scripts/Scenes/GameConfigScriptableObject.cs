@@ -1,8 +1,10 @@
-﻿using App.Scripts.Scenes.General.ItemSystem;
+﻿using System;
+using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map.Stickmans;
 using App.Scripts.Scenes.MainScene.Map;
 using App.Scripts.Scenes.MainScene.Map.CloudsSystem;
 using App.Scripts.Scenes.MainScene.Map.Level;
+using App.Scripts.Scenes.MainScene.Map.Level.Traps;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
 using StarterAssets.Animations;
@@ -28,5 +30,19 @@ namespace App.Scripts.Scenes
         public CoinConfig coinConfig;
         public CloudsGeneratorConfig cloudsGeneratorConfig;
         public BottomDieZoneConfig bottomDieZoneConfig;
+        public TrapConfigs trapConfigs;
+    }
+
+    [Serializable]
+    public class TrapConfigs
+    {
+        public BombConfig bombConfig;
+        public HorizontalSawConfig horizontalSawConfig;
+        public HorizontalSawCircleConfig horizontalSawCircleConfig;
+        public VerticalSawConfig verticalSawConfig;
+        public JustSawConfig justSawConfig;
+        public TrapConfig spikeConfig;
+        public SpikesCylinderConfig spikesCylinderConfig;
+        public SpikesCylinderLogConfig spikesCylinderLogConfig;
     }
 }
