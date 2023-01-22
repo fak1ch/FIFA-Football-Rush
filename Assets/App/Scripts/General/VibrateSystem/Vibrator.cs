@@ -6,7 +6,8 @@ namespace App.Scripts.General.VibrateSystem
 {
     public class Vibrator : MonoSingleton<Vibrator>
     {
-#if UNITY_ANDROID && !UNITY_EDITOR 
+        
+    #if UNITY_ANDROID && !UNITY_EDITOR 
         private static AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         private static AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
         private static AndroidJavaObject vibrator = currentActivity.Call<AndroidJavaObject>("getSystemService", "vibrator");

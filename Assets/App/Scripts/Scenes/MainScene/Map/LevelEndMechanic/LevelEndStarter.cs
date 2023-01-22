@@ -1,8 +1,8 @@
-﻿using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
+﻿using System.Collections.Generic;
+using App.Scripts.Scenes.General.ItemSystem;
+using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using Cinemachine;
 using StarterAssets;
-using StarterAssets.Animations;
-using StarterAssets.NewMovement;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.General.LevelEndMechanic
@@ -13,6 +13,10 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
         [SerializeField] private CinemachineVirtualCamera _followMainItemCamera;
         [SerializeField] private CollisionObject _collisionObject;
         [SerializeField] private LevelEndItemsTransfer _levelEndItemsTransfer;
+        [SerializeField] private GameEvents _gameEvents;
+        [SerializeField] private ItemContainer _itemContainer;
+        [SerializeField] private List<ParticleSystem> _particleSystems;
+        [SerializeField] private AudioSource _audioSource;
          
         private MainItem _mainItem;
         
@@ -28,6 +32,19 @@ namespace App.Scripts.Scenes.General.LevelEndMechanic
 
         private void StartLevelEndAnimation()
         {
+            foreach (var particleSystem in _particleSystems)
+            {
+                particleSystem.gameObject.SetActive(true);
+            }
+            
+            if (_itemContainer.CurrentPickableItems <= 0)
+            {
+                _gameEvents.EndLevelWithLose();
+                return;
+            }
+            
+            _audioSource.Play();
+            
             _followMainItemCamera.gameObject.SetActive(true);
             _player.SetPlayerCanMove(false);
 

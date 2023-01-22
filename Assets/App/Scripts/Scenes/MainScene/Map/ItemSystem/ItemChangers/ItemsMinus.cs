@@ -10,5 +10,15 @@ namespace App.Scripts.Scenes.General.ItemSystem.ItemChangers
         {
             itemContainer.RemoveSomePickableItems(_minusItemsValue);
         }
+        
+        protected override string GetChangeText()
+        {
+            return $"-{_minusItemsValue}";
+        }
+        
+        protected override bool IsEquationPositive()
+        {
+            return false;
+        }
     }
 }

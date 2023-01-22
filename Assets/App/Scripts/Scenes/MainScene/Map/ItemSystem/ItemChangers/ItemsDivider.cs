@@ -21,5 +21,15 @@ namespace App.Scripts.Scenes.General.ItemSystem.ItemChangers
                 itemContainer.RemoveSomePickableItems(delta * -1);
             }
         }
+        
+        protected override string GetChangeText()
+        {
+            return $"÷{_divider}";
+        }
+        
+        protected override bool IsEquationPositive()
+        {
+            return _divider < 1;
+        }
     }
 }

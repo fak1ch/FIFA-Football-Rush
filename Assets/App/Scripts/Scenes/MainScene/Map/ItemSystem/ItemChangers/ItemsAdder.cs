@@ -10,5 +10,15 @@ namespace App.Scripts.Scenes.General.ItemSystem.ItemChangers
         {
             itemContainer.AddSomePickableItems(_addItemsValue);
         }
+
+        protected override string GetChangeText()
+        {
+            return $"+{_addItemsValue}";
+        }
+
+        protected override bool IsEquationPositive()
+        {
+            return true;
+        }
     }
 }

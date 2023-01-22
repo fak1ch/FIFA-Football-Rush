@@ -7,6 +7,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
     {
         [SerializeField] private ItemContainer _itemContainer;
         [SerializeField] private CollisionObject _playerCollisionObject;
+        [SerializeField] private AudioSource _audioSource;
 
         private void OnEnable()
         {
@@ -22,10 +23,13 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             if (collision.gameObject.TryGetComponent(out PickableItem pickableItem))
             {
+                if (pickableItem.CanPick == false) return;
+                
                 pickableItem.OnLocalMoveAnimationComplete += FinalizePickableItem;
                 pickableItem.LocalMoveToPosition(_itemContainer.GetLocalPositionToNextItem());
                 
                 _itemContainer.AddPickableItemWithoutTeleport(pickableItem);
+                _audioSource.Play();
             }
         }
 

@@ -24,6 +24,8 @@ namespace StarterAssets.Animations
         [Space(10)]
         public float rightSpeedMultiplier;
         public float maxSpeed;
+        public float minLocalX;
+        public float maxLocalX;
     }
 
     public class StickmanView : MonoBehaviour
@@ -79,7 +81,10 @@ namespace StarterAssets.Animations
         {
             if (!_inputSystem.IsMouseDown) return;
 
-            transform.position += new Vector3(1, 0, 0) * _currentSpeed;
+            Vector3 newPosition = transform.position + new Vector3(1, 0, 0) * _currentSpeed;
+            newPosition.x = Mathf.Clamp(newPosition.x, _config.minLocalX, _config.maxLocalX);
+
+            transform.position = newPosition;
         }
 
         private void SmoothMove()

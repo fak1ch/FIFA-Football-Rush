@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.VibrateSystem;
 using StarterAssets;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
     public class TrapConfig
     {
         public int damageInPickableItems;
+
+        [Space(10)] 
+        public long vibrateMilliseconds = 200;
     }
     
     public abstract class Trap : MonoBehaviour
@@ -32,7 +36,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
             _trapConfig = config;
         }
         
-        public void SetActiveTrap(bool value)
+        public virtual void SetActiveTrap(bool value)
         {
             gameObject.SetActive(value);
         }
@@ -45,6 +49,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
             if (collision.gameObject.TryGetComponent(out Player player))
             {
                 player.ItemContainer.RemoveSomePickableItemsWithAnimation(_trapConfig.damageInPickableItems);
+                Vibrator.Instance.Vibrate(_trapConfig.vibrateMilliseconds);
                 SetActiveTrap(false);
             }
         }

@@ -12,6 +12,10 @@ namespace App.Scripts.Scenes.General
         [SerializeField] private ItemContainer _itemContainer;
         [SerializeField] private Transform _pointForTeleport;
         [SerializeField] private JointDeactivator _jointDeactivator;
+        
+        [Space(10)]
+        [SerializeField] private EndLevelScene _endLevelScene;
+        [SerializeField] private Transform _levelGround;
 
         private bool _jointsActive = true;
         
@@ -31,6 +35,11 @@ namespace App.Scripts.Scenes.General
             {
                 _jointsActive = !_jointsActive;
                 _jointDeactivator.SetActiveJoints(_jointsActive);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                _endLevelScene.Initialize(_levelGround);
             }
         }
     }

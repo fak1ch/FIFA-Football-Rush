@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.VibrateSystem;
 using DG.Tweening;
 using StarterAssets.Animations;
 using UnityEngine;
@@ -14,6 +15,9 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
         [Space(10)]
         public Vector3 endLocalEulerAngles;
         public float rotateDuration;
+
+        [Space(10)]
+        public int addMoneyValue = 1;
     }
     
     public class Coin : MonoBehaviour
@@ -21,14 +25,30 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private CoinConfig _config;
 
-        [SerializeField] private int _addMoneyValue;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private CollisionObject _meshObject;
+        [SerializeField] private ParticleSystem _pickEffect;
 
         private Vector3 _startLocalPosition;
         private Vector3 _endLocalPosition;
 
         private Sequence _moveSequence;
         private Tween _rotateTween;
-        
+
+        #region Events
+
+        private void OnEnable()
+        {
+            _meshObject.CollisionEnter += HandleCollisionEnter;
+        }
+
+        private void OnDisable()
+        {
+            _meshObject.CollisionEnter -= HandleCollisionEnter;
+        }
+
+        #endregion
+
         private void Start()
         {
             _config = _gameConfig.coinConfig;
@@ -49,13 +69,19 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
                 .SetLoops(-1);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void HandleCollisionEnter(Collision collision)
         {
             if (collision.gameObject.TryGetComponent(out StickmanView stickmanView))
             {
-                MoneyWallet.Instance.AddMoney(_addMoneyValue);
+                MoneyWallet.Instance.AddMoney(_config.addMoneyValue);
                 
-                gameObject.SetActive(false);
+                _meshObject.gameObject.SetActive(false);
+                
+                _pickEffect.gameObject.SetActive(true);
+                _pickEffect.DORestart();
+                
+                _audioSource.Play();
+
                 OnDestroy();
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.VibrateSystem;
 using DG.Tweening;
 using UnityEngine;
 
@@ -22,9 +23,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
         private Tween _localMoveTween;
         private PickableItemConfig _config;
 
-        private int _indexInContainer;
-
         public int ItemIndexInContainer { get; set; }
+        public bool CanPick { get; set; } = true;
 
         private void Start()
         {

@@ -39,12 +39,6 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         
         public void StartTransferItems()
         {
-            if (_itemContainer.CurrentPickableItems <= 0)
-            {
-                Debug.Log("Game Over");
-                return;
-            }
-            
             _config = _gameConfig.levelEndItemsTransferConfig;
 
             PickableItem pickableItem = _itemContainer.GetPickableItem();

@@ -1,12 +1,23 @@
-﻿using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
+﻿using System;
+using App.Scripts.General.VibrateSystem;
+using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.General.Map
 {
+    [Serializable]
+    public class DestroyableWallConfig
+    {
+        public long vibrateMilliseconds;
+    }
+    
     public class DestroyableWall : MonoBehaviour
     {
+        [SerializeField] private GameConfigScriptableObject _gameConfig;
+        private DestroyableWallConfig _config;
+        
         [SerializeField] private int _itemsCountForDestroy = 10;
 
         [Space(10)]
@@ -36,6 +47,7 @@ namespace App.Scripts.Scenes.General.Map
 
         public void Initialize(MainItem mainItem)
         {
+            _config = _gameConfig.destroyableWallConfig;
             _collider.isTrigger = mainItem.CurrentItemsCount >= _itemsCountForDestroy;
         }
 
@@ -60,6 +72,7 @@ namespace App.Scripts.Scenes.General.Map
             _collisionObject.gameObject.SetActive(false);
             _destroyEffect.gameObject.SetActive(true);
             _destroyEffect.DORestart();
+            Vibrator.Instance.Vibrate(_config.vibrateMilliseconds);
         }
     }
 }

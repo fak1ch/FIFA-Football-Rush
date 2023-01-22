@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Pool;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
     public class ItemContainer : MonoBehaviour
     {
         [SerializeField] private Transform _containerForPool;
+        [SerializeField] private Transform _containerForCantPickItems;
+        [SerializeField] private GameEvents _gameEvents;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private ItemContainerConfig _config;
@@ -23,7 +26,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         private Stack<PickableItem> _pickableItems;
 
         public int CurrentPickableItems => _pickableItems.Count;
-        public bool IsNextItemVisible => CurrentPickableItems <= _config.visibleItemCount;
+        private bool IsNextItemVisible => CurrentPickableItems <= _config.visibleItemCount;
         
         private void Start()
         {
@@ -65,7 +68,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
             pickableItem.gameObject.SetActive(IsNextItemVisible);
         }
 
-        public void RemovePickableItem(PickableItem pickableItem)
+        private void RemovePickableItem(PickableItem pickableItem)
         {
             pickableItem.gameObject.SetActive(false);
             _itemsPool.ReturnElementToPool(pickableItem);
@@ -79,8 +82,14 @@ namespace App.Scripts.Scenes.General.ItemSystem
             }
         }
         
-        public int RemoveSomePickableItems(int value)
+        public void RemoveSomePickableItems(int value)
         {
+            if (CurrentPickableItems <= 0)
+            {
+                _gameEvents.EndLevelWithLose();
+                return;
+            }
+            
             if (_pickableItems.Count < value)
             {
                 value = _pickableItems.Count;
@@ -90,17 +99,32 @@ namespace App.Scripts.Scenes.General.ItemSystem
             {
                 RemovePickableItem(GetPickableItem());
             }
-
-            return value;
         }
 
         public void RemoveSomePickableItemsWithAnimation(int value)
         {
-            int removedItems = RemoveSomePickableItems(value);
+            if (CurrentPickableItems <= 0)
+            {
+                _gameEvents.EndLevelWithLose();
+                return;
+            }
             
-            
+            while (value > 0 && CurrentPickableItems > 0)
+            {
+                PickableItem pickableItem = GetPickableItem();
+                RemovePickableItem(pickableItem);
+                pickableItem.CanPick = false;
+
+                pickableItem.transform.localPosition = GetLocalPositionToNextItem();
+                pickableItem.transform.SetParent(_containerForCantPickItems);
+                pickableItem.SetActiveCollider(true);
+                pickableItem.SetActiveGravity(true);
+                pickableItem.gameObject.SetActive(true);
+                
+                value--;
+            }
         }
-        
+
         public PickableItem GetPickableItem()
         {
             return _pickableItems.Pop();

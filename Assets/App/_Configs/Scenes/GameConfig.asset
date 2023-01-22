@@ -42,6 +42,8 @@ MonoBehaviour:
       m_Bits: 1
     rightSpeedMultiplier: 1.2
     maxSpeed: 3
+    minLocalX: -2.5
+    maxLocalX: 2.5
   forwardSmoothMovementConfig:
     maxMoveSpeed: 5
     smoothMoveMultiplier: 3
@@ -64,6 +66,7 @@ MonoBehaviour:
     moveDuration: 2
     endLocalEulerAngles: {x: 0, y: 360, z: 0}
     rotateDuration: 4
+    addMoneyValue: 1
   cloudsGeneratorConfig:
     leftBottomRectanglePoint: {x: -15, y: 7, z: 3}
     rightTopRectanglePoint: {x: 15, y: 11, z: 566.01}
@@ -71,27 +74,36 @@ MonoBehaviour:
     cloudsCount: 20
   bottomDieZoneConfig:
     dieYValue: -2
+  itemChangerConfig:
+    positiveColor: {r: 0.34901962, g: 1, b: 0.24705882, a: 1}
+    negativeColor: {r: 1, g: 0.24705882, b: 0.24705882, a: 1}
+  destroyableWallConfig:
+    vibrateMilliseconds: 100
   trapConfigs:
     bombConfig:
-      damageInPickableItems: 0
+      damageInPickableItems: 5
+      vibrateMilliseconds: 500
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 360, z: 0}
         rotateDuration: 7
         ease: 1
     horizontalSawConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 360, z: 0}
         rotateDuration: 3
         ease: 1
     horizontalSawCircleConfig:
-      damageInPickableItems: 0
+      damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 360, z: 0}
         rotateDuration: 5
         ease: 1
     verticalSawConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 0, z: 360}
         rotateDuration: 3
@@ -103,20 +115,24 @@ MonoBehaviour:
         ease: 7
     justSawConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 0, z: -360}
         rotateDuration: 3
         ease: 1
     spikeConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
     spikesCylinderConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 0, z: -360}
         rotateDuration: 3
         ease: 1
     spikesCylinderLogConfig:
       damageInPickableItems: 1
+      vibrateMilliseconds: 200
       infinityLocalRotationConfig:
         endLocalEulerAngles: {x: 0, y: 0, z: -360}
         rotateDuration: 2

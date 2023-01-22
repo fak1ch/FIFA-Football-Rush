@@ -1,5 +1,6 @@
 ﻿using System;
 using App.Scripts.Scenes.General.ItemSystem;
+using App.Scripts.Scenes.General.Map;
 using App.Scripts.Scenes.General.Map.Stickmans;
 using App.Scripts.Scenes.MainScene.Map;
 using App.Scripts.Scenes.MainScene.Map.CloudsSystem;
@@ -30,6 +31,8 @@ namespace App.Scripts.Scenes
         public CoinConfig coinConfig;
         public CloudsGeneratorConfig cloudsGeneratorConfig;
         public BottomDieZoneConfig bottomDieZoneConfig;
+        public ItemChangerConfig itemChangerConfig;
+        public DestroyableWallConfig destroyableWallConfig;
         public TrapConfigs trapConfigs;
     }
 
