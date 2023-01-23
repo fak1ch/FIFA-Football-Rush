@@ -18,7 +18,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
         
         private void Start()
         {
-            _config = _gameConfig.trapConfigs.horizontalSawCircleConfig;
+            _config = _gameConfig.levelObjectConfigs.trapConfigs.horizontalSawCircleConfig;
 
             _infinityLocalRotation.Initialize(_config.infinityLocalRotationConfig);
         }

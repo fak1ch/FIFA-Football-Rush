@@ -18,7 +18,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
 
         private void Start()
         {
-            _config = _gameConfig.trapConfigs.spikesCylinderConfig;
+            _config = _gameConfig.levelObjectConfigs.trapConfigs.spikesCylinderConfig;
             InitializeConfig(_config);
             
             _infinityLocalRotation.Initialize(_config.infinityLocalRotationConfig);

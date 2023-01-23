@@ -47,7 +47,7 @@ namespace App.Scripts.Scenes.General.Map
 
         public void Initialize(MainItem mainItem)
         {
-            _config = _gameConfig.destroyableWallConfig;
+            _config = _gameConfig.levelObjectConfigs.destroyableWallConfig;
             _collider.isTrigger = mainItem.CurrentItemsCount >= _itemsCountForDestroy;
         }
 

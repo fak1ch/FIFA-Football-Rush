@@ -61,84 +61,90 @@ MonoBehaviour:
     forceForward: 250
   goalkeeperJointDeactivatorConfig:
     positionSpringMinValue: 200
-  coinConfig:
-    endLocalPositionOffset: {x: 0, y: 0.1, z: 0}
-    moveDuration: 2
-    endLocalEulerAngles: {x: 0, y: 360, z: 0}
-    rotateDuration: 4
-    addMoneyValue: 1
   cloudsGeneratorConfig:
     leftBottomRectanglePoint: {x: -15, y: 7, z: 3}
     rightTopRectanglePoint: {x: 15, y: 11, z: 566.01}
     minDistanceBetweenClouds: 100
     cloudsCount: 20
-  bottomDieZoneConfig:
-    dieYValue: -2
   itemChangerConfig:
     positiveColor: {r: 0.34901962, g: 1, b: 0.24705882, a: 1}
     negativeColor: {r: 1, g: 0.24705882, b: 0.24705882, a: 1}
-  destroyableWallConfig:
-    vibrateMilliseconds: 100
-  trapConfigs:
-    bombConfig:
-      damageInPickableItems: 5
-      vibrateMilliseconds: 500
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 360, z: 0}
-        rotateDuration: 7
-        ease: 1
-    horizontalSawConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 360, z: 0}
-        rotateDuration: 3
-        ease: 1
-    horizontalSawCircleConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 360, z: 0}
-        rotateDuration: 5
-        ease: 1
-    verticalSawConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 0, z: 360}
-        rotateDuration: 3
-        ease: 1
-      infinityLocalMoveXConfig:
-        startX: -2.35
-        endX: 2.35
-        duration: 2
-        ease: 7
-    justSawConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 0, z: -360}
-        rotateDuration: 3
-        ease: 1
-    spikeConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-    spikesCylinderConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 0, z: -360}
-        rotateDuration: 3
-        ease: 1
-    spikesCylinderLogConfig:
-      damageInPickableItems: 1
-      vibrateMilliseconds: 200
-      infinityLocalRotationConfig:
-        endLocalEulerAngles: {x: 0, y: 0, z: -360}
-        rotateDuration: 2
-        ease: 4
-      infinityLocalMoveXConfig:
-        startX: -2.5
-        endX: 2.5
-        duration: 2
-        ease: 4
+  levelObjectConfigs:
+    destroyableWallConfig:
+      vibrateMilliseconds: 50
+    coinConfig:
+      endLocalPositionOffset: {x: 0, y: 0.01, z: 0}
+      moveDuration: 2
+      endLocalEulerAngles: {x: 0, y: 360, z: 0}
+      rotateDuration: 4
+      addMoneyValue: 1
+    rampConfig:
+      jumpCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    trapConfigs:
+      bombConfig:
+        damageInPickableItems: 5
+        vibrateMilliseconds: 500
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 360, z: 0}
+          rotateDuration: 7
+          ease: 1
+      horizontalSawConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 360, z: 0}
+          rotateDuration: 3
+          ease: 1
+      horizontalSawCircleConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 360, z: 0}
+          rotateDuration: 5
+          ease: 1
+      verticalSawConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 0, z: 360}
+          rotateDuration: 3
+          ease: 1
+        infinityLocalMoveXConfig:
+          startX: -2.35
+          endX: 2.35
+          duration: 2
+          ease: 7
+      justSawConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 0, z: -360}
+          rotateDuration: 3
+          ease: 1
+      spikeConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+      spikesCylinderConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 0, z: -360}
+          rotateDuration: 3
+          ease: 1
+      spikesCylinderLogConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationConfig:
+          endLocalEulerAngles: {x: 0, y: 0, z: -360}
+          rotateDuration: 2
+          ease: 4
+        infinityLocalMoveXConfig:
+          startX: -2.5
+          endX: 2.5
+          duration: 2
+          ease: 4

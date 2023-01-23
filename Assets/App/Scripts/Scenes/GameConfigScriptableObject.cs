@@ -28,12 +28,10 @@ namespace App.Scripts.Scenes
         public LevelEndItemsTransferConfig levelEndItemsTransferConfig;
         public StickmanGoalkeeperConfig stickmanGoalkeeperConfig;
         public JointDeactivatorConfig goalkeeperJointDeactivatorConfig;
-        public CoinConfig coinConfig;
         public CloudsGeneratorConfig cloudsGeneratorConfig;
-        public BottomDieZoneConfig bottomDieZoneConfig;
         public ItemChangerConfig itemChangerConfig;
-        public DestroyableWallConfig destroyableWallConfig;
-        public TrapConfigs trapConfigs;
+
+        [Space(10)] public LevelObjectConfigs levelObjectConfigs;
     }
 
     [Serializable]
@@ -47,5 +45,14 @@ namespace App.Scripts.Scenes
         public TrapConfig spikeConfig;
         public SpikesCylinderConfig spikesCylinderConfig;
         public SpikesCylinderLogConfig spikesCylinderLogConfig;
+    }
+
+    [Serializable]
+    public class LevelObjectConfigs
+    {
+        public DestroyableWallConfig destroyableWallConfig;
+        public CoinConfig coinConfig;
+        public RampConfig rampConfig;
+        public TrapConfigs trapConfigs;
     }
 }

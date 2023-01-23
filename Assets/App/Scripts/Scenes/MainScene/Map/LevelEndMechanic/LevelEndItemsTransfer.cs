@@ -23,6 +23,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         [SerializeField] private CameraTargetSetuper _cameraTargetSetuper;
         [SerializeField] private Transform _startPointForMainItem;
         [SerializeField] private WallsContainer _wallsContainer;
+        [SerializeField] private AudioSource _audioSource;
         
         [Space(10)]
         [SerializeField] private CinemachineVirtualCamera _mainItemCamera;
@@ -58,6 +59,8 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         {
             _delayBetweenTransferItems = _config.timeForTransferItems / _itemContainer.CurrentPickableItems;
             
+            _audioSource.Play();
+            
             while (_itemContainer.CurrentPickableItems > 0)
             {
                 PickableItem pickableItem = _itemContainer.GetPickableItem();
@@ -70,6 +73,8 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             }
 
             if (_itemsWhichMoveToMainItem > 0) yield return null;
+            
+            _audioSource.Stop();
 
             yield return new WaitForSeconds(_config.delayBetweenMainItemStartMove);
             

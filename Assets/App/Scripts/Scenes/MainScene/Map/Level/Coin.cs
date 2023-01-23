@@ -51,7 +51,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
 
         private void Start()
         {
-            _config = _gameConfig.coinConfig;
+            _config = _gameConfig.levelObjectConfigs.coinConfig;
             
             _startLocalPosition = transform.localPosition;
             _endLocalPosition = _startLocalPosition + _config.endLocalPositionOffset;

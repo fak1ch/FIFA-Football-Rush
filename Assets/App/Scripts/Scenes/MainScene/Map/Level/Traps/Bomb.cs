@@ -22,7 +22,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
 
         private void Start()
         {
-            _config = _gameConfig.trapConfigs.bombConfig;
+            _config = _gameConfig.levelObjectConfigs.trapConfigs.bombConfig;
             InitializeConfig(_config);
 
             _infinityLocalRotation.Initialize(_config.infinityLocalRotationConfig);

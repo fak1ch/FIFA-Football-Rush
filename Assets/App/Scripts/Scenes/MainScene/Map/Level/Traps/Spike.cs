@@ -7,7 +7,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
     {
         private void Start()
         {
-            InitializeConfig(_gameConfig.trapConfigs.spikeConfig);
+            InitializeConfig(_gameConfig.levelObjectConfigs.trapConfigs.spikeConfig);
         }
     }
 }
