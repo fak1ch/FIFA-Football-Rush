@@ -10,28 +10,12 @@ namespace StarterAssets.Animations
          [SerializeField] private ForwardSmoothMovement _forwardSmoothMovement;
          [SerializeField] private StickmanView _stickmanView;
          [SerializeField] private Animator _animator;
-        
-         private int _jumpTriggerId;
+         
          private int _moveSpeedPercentId;
          private int _groundedId;
 
-         #region Events
-
-         private void OnEnable()
-         {
-             _stickmanView.OnJump += PlayJumpAnimation;
-         }
-
-         private void OnDisable()
-         {
-             _stickmanView.OnJump += PlayJumpAnimation;
-         }
-
-         #endregion
-
          private void Start()
          {
-             _jumpTriggerId = Animator.StringToHash("Jump");
              _moveSpeedPercentId = Animator.StringToHash("MoveSpeedPercent");
              _groundedId = Animator.StringToHash("Grounded");
          }
@@ -43,11 +27,6 @@ namespace StarterAssets.Animations
              
              _animator.SetFloat(_moveSpeedPercentId, percent);
              _animator.SetBool(_groundedId, _stickmanView.IsGrounded);
-         }
-        
-         private void PlayJumpAnimation()
-         {
-             _animator.SetTrigger(_jumpTriggerId);
          }
     }
 }

@@ -73,13 +73,12 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             }
 
             if (_itemsWhichMoveToMainItem > 0) yield return null;
-            
-            _audioSource.Stop();
 
             yield return new WaitForSeconds(_config.delayBetweenMainItemStartMove);
             
             _cameraTargetSetuper.SetupTarget(_mainItem.transform);
             _wallsContainer.Initialize(_mainItem);
+            _audioSource.Stop();
             
             _mainItem.StartMove();
         }

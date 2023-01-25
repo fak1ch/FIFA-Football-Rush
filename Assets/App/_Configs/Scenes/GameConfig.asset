@@ -27,20 +27,20 @@ MonoBehaviour:
       size: 500
       container: {fileID: 0}
       prefab: {fileID: 2323988853793782158, guid: 4fdd3fc449e7336409422ea66ea2d1aa, type: 3}
-    offsetY: 0.7
+    offsetY: 0.65
     visibleItemCount: 15
   stickmanViewConfig:
-    rotateSpeed: 10
-    angleMultiplier: 18
+    rotateSpeed: 20
+    angleMultiplier: 20
     thresholdInputX: 0.1
-    minAngleY: -85
-    maxAngleY: 85
-    groundedOffset: 0
-    groundedRadius: 0
+    minAngleY: -89
+    maxAngleY: 89
+    groundedOffset: 0.5
+    groundedRadius: 0.2
     groundLayers:
       serializedVersion: 2
-      m_Bits: 1
-    rightSpeedMultiplier: 1.2
+      m_Bits: 64
+    rightSpeedMultiplier: 1.3
     maxSpeed: 3
     minLocalX: -2.5
     maxLocalX: 2.5
@@ -78,13 +78,68 @@ MonoBehaviour:
       endLocalEulerAngles: {x: 0, y: 360, z: 0}
       rotateDuration: 4
       addMoneyValue: 1
-    rampConfig:
-      jumpCurve:
+    jumpPlaceConfig:
+      yAnimation:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 3.6537535
+          outSlope: 3.6537535
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.055666003
+        - serializedVersion: 3
+          time: 0.5
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -3.4812124
+          outSlope: -3.4812124
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.059642196
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      zAnimation:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      jumpHeightMultiplierByJumpLength: 0.5
+      jumpDurationMultiplierByJumpLength: 0.15
+      spawnCoins: 1
+      coinCount: 10
     trapConfigs:
       bombConfig:
         damageInPickableItems: 5
@@ -139,12 +194,34 @@ MonoBehaviour:
       spikesCylinderLogConfig:
         damageInPickableItems: 1
         vibrateMilliseconds: 200
-        infinityLocalRotationConfig:
-          endLocalEulerAngles: {x: 0, y: 0, z: -360}
-          rotateDuration: 2
+        infinityLocalRotationSequenceConfig:
+          startLocalAngle: {x: 0, y: 0, z: 360}
+          endLocalAngle: {x: 0, y: 0, z: -360}
+          duration: 2
           ease: 4
+          isRelative: 1
         infinityLocalMoveXConfig:
           startX: -2.5
           endX: 2.5
           duration: 2
           ease: 4
+      barrierConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        infinityLocalRotationSequenceConfig:
+          startLocalAngle: {x: 270, y: 0, z: 0}
+          endLocalAngle: {x: 90, y: 0, z: 0}
+          duration: 2
+          ease: 0
+          isRelative: 0
+      hammerConfig:
+        damageInPickableItems: 1
+        vibrateMilliseconds: 200
+        hammerAnimationConfig:
+          startLocalAngle: {x: 0, y: 0, z: 90}
+          endLocalAngle: {x: 0, y: 0, z: 0}
+          liftUpDuration: 1.2
+          liftDownDuration: 1
+          liftUpEase: 6
+          liftDownEase: 30
+          intervalBetweenAnims: 0.15

@@ -17,7 +17,6 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
         private BombConfig _config;
 
         [SerializeField] private AudioSource _audioSource;
-        [SerializeField] private GameObject _meshObject;
         [SerializeField] private GameObject _explosiveEffect;
 
         private void Start()
@@ -30,8 +29,9 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
 
         public override void SetActiveTrap(bool value)
         {
+            base.SetActiveTrap(value);
+            
             _audioSource.Play();
-            _meshObject.SetActive(value);
             _explosiveEffect.SetActive(!value);
         }
     }

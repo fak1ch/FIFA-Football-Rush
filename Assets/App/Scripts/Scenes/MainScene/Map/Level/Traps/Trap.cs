@@ -18,6 +18,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
     {
         [SerializeField] protected GameConfigScriptableObject _gameConfig;
         [SerializeField] private CollisionObject _collisionObject;
+        [SerializeField] private GameObject _meshObject;
 
         private TrapConfig _trapConfig;
         
@@ -38,7 +39,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level.Traps
         
         public virtual void SetActiveTrap(bool value)
         {
-            gameObject.SetActive(value);
+            _meshObject.SetActive(value);
         }
         
         private void HandleCollisionEnter(Collision collision)

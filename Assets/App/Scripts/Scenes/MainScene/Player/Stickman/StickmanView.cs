@@ -30,8 +30,6 @@ namespace StarterAssets.Animations
 
     public class StickmanView : MonoBehaviour
     {
-        public event Action OnJump;
-        
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private StickmanViewConfig _config;
 
@@ -53,6 +51,8 @@ namespace StarterAssets.Animations
 
         private void Update()
         {
+            GroundedCheck();
+            
             if (!_isCanMove) return;
             
             _deltaMouseX = _inputSystem.MoveInput.x;
@@ -64,7 +64,6 @@ namespace StarterAssets.Animations
             RotateStickman(newAngleY);
             SmoothMove();
             MoveStickman();
-            GroundedCheck();
         }
 
         private void RotateStickman(float targetYRotation)
@@ -98,12 +97,23 @@ namespace StarterAssets.Animations
         private void GroundedCheck()
         {
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _config.groundedOffset, transform.position.z);
-            IsGrounded = Physics.CheckSphere(spherePosition, _config.groundedRadius, _config.groundLayers, QueryTriggerInteraction.Ignore);
+            IsGrounded = Physics.CheckSphere(spherePosition, _config.groundedRadius, _config.groundLayers);
         }
         
         public void SetCanMove(bool value)
         {
             _isCanMove = value;
+        }
+        
+        private void OnDrawGizmosSelected()
+        {
+            Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
+            Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
+
+            Gizmos.color = IsGrounded ? transparentGreen : transparentRed;
+            Gizmos.DrawSphere(new Vector3(transform.position.x, 
+                transform.position.y - _config.groundedOffset, transform.position.z), _config.groundedRadius);
+            
         }
     }
 }

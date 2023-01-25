@@ -6,6 +6,7 @@ using App.Scripts.Scenes.MainScene.Map;
 using App.Scripts.Scenes.MainScene.Map.CloudsSystem;
 using App.Scripts.Scenes.MainScene.Map.Level;
 using App.Scripts.Scenes.MainScene.Map.Level.Traps;
+using App.Scripts.Scenes.MainScene.Map.Level.Traps.Barrier;
 using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
 using StarterAssets.Animations;
@@ -45,6 +46,8 @@ namespace App.Scripts.Scenes
         public TrapConfig spikeConfig;
         public SpikesCylinderConfig spikesCylinderConfig;
         public SpikesCylinderLogConfig spikesCylinderLogConfig;
+        public BarrierConfig barrierConfig;
+        public HammerConfig hammerConfig;
     }
 
     [Serializable]
@@ -52,7 +55,7 @@ namespace App.Scripts.Scenes
     {
         public DestroyableWallConfig destroyableWallConfig;
         public CoinConfig coinConfig;
-        public RampConfig rampConfig;
+        public JumpPlaceConfig jumpPlaceConfig;
         public TrapConfigs trapConfigs;
     }
 }

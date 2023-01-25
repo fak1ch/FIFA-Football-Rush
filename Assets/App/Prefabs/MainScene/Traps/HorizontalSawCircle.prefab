@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
   _collisionObject: {fileID: 1590651217763732648}
+  _meshObject: {fileID: 2733040008792456438}
   _infinityLocalRotation: {fileID: 6562695436276428095}
 --- !u!1001 &6562695436267175705
 PrefabInstance:
@@ -137,6 +138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df0efda1255412184eb85d43814d615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2733040008792456438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9150986594655208431, guid: 0a1c391ceee4a684893d8bdaf4d80c30, type: 3}
+  m_PrefabInstance: {fileID: 6562695436267175705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5322220845946407651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1355358172731717114, guid: 0a1c391ceee4a684893d8bdaf4d80c30, type: 3}

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
   _collisionObject: {fileID: 7663175068643730216}
+  _meshObject: {fileID: 6250180610361194036}
 --- !u!114 &7663175068643730216
 MonoBehaviour:
   m_ObjectHideFlags: 0

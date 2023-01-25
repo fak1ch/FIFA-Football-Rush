@@ -34,6 +34,8 @@ namespace StarterAssets.InputSystems
 
         private void Update()
         {
+            _screenMultiplier = _config.targetScreenWidth/ _canvas.pixelRect.width;
+            
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 IsMouseDown = true;

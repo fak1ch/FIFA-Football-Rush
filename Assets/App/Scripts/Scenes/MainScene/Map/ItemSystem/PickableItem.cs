@@ -50,6 +50,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
             
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
+
+            _rigidbody.isKinematic = !value;
         }
 
         public void SetActiveCollider(bool value)

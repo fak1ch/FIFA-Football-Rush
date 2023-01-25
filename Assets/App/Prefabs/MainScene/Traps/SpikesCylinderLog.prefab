@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1.7513, y: 1.7513, z: 1.7513}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7574522761939939157}
+  - {fileID: 8680893307456536720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
   _collisionObject: {fileID: 1029118742214055945}
-  _logAnimation: {fileID: 7574522761939939158}
+  _meshObject: {fileID: 6973342091181692908}
+  _infinityLocalRotationSequence: {fileID: 2071292265563223538}
   _infinityLocalMoveX: {fileID: 998822850909827647}
 --- !u!114 &998822850909827647
 MonoBehaviour:
@@ -145,6 +146,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6973342091181692908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8680893307456536720}
+  m_Layer: 0
+  m_Name: MeshObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8680893307456536720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6973342091181692908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7574522761939939157}
+  m_Father: {fileID: 474945849595897991}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8138420122253978922
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +191,7 @@ GameObject:
   - component: {fileID: 3845435588225619925}
   - component: {fileID: 1029118742214055946}
   - component: {fileID: 1029118742214055945}
-  - component: {fileID: 7574522761939939158}
+  - component: {fileID: 2071292265563223538}
   m_Layer: 0
   m_Name: Cylinder002
   m_TagString: Untagged
@@ -179,7 +212,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1938385422378716262}
-  m_Father: {fileID: 474945849595897991}
+  m_Father: {fileID: 8680893307456536720}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &1029118742214055947
@@ -258,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df0efda1255412184eb85d43814d615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7574522761939939158
+--- !u!114 &2071292265563223538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,6 +300,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8138420122253978922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84311db851434355af36027fd6f4f69a, type: 3}
+  m_Script: {fileID: 11500000, guid: f825a2cf383a43819f16539489c74a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
