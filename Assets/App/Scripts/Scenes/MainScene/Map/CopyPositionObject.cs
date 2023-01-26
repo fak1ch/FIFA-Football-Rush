@@ -24,5 +24,10 @@ namespace App.Scripts.Scenes.General.Map
             _target = target;
             _positionOffset = transform.position - _target.transform.position;
         }
+
+        public void AddOffsetToPosition(Vector3 offset)
+        {
+            transform.position += offset;
+        }
     }
 }

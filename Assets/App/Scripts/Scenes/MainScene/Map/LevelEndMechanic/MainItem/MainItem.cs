@@ -21,6 +21,7 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         private bool _isGameOver = false;
 
         public int CurrentItemsCount { get; private set;  } = 0;
+        public PickableItem PickableItem => _pickableItem;
 
         public void Initialize(GameConfigScriptableObject gameConfig, PickableItem pickableItem)
         {

@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Pool;
 using UnityEngine;
 
@@ -12,6 +12,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         public PoolData<PickableItem> poolData;
         public float offsetY = 0.7f;
         public int visibleItemCount = 15;
+        public int changeItemCountPerFrame;
     }
     
     public class ItemContainer : MonoBehaviour
@@ -24,6 +25,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
         private ItemContainerConfig _config;
         private ObjectPool<PickableItem> _itemsPool;
         private Stack<PickableItem> _pickableItems;
+        
+        private delegate void ChangeItemMethod(PickableItem pickable);
 
         public int CurrentPickableItems => _pickableItems.Count;
         private bool IsNextItemVisible => CurrentPickableItems <= _config.visibleItemCount;
@@ -73,15 +76,12 @@ namespace App.Scripts.Scenes.General.ItemSystem
             pickableItem.gameObject.SetActive(false);
             _itemsPool.ReturnElementToPool(pickableItem);
         }
-        
+
         public void AddSomePickableItems(int value)
         {
-            for (int i = 0; i < value; i++)
-            {
-                AddPickableItem(_itemsPool.GetElement());
-            }
+            StartCoroutine(ChangeItemsCount(value, true));
         }
-        
+
         public void RemoveSomePickableItems(int value)
         {
             if (CurrentPickableItems <= 0)
@@ -90,14 +90,28 @@ namespace App.Scripts.Scenes.General.ItemSystem
                 return;
             }
             
-            if (_pickableItems.Count < value)
-            {
-                value = _pickableItems.Count;
-            }
+            StartCoroutine(ChangeItemsCount(value, false));
+        }
 
-            for (int i = 0; i < value; i++)
+        private IEnumerator ChangeItemsCount(int value, bool addItemsFlag)
+        {
+            ChangeItemMethod ChangeItemMethod = addItemsFlag ? AddPickableItem : RemovePickableItem;
+
+            int tempChangeItemCountPerFrame = 0;
+            
+            for (int i = 0; i < value && CurrentPickableItems >= 0; i++)
             {
-                RemovePickableItem(GetPickableItem());
+                PickableItem pickableItem = addItemsFlag ? _itemsPool.GetElement() : GetPickableItem();
+                if (pickableItem == null) break;
+                
+                ChangeItemMethod(pickableItem);
+                
+                tempChangeItemCountPerFrame++;
+                if (tempChangeItemCountPerFrame == _config.changeItemCountPerFrame)
+                {
+                    tempChangeItemCountPerFrame = 0;
+                    yield return null;
+                }
             }
         }
 
@@ -127,7 +141,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
         public PickableItem GetPickableItem()
         {
-            return _pickableItems.Pop();
+            return _pickableItems.Count == 0 ? 
+                null : _pickableItems.Pop();
         }
     }
 }

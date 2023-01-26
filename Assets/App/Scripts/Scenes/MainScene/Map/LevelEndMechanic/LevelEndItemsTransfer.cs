@@ -24,11 +24,10 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
         [SerializeField] private Transform _startPointForMainItem;
         [SerializeField] private WallsContainer _wallsContainer;
         [SerializeField] private AudioSource _audioSource;
-        
-        [Space(10)]
-        [SerializeField] private CinemachineVirtualCamera _mainItemCamera;
-        [SerializeField] private TextMeshProUGUI _itemsCountText;
-        
+
+        [Space(10)] 
+        [SerializeField] private MainItemViewData _mainItemViewData;
+
         [Space(10)]
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
@@ -49,8 +48,8 @@ namespace App.Scripts.Scenes.MainScene.Map.LevelEndMechanic
             
             _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
             _mainItem.Initialize(_gameConfig, pickableItem);
-            pickableItem.gameObject.AddComponent<MainItemView>().Initialize(_gameConfig.mainItemViewConfig,
-                _mainItem, _mainItemCamera, _itemsCountText, pickableItem);
+            pickableItem.gameObject.AddComponent<MainItemView>()
+                .Initialize(_gameConfig.mainItemViewConfig, _mainItemViewData, _mainItem);
 
             StartCoroutine(TransferItemsFromContainerToMainItem());
         }

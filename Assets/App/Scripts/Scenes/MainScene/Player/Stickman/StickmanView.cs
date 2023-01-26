@@ -21,7 +21,8 @@ namespace StarterAssets.Animations
         public float groundedRadius;
         public LayerMask groundLayers;
 
-        [Space(10)]
+        [Space(10)] 
+        public float smoothing;
         public float rightSpeedMultiplier;
         public float maxSpeed;
         public float minLocalX;
@@ -83,7 +84,7 @@ namespace StarterAssets.Animations
             Vector3 newPosition = transform.position + new Vector3(1, 0, 0) * _currentSpeed;
             newPosition.x = Mathf.Clamp(newPosition.x, _config.minLocalX, _config.maxLocalX);
 
-            transform.position = newPosition;
+            transform.position = Vector3.Lerp(transform.position, newPosition, 1 / _config.smoothing);
         }
 
         private void SmoothMove()
@@ -91,7 +92,9 @@ namespace StarterAssets.Animations
             float percent = MathUtils.GetPercent(0, _forwardSmoothMovement.MaxMoveSpeed,
                 _forwardSmoothMovement.CurrentMoveSpeed);
 
-            _currentSpeed = _config.maxSpeed * percent * Time.deltaTime * _deltaMouseX * _config.rightSpeedMultiplier;
+            float tempSpeed = percent * Time.deltaTime * _deltaMouseX * _config.rightSpeedMultiplier;
+
+            _currentSpeed = Mathf.Clamp(tempSpeed, -_config.maxSpeed, _config.maxSpeed);
         }
         
         private void GroundedCheck()

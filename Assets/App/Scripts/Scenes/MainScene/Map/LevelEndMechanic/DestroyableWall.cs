@@ -69,6 +69,7 @@ namespace App.Scripts.Scenes.General.Map
         
         private void DestroyWall()
         {
+            _itemsCountForDestroyText.gameObject.SetActive(false);
             _collisionObject.gameObject.SetActive(false);
             _destroyEffect.gameObject.SetActive(true);
             _destroyEffect.DORestart();

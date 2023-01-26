@@ -87,8 +87,6 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
                 coin.transform.SetParent(_coinContainer);
 
                 evaluateTime += timeOffset;
-                
-                Debug.Log(evaluateTime);
             }
         }
 
@@ -103,7 +101,7 @@ namespace App.Scripts.Scenes.MainScene.Map.Level
             {
                 expiredSeconds += Time.deltaTime;
                 progress = expiredSeconds / jumpDuration;
-
+                
                 float yPosition = _config.yAnimation.Evaluate(progress) * jumpHeight;
                 float zPosition = _config.zAnimation.Evaluate(progress) * jumpLength;
 
