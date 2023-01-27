@@ -8,7 +8,7 @@ namespace StarterAssets.Animations
     public class StickmanAnimationHandler : MonoBehaviour
     {
          [SerializeField] private ForwardSmoothMovement _forwardSmoothMovement;
-         [SerializeField] private StickmanView _stickmanView;
+         [SerializeField] private GroundChecker _groundChecker;
          [SerializeField] private Animator _animator;
          
          private int _moveSpeedPercentId;
@@ -26,7 +26,7 @@ namespace StarterAssets.Animations
                  _forwardSmoothMovement.CurrentMoveSpeed);
              
              _animator.SetFloat(_moveSpeedPercentId, percent);
-             _animator.SetBool(_groundedId, _stickmanView.IsGrounded);
+             _animator.SetBool(_groundedId, _groundChecker.IsGrounded);
          }
     }
 }

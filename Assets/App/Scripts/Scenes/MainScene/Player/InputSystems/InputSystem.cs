@@ -57,6 +57,7 @@ namespace StarterAssets.InputSystems
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 IsMouseDown = false;
+                MoveInput = Vector2.zero;
             }
             
             _lastFrameMousePosition = _currentFrameMousePosition;

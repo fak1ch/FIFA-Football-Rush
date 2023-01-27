@@ -8,6 +8,15 @@ namespace App.Scripts.General.Utils
         {
             value = Mathf.Clamp(value, min, max);
             
+            if (max - min == 0) return 0;
+            
+            return (value - min) / (max - min);
+        }
+        
+        public static float GetPercentUnclamped(float min, float max, float value)
+        {
+            if (max - min == 0) return 0;
+
             return (value - min) / (max - min);
         }
 

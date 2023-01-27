@@ -15,7 +15,7 @@ namespace StarterAssets
 
         public void SetPlayerCanMove(bool value)
         {
-            _stickmanView.SetCanMove(value);
+            _stickmanView.SetPause(!value);
             _forwardSmoothMovement.SetCanMove(value);
         }
     }

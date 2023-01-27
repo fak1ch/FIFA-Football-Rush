@@ -7490,6 +7490,9 @@ GameObject:
   - component: {fileID: 1929228606}
   - component: {fileID: 1929228613}
   - component: {fileID: 1929228614}
+  - component: {fileID: 1929228617}
+  - component: {fileID: 1929228616}
+  - component: {fileID: 1929228615}
   m_Layer: 0
   m_Name: StickmanView
   m_TagString: Untagged
@@ -7526,8 +7529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
-  _inputSystem: {fileID: 1665021561}
-  _forwardSmoothMovement: {fileID: 819782043}
+  _leftToRightMovement: {fileID: 1929228617}
+  _stickmanRotation: {fileID: 1929228616}
 --- !u!65 &1929228610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7583,6 +7586,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemContainer: {fileID: 1665021564}
   _stickmanView: {fileID: 1929228606}
+  _forwardSmoothMovement: {fileID: 819782043}
+--- !u!114 &1929228615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929228604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b33142f57d44b2a6e8c5436b9fae25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
+--- !u!114 &1929228616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929228604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c8e0f3ee634ff58f1a0d868f6885f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftToRightMovement: {fileID: 1929228617}
+--- !u!114 &1929228617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929228604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae44e401a74ca4a118466f1068a606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputSystem: {fileID: 1665021561}
   _forwardSmoothMovement: {fileID: 819782043}
 --- !u!1 &1944677056
 GameObject:
@@ -11432,7 +11475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _forwardSmoothMovement: {fileID: 819782043}
-  _stickmanView: {fileID: 1929228606}
+  _groundChecker: {fileID: 1929228615}
   _animator: {fileID: 5866666020242979995}
 --- !u!4 &5901452233657496674
 Transform:
