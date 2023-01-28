@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using App.Scripts.General.Utils;
-using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
+using Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainItem;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.General.Map.Stickmans

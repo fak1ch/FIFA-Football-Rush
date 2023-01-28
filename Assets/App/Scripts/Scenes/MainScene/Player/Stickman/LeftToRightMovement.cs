@@ -42,8 +42,6 @@ namespace StarterAssets.Animations
             ControlSpeed();
             SmoothMove();
             DragVelocity();
-            
-            Debug.Log(VelocityX);
         }
 
         private void GetInput()

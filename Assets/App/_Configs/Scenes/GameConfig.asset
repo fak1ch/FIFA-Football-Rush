@@ -73,6 +73,8 @@ MonoBehaviour:
   itemChangerConfig:
     positiveColor: {r: 0.34901962, g: 1, b: 0.24705882, a: 1}
     negativeColor: {r: 1, g: 0.24705882, b: 0.24705882, a: 1}
+  levelsListConfig:
+    levelsCellCount: 5
   levelObjectConfigs:
     destroyableWallConfig:
       vibrateMilliseconds: 50

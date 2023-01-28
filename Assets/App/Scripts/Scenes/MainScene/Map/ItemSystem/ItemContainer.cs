@@ -21,7 +21,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         [SerializeField] private Transform _containerForCantPickItems;
         [SerializeField] private GameEvents _gameEvents;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
-
+        
         private ItemContainerConfig _config;
         private ObjectPool<PickableItem> _itemsPool;
         private Stack<PickableItem> _pickableItems;

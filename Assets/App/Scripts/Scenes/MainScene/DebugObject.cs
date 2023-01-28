@@ -1,7 +1,7 @@
 ﻿using System;
 using App.Scripts.Scenes.General.ItemSystem;
-using App.Scripts.Scenes.MainScene.Map.LevelEndMechanic;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
+using Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic;
 using StarterAssets;
 using UnityEngine;
 
