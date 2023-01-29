@@ -2,21 +2,23 @@
 using App.Scripts.General.UI.ButtonSpace;
 using App.Scripts.Scenes;
 using App.Scripts.Scenes.General;
+using Assets.App.Scripts.Scenes.MainScene.Map.Level;
 using TMPro;
 using UnityEngine;
 
 namespace App.Scripts.General.PopUpSystemSpace.PopUps
 {
     [Serializable]
-    public class GameOverPopUpConfig
+    public class GamePassedPopUpConfig
     {
         public int CoinsBonus;
     }
 
-    public class GameOverPopUp : PopUp
+    public class GamePassedPopUp : PopUp
     {
+        [SerializeField] private LevelsScriptableObject _levelsConfig;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
-        private GameOverPopUpConfig _config;
+        private GamePassedPopUpConfig _config;
 
         [SerializeField] private CustomButton _restartButton;
         [SerializeField] private TextMeshProUGUI _bonusCoinsText;
@@ -28,19 +30,19 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         private void OnEnable()
         {
-            _restartButton.onClickOccurred.AddListener(RestartGame);
+            _restartButton.onClickOccurred.AddListener(StartNextLevel);
         }
 
         private void OnDisable()
         {
-            _restartButton.onClickOccurred.RemoveListener(RestartGame);
+            _restartButton.onClickOccurred.RemoveListener(StartNextLevel);
         }
 
         #endregion
 
         public void Initialize(GameEvents gameEvents)
         {
-            _config = _gameConfig.PopUpConfigs.GameOverPopUpConfig;
+            _config = _gameConfig.PopUpConfigs.GamePassedPopUpConfig;
             _bonusCoinsText.text = $"+{_config.CoinsBonus.ToString()}";
             _gameEvents = gameEvents;
         }
@@ -52,8 +54,13 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
             MoneyWallet.Instance.AddMoney(_config.CoinsBonus);
         }
 
-        private void RestartGame()
+        private void StartNextLevel()
         {
+            if (_levelsConfig.LevelByNumberExist(_levelsConfig.SelectedLevelNumber + 1))
+            {
+                _levelsConfig.SelectedLevelNumber++;
+            }
+            
             HidePopUp();
             _gameEvents.RestartLevel();
         }

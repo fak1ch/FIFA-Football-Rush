@@ -1,40 +1,91 @@
-﻿using StarterAssets;
+﻿using System;
+using System.Collections;
+using App.Scripts.General.LoadScene;
+using App.Scripts.General.PopUpSystemSpace;
+using App.Scripts.General.PopUpSystemSpace.PopUps;
+using StarterAssets;
+using StarterAssets.Animations;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.General
 {
+    [Serializable]
+    public class GameEventsConfig
+    {
+        public float durationTillEndLevel;
+    }
+    
     public class GameEvents : MonoBehaviour
     {
-        [SerializeField] private Player _player;
-        [SerializeField] private GameObject _mainMenuUI;
-
-        public bool IsLevelEnd { get; private set; }
+        [SerializeField] private GameConfigScriptableObject _gameConfig;
+        private GameEventsConfig _config;
         
+        [Space(10)]
+        [SerializeField] private Player _player;
+        [SerializeField] private StickmanAnimationHandler _stickmanAnimationHandler;
+        [SerializeField] private GameObject _mainMenuUI;
+        [SerializeField] private GameObject _gameProcessUI;
+        
+        private delegate void EmptyMethod();
+
+        private void Start()
+        {
+            _config = _gameConfig.GameEventsConfig;
+            
+            GameOverPopUp gameOverPopUp = PopUpSystem.Instance.GetPopUpWithoutShow<GameOverPopUp>();
+            gameOverPopUp.Initialize(this);
+            GamePassedPopUp gamePassedPopUp = PopUpSystem.Instance.GetPopUpWithoutShow<GamePassedPopUp>();
+            gamePassedPopUp.Initialize(this);
+        }
+
         public void StartLevel()
         {
-            RestartLevel();
-            
-            _player.SetPlayerCanMove(true);
-            _mainMenuUI.SetActive(false);
+            _mainMenuUI.gameObject.SetActive(false);
+            _gameProcessUI.gameObject.SetActive(true);
+            SetPauseGame(false);
         }
 
         public void RestartLevel()
         {
-            IsLevelEnd = false;
+            SceneLoader.Instance.LoadScene(SceneEnum.MainScene);
         }
 
-        public void EndLevelWithWin()
+        private void EndLevelWithWin()
         {
-            IsLevelEnd = true;
-            
-            Debug.Log("Victory");
+            PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
         }
 
-        public void EndLevelWithLose()
+        private void EndLevelWithLose()
         {
-            IsLevelEnd = true;
+            PopUpSystem.Instance.ShowPopUp<GameOverPopUp>();
+        }
+
+        public void EndLevel(bool victory)
+        {
+            SetPauseGame(true);
+
+            if (victory)
+            {
+                _stickmanAnimationHandler.PlayVictoryAnimation();
+            }
+            else
+            {
+                _stickmanAnimationHandler.PlayDieAnimation();
+            }
             
-            Debug.Log("GameOver");
+            EmptyMethod EndLevel = victory ? EndLevelWithWin : EndLevelWithLose;
+            StartCoroutine(EndLevelAfterDuration(EndLevel));
+        }
+        
+        private IEnumerator EndLevelAfterDuration(EmptyMethod EndLevel)
+        {
+            yield return new WaitForSeconds(_config.durationTillEndLevel);
+            EndLevel();
+        }
+        
+        private void SetPauseGame(bool value)
+        {
+            _player.SetPlayerCanMove(!value);
         }
     }
 }

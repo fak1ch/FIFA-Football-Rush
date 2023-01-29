@@ -13,11 +13,15 @@ namespace StarterAssets.Animations
          
          private int _moveSpeedPercentId;
          private int _groundedId;
+         private int _playerDieTriggerId;
+         private int _playerVictoryTriggerId;
 
          private void Start()
          {
              _moveSpeedPercentId = Animator.StringToHash("MoveSpeedPercent");
              _groundedId = Animator.StringToHash("Grounded");
+             _playerDieTriggerId = Animator.StringToHash("PlayerDie");
+             _playerVictoryTriggerId = Animator.StringToHash("PlayerDance");
          }
         
          private void Update()
@@ -27,6 +31,16 @@ namespace StarterAssets.Animations
              
              _animator.SetFloat(_moveSpeedPercentId, percent);
              _animator.SetBool(_groundedId, _groundChecker.IsGrounded);
+         }
+
+         public void PlayVictoryAnimation()
+         {
+             _animator.SetTrigger(_playerVictoryTriggerId);
+         }
+
+         public void PlayDieAnimation()
+         {
+             _animator.SetTrigger(_playerDieTriggerId);
          }
     }
 }

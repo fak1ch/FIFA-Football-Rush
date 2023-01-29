@@ -19,6 +19,7 @@ namespace StarterAssets.Animations
 
         [SerializeField] private LeftToRightMovement _leftToRightMovement;
         [SerializeField] private StickmanRotation _stickmanRotation;
+        [SerializeField] private Collider _collider;
 
         private void Start()
         {
@@ -32,6 +33,7 @@ namespace StarterAssets.Animations
         {
             _leftToRightMovement.SetPause(value);
             _stickmanRotation.SetPause(value);
+            _collider.enabled = !value;
         }
     }
 }

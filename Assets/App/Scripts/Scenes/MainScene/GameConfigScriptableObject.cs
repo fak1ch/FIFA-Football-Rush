@@ -1,4 +1,8 @@
 ﻿using System;
+using App.Scripts.General.PopUpSystemSpace;
+using App.Scripts.General.PopUpSystemSpace.PopUps;
+using App.Scripts.Scenes.General;
+using App.Scripts.Scenes.General.CoinsSystem;
 using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map;
 using App.Scripts.Scenes.General.Map.Stickmans;
@@ -24,6 +28,7 @@ namespace App.Scripts.Scenes
     [CreateAssetMenu(menuName = "GameConfig", fileName = "GameConfig")]
     public class GameConfigScriptableObject : ScriptableObject
     {
+        public GameEventsConfig GameEventsConfig;
         public MainItemConfig mainItemConfig;
         public MainItemViewConfig mainItemViewConfig;
         public InputSystemConfig inputSystemConfig;
@@ -37,8 +42,11 @@ namespace App.Scripts.Scenes
         public CloudsGeneratorConfig cloudsGeneratorConfig;
         public ItemChangerConfig itemChangerConfig;
         public LevelsListConfig levelsListConfig;
-
-        [Space(10)] public LevelObjectConfigs levelObjectConfigs;
+        public MoneyViewConfig moneyViewConfig;
+ 
+        [Space(10)] 
+        public LevelObjectConfigs levelObjectConfigs;
+        public PopUpConfigs PopUpConfigs;
     }
 
     [Serializable]
@@ -62,6 +70,14 @@ namespace App.Scripts.Scenes
         public DestroyableWallConfig destroyableWallConfig;
         public CoinConfig coinConfig;
         public JumpPlaceConfig jumpPlaceConfig;
+        public ExplosiveGeneratorConfig ExplosiveGeneratorConfig;
         public TrapConfigs trapConfigs;
+    }
+
+    [Serializable]
+    public class PopUpConfigs
+    {
+        public GameOverPopUpConfig GameOverPopUpConfig;
+        public GamePassedPopUpConfig GamePassedPopUpConfig;
     }
 }

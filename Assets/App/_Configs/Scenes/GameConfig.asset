@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45370a4786a1452dad191368c501a2fc, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  GameEventsConfig:
+    durationTillEndLevel: 1
   mainItemConfig:
     gameOverNewVelocity: {x: 0, y: 10, z: 0}
     startVelocity: {x: 0, y: 9.5, z: 67.5}
   mainItemViewConfig:
     scaleValueForOnePickableItem: 0.017
     massValueForOnePickableItem: 0.01
-    cinemachineDistanceForOnePickableItem: 0.001
+    cinemachineDistanceForOnePickableItem: 0.005
     cameraTargetPointOffsetForOnePickableItem: {x: 0, y: 0.003, z: 0}
   inputSystemConfig:
     sensitivity: 0.1
@@ -60,7 +62,7 @@ MonoBehaviour:
     itemLocalMoveDuration: 1
     itemLocalMoveEase: 0
   stickmanGoalkeeperConfig:
-    delayUntilJump: 0.5
+    delayUntilJump: 0.25
     forceUp: 250
     forceForward: 250
   goalkeeperJointDeactivatorConfig:
@@ -75,6 +77,8 @@ MonoBehaviour:
     negativeColor: {r: 1, g: 0.24705882, b: 0.24705882, a: 1}
   levelsListConfig:
     levelsCellCount: 5
+  moneyViewConfig:
+    animationDuration: 1
   levelObjectConfigs:
     destroyableWallConfig:
       vibrateMilliseconds: 50
@@ -146,6 +150,9 @@ MonoBehaviour:
       jumpDurationMultiplierByJumpLength: 0.15
       spawnCoins: 1
       coinCount: 10
+    ExplosiveGeneratorConfig:
+      ExplosionForce: 4000
+      ExplosionRadius: 3
     trapConfigs:
       bombConfig:
         damageInPickableItems: 5
@@ -231,3 +238,8 @@ MonoBehaviour:
           liftUpEase: 6
           liftDownEase: 30
           intervalBetweenAnims: 0.15
+  PopUpConfigs:
+    GameOverPopUpConfig:
+      CoinsBonus: 57
+    GamePassedPopUpConfig:
+      CoinsBonus: 421

@@ -148,13 +148,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _popUpList:
   - id: 0
-    prefab: {fileID: 5243653900887806711, guid: ba230bf4e296a134a82e782265b0e063, type: 3}
-    poolSize: 1
-  - id: 1
     prefab: {fileID: 5243653901078697476, guid: da6ae7246b3546043b80f7be6279f0b9, type: 3}
     poolSize: 1
-  - id: 2
+  - id: 1
     prefab: {fileID: 2571984596080804511, guid: b11a834cf8cd44045ac13bb90c7e1027, type: 3}
+    poolSize: 1
+  - id: 2
+    prefab: {fileID: 7540077645661947242, guid: ba230bf4e296a134a82e782265b0e063, type: 3}
+    poolSize: 1
+  - id: 3
+    prefab: {fileID: 7473749928517919573, guid: 039f95816893d5048b23d7ba6b855952, type: 3}
     poolSize: 1
   _canvasParent: {fileID: 4875852070084274681}
 --- !u!1 &8181663602631953956

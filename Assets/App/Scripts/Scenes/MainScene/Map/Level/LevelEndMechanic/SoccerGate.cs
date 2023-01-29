@@ -1,4 +1,5 @@
-﻿using App.Scripts.Scenes;
+﻿using System.Collections.Generic;
+using App.Scripts.Scenes;
 using App.Scripts.Scenes.General;
 using UnityEngine;
 
@@ -8,6 +9,10 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
     {
         [SerializeField] private Trigger _trigger;
         [SerializeField] private GameEvents _gameEvents;
+
+        [Space(10)]
+        [SerializeField] private ExplosiveGenerator _explosiveGenerator;
+        [SerializeField] private List<Rigidbody> _rigidbodiesForExplosive;
 
         private void OnEnable()
         {
@@ -23,7 +28,9 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         {
             if (inputCollider.TryGetComponent(out MainItem.MainItem mainItem))
             {
-                _gameEvents.EndLevelWithWin();
+                _gameEvents.EndLevel(true);
+                _rigidbodiesForExplosive.Add(mainItem.GetComponent<Rigidbody>());
+                _explosiveGenerator.Explode(_rigidbodiesForExplosive);
             }
         }
     }

@@ -40,7 +40,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             
             if (_itemContainer.CurrentPickableItems <= 0)
             {
-                _gameEvents.EndLevelWithLose();
+                _gameEvents.EndLevel(false);
                 return;
             }
             

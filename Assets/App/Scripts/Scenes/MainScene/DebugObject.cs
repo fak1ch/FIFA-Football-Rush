@@ -41,6 +41,11 @@ namespace App.Scripts.Scenes.General
             {
                 _endLevelScene.Initialize(_levelGround);
             }
+            
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                MoneyWallet.Instance.AddMoney(100);
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-    using ButtonSpace;
+using ButtonSpace;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +19,7 @@ namespace App.Scripts.General.UI.ButtonSpace
         [Space(10)] 
         [SerializeField] private bool _playButtonClickSound = true;
         [SerializeField] private bool _waitTillTheEndAnimation = true;
+        [SerializeField] private bool _animateButton = false;
 
         public UnityEvent onClickOccurred;
         
@@ -29,14 +30,13 @@ namespace App.Scripts.General.UI.ButtonSpace
         
         private bool _onPointerClickOpen = false;
         private bool _pointerExit = false;
-        private bool _isPressed = false;
-        private bool _pointerOverButton;
 
-        public bool IsButtonPressed => _isPressed;
-        public bool PointerOverButton => _pointerOverButton;
+
         
         private void Awake()
         {
+            if (!_animateButton) return;
+            
             _startScale = _button.transform.localScale;
             _startColor = _buttonImage.color;
         }
@@ -44,12 +44,14 @@ namespace App.Scripts.General.UI.ButtonSpace
         public void OnPointerDown(PointerEventData eventData)
         {
             if (!interactable) return;
-            
-            _scaleTween = _button.transform.DOScale(
-                _startScale * _settings.pressedScalePercent, + _settings.scaleDuration);
-            _colorTween = _buttonImage.DOColor(_settings.pressedColor, _settings.changeColorDuration);
 
-            _isPressed = true;
+            if (_animateButton)
+            {
+                _scaleTween = _button.transform.DOScale(
+                    _startScale * _settings.pressedScalePercent, + _settings.scaleDuration);
+                _colorTween = _buttonImage.DOColor(_settings.pressedColor, _settings.changeColorDuration);
+            }
+            
             _onPointerClickOpen = false;
             _pointerExit = false;
         }
@@ -57,34 +59,37 @@ namespace App.Scripts.General.UI.ButtonSpace
         public void OnPointerUp(PointerEventData eventData)
         {
             if (!interactable) return;
-            
-            _scaleTween = _button.transform.DOScale(
-                _startScale, _settings.scaleDuration);
-            _colorTween = _buttonImage.DOColor(_startColor, _settings.changeColorDuration);
+
+            if (_animateButton)
+            {
+                _scaleTween = _button.transform.DOScale(
+                    _startScale, _settings.scaleDuration);
+                _colorTween = _buttonImage.DOColor(_startColor, _settings.changeColorDuration);
+            }
 
             if (_pointerExit) return;
             
             _onPointerClickOpen = true;
-            _isPressed = false;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _pointerOverButton = true;
+            
         }
         
         public void OnPointerExit(PointerEventData eventData)
         {
             if (!interactable) return;
-            
-            _scaleTween = _button.transform.DOScale(
-                _startScale, _settings.scaleDuration);
-            _colorTween = _buttonImage.DOColor(_startColor, _settings.changeColorDuration);
+
+            if (_animateButton)
+            {
+                _scaleTween = _button.transform.DOScale(
+                    _startScale, _settings.scaleDuration);
+                _colorTween = _buttonImage.DOColor(_startColor, _settings.changeColorDuration);
+            }
 
             _onPointerClickOpen = false;
             _pointerExit = true;
-            _isPressed = false;
-            _pointerOverButton = false;
         }
 
         public void OnPointerClick(PointerEventData eventData)
@@ -100,7 +105,7 @@ namespace App.Scripts.General.UI.ButtonSpace
                     ButtonClickSoundHandler.Instance.PlayCustomButtonClickSound();
                 }
 
-                if (_waitTillTheEndAnimation)
+                if (_waitTillTheEndAnimation && _animateButton)
                 {
                     _scaleTween.OnComplete(ClickHappened);
                 }

@@ -11,6 +11,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
         private void Update()
         {
+            UpdateView();
+        }
+
+        private void UpdateView()
+        {
             _text.text = _itemContainer.CurrentPickableItems.ToString();
         }
     }

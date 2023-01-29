@@ -17,6 +17,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
     
     public class ItemContainer : MonoBehaviour
     {
+        public event Action OnItemsCountChanged;
+        
         [SerializeField] private Transform _containerForPool;
         [SerializeField] private Transform _containerForCantPickItems;
         [SerializeField] private GameEvents _gameEvents;
@@ -59,6 +61,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _pickableItems.Push(pickableItem);
             pickableItem.ItemIndexInContainer = _pickableItems.Count;
             pickableItem.transform.SetParent(_config.poolData.container);
+            
+            OnItemsCountChanged?.Invoke();
         }
         
         private void AddPickableItem(PickableItem pickableItem)
@@ -86,7 +90,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             if (CurrentPickableItems <= 0)
             {
-                _gameEvents.EndLevelWithLose();
+                _gameEvents.EndLevel(false);
                 return;
             }
             
@@ -105,6 +109,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
                 if (pickableItem == null) break;
                 
                 ChangeItemMethod(pickableItem);
+                OnItemsCountChanged?.Invoke();
                 
                 tempChangeItemCountPerFrame++;
                 if (tempChangeItemCountPerFrame == _config.changeItemCountPerFrame)
@@ -119,7 +124,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             if (CurrentPickableItems <= 0)
             {
-                _gameEvents.EndLevelWithLose();
+                _gameEvents.EndLevel(false);
                 return;
             }
             
@@ -137,6 +142,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
                 
                 value--;
             }
+            
+            OnItemsCountChanged?.Invoke();
         }
 
         public PickableItem GetPickableItem()

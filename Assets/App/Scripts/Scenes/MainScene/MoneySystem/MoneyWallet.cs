@@ -9,8 +9,8 @@ public class MoneyWallet : MonoSingleton<MoneyWallet>
     
     [SerializeField] private int _currentMoneyCount = 0;
 
-    public int CurrentMoneyCount => _currentMoneyCount;
-    
+    public int MoneyCount => _currentMoneyCount;
+
     protected override void Awake()
     {
         base.Awake();
@@ -21,7 +21,7 @@ public class MoneyWallet : MonoSingleton<MoneyWallet>
     public void AddMoney(int count)
     {
         _currentMoneyCount += count;
-        MoneyCountChanged(count);
+        MoneyCountChanged();
     }
 
     public void TakeMoney(int count)
@@ -29,7 +29,7 @@ public class MoneyWallet : MonoSingleton<MoneyWallet>
         if (!IsMoneyEnough(count)) return;
         
         _currentMoneyCount -= count;
-        MoneyCountChanged(-count);
+        MoneyCountChanged();
     }
 
     public bool IsMoneyEnough(int count)
@@ -37,9 +37,9 @@ public class MoneyWallet : MonoSingleton<MoneyWallet>
         return _currentMoneyCount >= count;
     }
 
-    private void MoneyCountChanged(int moneyDelta)
+    private void MoneyCountChanged()
     {
         PlayerPrefs.SetInt(MoneyKey, _currentMoneyCount);
-        OnMoneyCountChanged?.Invoke(moneyDelta);
+        OnMoneyCountChanged?.Invoke(_currentMoneyCount);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using App.Scripts.General.VibrateSystem;
 using App.Scripts.Scenes;
+using App.Scripts.Scenes.General;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -26,6 +27,8 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         [SerializeField] private Trigger _trigger;
         [SerializeField] private Collider _collider;
         [SerializeField] private TextMeshProUGUI _itemsCountForDestroyText;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private GameEvents _gameEvents;
 
         #region Events
 
@@ -56,6 +59,12 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             if (target.TryGetComponent(out MainItem.MainItem mainItem))
             {
                 DestroyWall();
+                
+                _destroyEffect.gameObject.SetActive(true);
+                _destroyEffect.DORestart();
+                
+                _audioSource.Play();
+                Vibrator.Instance.Vibrate(_config.vibrateMilliseconds);
             }
         }
         
@@ -64,6 +73,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             if (collision.gameObject.TryGetComponent(out MainItem.MainItem mainItem))
             {
                 mainItem.StartGameOverAnimation();
+                _gameEvents.EndLevel(true);
             }
         }
         
@@ -71,9 +81,6 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         {
             _itemsCountForDestroyText.gameObject.SetActive(false);
             _collisionObject.gameObject.SetActive(false);
-            _destroyEffect.gameObject.SetActive(true);
-            _destroyEffect.DORestart();
-            Vibrator.Instance.Vibrate(_config.vibrateMilliseconds);
         }
     }
 }
