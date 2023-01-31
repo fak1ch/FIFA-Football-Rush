@@ -16,14 +16,9 @@ namespace StarterAssets.Animations
     public class GroundChecker : MonoBehaviour
     {
         [SerializeField] private GameConfigScriptableObject _gameConfig;
-        private GroundCheckerConfig _config;
+        private GroundCheckerConfig _config => _gameConfig.stickmanViewConfig.groundCheckerConfig;
         
         public bool IsGrounded { get; private set; }
-
-        private void Start()
-        {
-            _config = _gameConfig.stickmanViewConfig.groundCheckerConfig;
-        }
 
         private void Update()
         {
@@ -34,16 +29,6 @@ namespace StarterAssets.Animations
         {
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - _config.groundedOffset, transform.position.z);
             IsGrounded = Physics.CheckSphere(spherePosition, _config.groundedRadius, _config.groundLayers);
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-            Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
-            
-            Gizmos.color = IsGrounded ? transparentGreen : transparentRed;
-            Gizmos.DrawSphere(new Vector3(transform.position.x, 
-                transform.position.y - _config.groundedOffset, transform.position.z), _config.groundedRadius);
         }
     }
 }

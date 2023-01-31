@@ -19,7 +19,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         [SerializeField] private List<ParticleSystem> _particleSystems;
         [SerializeField] private AudioSource _audioSource;
          
-        private MainItem.MainItem _mainItem;
+        private MainItem _mainItem;
         
         private void OnEnable()
         {

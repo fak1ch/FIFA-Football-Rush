@@ -28,7 +28,6 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         [SerializeField] private Collider _collider;
         [SerializeField] private TextMeshProUGUI _itemsCountForDestroyText;
         [SerializeField] private AudioSource _audioSource;
-        [SerializeField] private GameEvents _gameEvents;
 
         #region Events
 
@@ -48,7 +47,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
 
         #endregion
 
-        public void Initialize(MainItem.MainItem mainItem)
+        public void Initialize(MainItem mainItem)
         {
             _config = _gameConfig.levelObjectConfigs.destroyableWallConfig;
             _collider.isTrigger = mainItem.CurrentItemsCount >= _itemsCountForDestroy;
@@ -56,7 +55,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
 
         private void HandleTriggerEnter(Collider target)
         {
-            if (target.TryGetComponent(out MainItem.MainItem mainItem))
+            if (target.TryGetComponent(out MainItem mainItem))
             {
                 DestroyWall();
                 
@@ -70,10 +69,9 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         
         private void HandleCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out MainItem.MainItem mainItem))
+            if (collision.gameObject.TryGetComponent(out MainItem mainItem))
             {
                 mainItem.StartGameOverAnimation();
-                _gameEvents.EndLevel(true);
             }
         }
         

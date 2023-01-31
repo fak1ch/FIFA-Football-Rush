@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using App.Scripts.Scenes.General;
 using UnityEngine;
 
 namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
@@ -7,7 +8,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
     {
         [SerializeField] private List<DestroyableWall> _walls;
 
-        public void Initialize(MainItem.MainItem mainItem)
+        public void Initialize(MainItem mainItem)
         {
             foreach (var wall in _walls)
             {

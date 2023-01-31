@@ -166,6 +166,7 @@ MonoBehaviour:
   _collider: {fileID: 3592866021277993376}
   _itemsCountForDestroyText: {fileID: 2173319480565449147}
   _audioSource: {fileID: 8646190325305094908}
+  _gameEvents: {fileID: 0}
 --- !u!82 &8646190325305094908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 230571f10fb907843bad6b8d4bed676b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 50db684eccdeff044bd61cdf01d0d6ab, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

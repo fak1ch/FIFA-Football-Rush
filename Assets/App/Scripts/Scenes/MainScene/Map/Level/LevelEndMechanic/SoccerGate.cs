@@ -26,7 +26,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
 
         private void HandleTriggerEnter(Collider inputCollider)
         {
-            if (inputCollider.TryGetComponent(out MainItem.MainItem mainItem))
+            if (inputCollider.TryGetComponent(out MainItem mainItem))
             {
                 _gameEvents.EndLevel(true);
                 _rigidbodiesForExplosive.Add(mainItem.GetComponent<Rigidbody>());

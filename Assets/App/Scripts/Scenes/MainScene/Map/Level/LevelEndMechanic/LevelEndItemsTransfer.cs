@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using App.Scripts.Scenes;
+using App.Scripts.Scenes.General;
 using App.Scripts.Scenes.General.ItemSystem;
-using Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainItem;
 using DG.Tweening;
 using UnityEngine;
 
@@ -24,6 +24,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         [SerializeField] private Transform _startPointForMainItem;
         [SerializeField] private WallsContainer _wallsContainer;
         [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private GameEvents _gameEvents;
 
         [Space(10)] 
         [SerializeField] private MainItemViewData _mainItemViewData;
@@ -32,7 +33,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         [SerializeField] private GameConfigScriptableObject _gameConfig;
 
         private LevelEndItemsTransferConfig _config;
-        private MainItem.MainItem _mainItem;
+        private MainItem _mainItem;
 
         private int _itemsWhichMoveToMainItem;
         private float _delayBetweenTransferItems;
@@ -46,8 +47,8 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             pickableItem.SetActiveCollider(true);
             MovePickableItemToStartPoint(pickableItem, false);
             
-            _mainItem = pickableItem.gameObject.AddComponent<MainItem.MainItem>();
-            _mainItem.Initialize(_gameConfig, pickableItem);
+            _mainItem = pickableItem.gameObject.AddComponent<MainItem>();
+            _mainItem.Initialize(_gameConfig, pickableItem, _gameEvents);
             pickableItem.gameObject.AddComponent<MainItemView>()
                 .Initialize(_gameConfig.mainItemViewConfig, _mainItemViewData, _mainItem);
 

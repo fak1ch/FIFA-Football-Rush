@@ -4,7 +4,7 @@ using Cinemachine;
 using TMPro;
 using UnityEngine;
 
-namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainItem
+namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
 {
     [Serializable]
     public class MainItemViewConfig

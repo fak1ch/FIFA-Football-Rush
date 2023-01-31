@@ -1,9 +1,10 @@
 ﻿using System;
 using App.Scripts.Scenes;
+using App.Scripts.Scenes.General;
 using App.Scripts.Scenes.General.ItemSystem;
 using UnityEngine;
 
-namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainItem
+namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
 {
     [Serializable]
     public class MainItemConfig
@@ -18,16 +19,18 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainIte
         
         private MainItemConfig _config;
 
-        private PickableItem _pickableItem; 
+        private PickableItem _pickableItem;
+        private GameEvents _gameEvents;
         private bool _isGameOver = false;
 
         public int CurrentItemsCount { get; private set;  } = 0;
         public PickableItem PickableItem => _pickableItem;
 
-        public void Initialize(GameConfigScriptableObject gameConfig, PickableItem pickableItem)
+        public void Initialize(GameConfigScriptableObject gameConfig, PickableItem pickableItem, GameEvents gameEvents)
         {
             _config = gameConfig.mainItemConfig;
             _pickableItem = pickableItem;
+            _gameEvents = gameEvents;
 
             CurrentItemsCount = 1;
         }
@@ -53,6 +56,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic.MainIte
             _isGameOver = true;
 
             _pickableItem.SetRigidbodyVelocity(_config.gameOverNewVelocity);
+            _gameEvents.EndLevel(true);
         }
     }
 }
