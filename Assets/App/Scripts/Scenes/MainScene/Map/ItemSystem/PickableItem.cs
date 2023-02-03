@@ -1,5 +1,6 @@
 ﻿using System;
 using App.Scripts.General.VibrateSystem;
+using App.Scripts.Scenes.MainScene.Skins;
 using DG.Tweening;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace App.Scripts.Scenes.General.ItemSystem
     {
         public event Action<PickableItem> OnLocalMoveAnimationComplete;
 
+        [SerializeField] private MeshFilter _meshFilter;
+        [SerializeField] private MeshRenderer _meshRenderer;
         [SerializeField] private Collider _collider;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
@@ -78,7 +81,13 @@ namespace App.Scripts.Scenes.General.ItemSystem
         {
             _rigidbody.mass += value;
         }
-        
+
+        public void SetSkin(BallConfig ballConfig)
+        {
+            _meshFilter.mesh = ballConfig.BallMesh;
+            _meshRenderer.materials = ballConfig.Materials;
+        }
+
         private void OnDestroy()
         {
             _localMoveTween?.Kill();

@@ -20,7 +20,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelObjects
         public int addMoneyValue = 1;
     }
     
-    public class Coin : MonoBehaviour
+    public class Coin : OtherLevelObject
     {
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private CoinConfig _config;

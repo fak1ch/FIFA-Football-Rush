@@ -25,10 +25,6 @@ MonoBehaviour:
     price: 0
     itemName: DragonHat
     hatPrefab: {fileID: 8795752501636770978, guid: c666ed875d29b0844ba1ad5e13ee8720, type: 3}
-  - itemLotSprite: {fileID: 21300000, guid: 53ae43357081eff498f0285990f753d9, type: 3}
-    price: 0
-    itemName: Glasses
-    hatPrefab: {fileID: 4683524938909977571, guid: 86e152521cb0f954db97e66d78d850d0, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 5e0dc30050d8d554a9236d7207460334, type: 3}
     price: 0
     itemName: MexicoHat

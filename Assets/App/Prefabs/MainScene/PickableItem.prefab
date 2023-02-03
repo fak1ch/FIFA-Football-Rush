@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58643bd31bbe4716a7124f0f60a020a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _meshFilter: {fileID: 6229595174017721326}
+  _meshRenderer: {fileID: 6229595174017721325}
   _collider: {fileID: 5757552862686049651}
   _rigidbody: {fileID: 4272883467803200738}
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}

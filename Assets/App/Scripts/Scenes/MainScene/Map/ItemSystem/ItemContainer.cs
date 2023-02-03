@@ -17,7 +17,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
     
     public class ItemContainer : MonoBehaviour
     {
-        public event Action OnItemsCountChanged;
+        public event Action<PickableItem> OnAddedItemVisible;
         
         [SerializeField] private Transform _containerForPool;
         [SerializeField] private Transform _containerForCantPickItems;
@@ -61,8 +61,6 @@ namespace App.Scripts.Scenes.General.ItemSystem
             _pickableItems.Push(pickableItem);
             pickableItem.ItemIndexInContainer = _pickableItems.Count;
             pickableItem.transform.SetParent(_config.poolData.container);
-            
-            OnItemsCountChanged?.Invoke();
         }
         
         private void AddPickableItem(PickableItem pickableItem)
@@ -73,6 +71,11 @@ namespace App.Scripts.Scenes.General.ItemSystem
 
             pickableItem.transform.localPosition = newLocalPosition;
             pickableItem.gameObject.SetActive(IsNextItemVisible);
+
+            if (IsNextItemVisible)
+            {
+                OnAddedItemVisible?.Invoke(pickableItem);
+            }
         }
 
         private void RemovePickableItem(PickableItem pickableItem)
@@ -109,8 +112,7 @@ namespace App.Scripts.Scenes.General.ItemSystem
                 if (pickableItem == null) break;
                 
                 ChangeItemMethod(pickableItem);
-                OnItemsCountChanged?.Invoke();
-                
+
                 tempChangeItemCountPerFrame++;
                 if (tempChangeItemCountPerFrame == _config.changeItemCountPerFrame)
                 {
@@ -142,14 +144,16 @@ namespace App.Scripts.Scenes.General.ItemSystem
                 
                 value--;
             }
-            
-            OnItemsCountChanged?.Invoke();
         }
 
         public PickableItem GetPickableItem()
         {
-            return _pickableItems.Count == 0 ? 
-                null : _pickableItems.Pop();
+            if (CurrentPickableItems == 0) return null;
+            
+            PickableItem pickableItem = _pickableItems.Pop();
+            OnAddedItemVisible?.Invoke(pickableItem);
+
+            return pickableItem;
         }
     }
 }

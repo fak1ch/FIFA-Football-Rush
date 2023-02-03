@@ -88,6 +88,7 @@ MonoBehaviour:
   _priceText: {fileID: 4732882404889689204}
   _lotImage: {fileID: 8493468217075967265}
   _interactButton: {fileID: 4732882404873308128}
+  _rectTransform: {fileID: 4732882404873308132}
   _notPurchasedView: {fileID: 8493468216032089712}
   _itemSelectedView: {fileID: 8493468216479917302}
 --- !u!1 &4732882404889689210

@@ -19,7 +19,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelObjects
         public int coinCount;
     }
     
-    public class JumpPlace : MonoBehaviour
+    public class JumpPlace : OtherLevelObject
     {
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private JumpPlaceConfig _config;

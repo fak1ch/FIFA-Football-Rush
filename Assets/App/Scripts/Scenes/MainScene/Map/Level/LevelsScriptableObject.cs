@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
@@ -14,10 +16,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
         
         public Level GetLevelPrefabByNumber(int number)
         {
-            if (number < 1)
-            {
-                number = 1;
-            }
+            number = Math.Clamp(number, 1, LevelsCount);
             
             return _levelConfigs[number - 1].levelPrefab;
         }
@@ -25,6 +24,14 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
         public bool LevelByNumberExist(int number)
         {
             return number < _levelConfigs.Count;
+        }
+
+        public void AddLevelAsLast(Level level)
+        {
+            _levelConfigs.Add(new LevelConfig()  
+            {
+                levelPrefab = level
+            });
         }
     }
 

@@ -43,6 +43,11 @@ namespace App.Scripts.Scenes.MainScene.Skins.UI
             
             _priceText.text = ShopItemConfig.price.ToString();
             _lotImage.sprite = ShopItemConfig.itemLotSprite;
+
+            if (ShopItemConfig.price == 0)
+            {
+                ItemWasPurchased();
+            }
             
             _notPurchasedView.SetActive(!_shopItemRepository.IsPurchased);
         }

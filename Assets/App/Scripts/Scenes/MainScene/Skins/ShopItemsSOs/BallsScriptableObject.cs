@@ -12,7 +12,7 @@ namespace App.Scripts.Scenes.MainScene.Skins
     [Serializable]
     public class BallConfig : ShopItemConfig
     {
-        public Mesh hatPrefab;
-        public Vector3 localScale;
+        public Mesh BallMesh;
+        public Material[] Materials;
     }
 }

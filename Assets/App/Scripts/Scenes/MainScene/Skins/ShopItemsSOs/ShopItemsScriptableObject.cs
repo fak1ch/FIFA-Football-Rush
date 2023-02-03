@@ -8,7 +8,9 @@ namespace App.Scripts.Scenes.MainScene.Skins
     {
         [SerializeField] private List<T> _shopItemConfigs;
 
-        public int SelectedItemIndex { get; private set; }
+        private int _selectedItemIndex = 0;
+        
+        public int SelectedItemIndex => _selectedItemIndex;
         public int ShopItemCount => _shopItemConfigs.Count;
 
         public virtual T GetShopItemConfigByIndex(int index)
@@ -22,7 +24,7 @@ namespace App.Scripts.Scenes.MainScene.Skins
             {
                 if (_shopItemConfigs[i] == shopItemConfig)
                 {
-                    SelectedItemIndex = i;
+                    _selectedItemIndex = i;
                 }
             }
         }

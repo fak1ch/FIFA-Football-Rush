@@ -19,6 +19,8 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
     
     public class LevelEndItemsTransfer : MonoBehaviour
     {
+        public event Action<PickableItem> OnPickableItemVisible;
+        
         [SerializeField] private ItemContainer _itemContainer;
         [SerializeField] private CameraTargetSetuper _cameraTargetSetuper;
         [SerializeField] private Transform _startPointForMainItem;
@@ -64,7 +66,6 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             while (_itemContainer.CurrentPickableItems > 0)
             {
                 PickableItem pickableItem = _itemContainer.GetPickableItem();
-                pickableItem.gameObject.SetActive(true);
                 MovePickableItemToStartPoint(pickableItem);
 
                 _itemsWhichMoveToMainItem++;
@@ -85,6 +86,8 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         
         private void MovePickableItemToStartPoint(PickableItem pickableItem, bool switchOffItem = true)
         {
+            OnPickableItemVisible?.Invoke(pickableItem);
+            pickableItem.gameObject.SetActive(true);
             pickableItem.transform.SetParent(_startPointForMainItem);
             pickableItem.LocalMoveToPosition(Vector3.zero, _config.itemLocalMoveDuration, _config.itemLocalMoveEase);
 
