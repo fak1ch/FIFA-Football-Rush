@@ -67,3 +67,15 @@ MonoBehaviour:
     BallMesh: {fileID: -2128599272216676504, guid: cc632c1d464eb5e4fa3037534b68dc37, type: 3}
     Materials:
     - {fileID: 2100000, guid: 18abc87a0fc3c4a4aa1208a84ff3f3b5, type: 2}
+  - itemLotSprite: {fileID: 21300000, guid: 9d3250954c1cd2e418a98329afac87ec, type: 3}
+    price: 8
+    itemName: FuguBall
+    BallMesh: {fileID: 7171552184528795524, guid: d371c7313acc8da4e89c2f63aaf60a4e, type: 3}
+    Materials:
+    - {fileID: 2100000, guid: 927d9cdc43055554d90e280a7cf37065, type: 2}
+    - {fileID: 2100000, guid: 537f224ace7daae44a3e06bbb7cfc061, type: 2}
+    - {fileID: 2100000, guid: 56f774e0bf1ab0c44b01d642465b599c, type: 2}
+    - {fileID: 2100000, guid: ea55f776fed370a49a0da01dadee558c, type: 2}
+    - {fileID: 2100000, guid: 98ae54ae1076d0a4ebb9bd0d2eda03a7, type: 2}
+    - {fileID: 2100000, guid: 98ae54ae1076d0a4ebb9bd0d2eda03a7, type: 2}
+    - {fileID: 2100000, guid: 5561992e1d3b40d4192e936df4e3d74c, type: 2}
