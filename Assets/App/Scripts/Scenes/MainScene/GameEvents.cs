@@ -26,7 +26,7 @@ namespace App.Scripts.Scenes.General
         [SerializeField] private GameObject _mainMenuUI;
         [SerializeField] private GameObject _gameProcessUI;
         
-        private delegate void EmptyMethod();
+        private delegate void EmptyMethod(int itemsCount);
 
         private void Start()
         {
@@ -50,17 +50,18 @@ namespace App.Scripts.Scenes.General
             SceneLoader.Instance.LoadScene(SceneEnum.MainScene);
         }
 
-        private void EndLevelWithWin()
+        private void EndLevelWithWin(int itemsCount)
         {
-            PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
+            GamePassedPopUp gamePassedPopUp = PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
+            gamePassedPopUp.AddCoinsBonus(itemsCount);
         }
 
-        private void EndLevelWithLose()
+        private void EndLevelWithLose(int itemsCount)
         {
             PopUpSystem.Instance.ShowPopUp<GameOverPopUp>();
         }
 
-        public void EndLevel(bool victory)
+        public void EndLevel(bool victory, int itemsCount = 0)
         {
             SetPauseGame(true);
 
@@ -74,13 +75,13 @@ namespace App.Scripts.Scenes.General
             }
             
             EmptyMethod EndLevel = victory ? EndLevelWithWin : EndLevelWithLose;
-            StartCoroutine(EndLevelAfterDuration(EndLevel));
+            StartCoroutine(EndLevelAfterDuration(EndLevel, itemsCount));
         }
         
-        private IEnumerator EndLevelAfterDuration(EmptyMethod EndLevel)
+        private IEnumerator EndLevelAfterDuration(EmptyMethod EndLevel, int itemsCount)
         {
             yield return new WaitForSeconds(_config.durationTillEndLevel);
-            EndLevel();
+            EndLevel(itemsCount);
         }
         
         private void SetPauseGame(bool value)

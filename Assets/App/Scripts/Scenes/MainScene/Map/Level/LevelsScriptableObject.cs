@@ -9,9 +9,13 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
     [CreateAssetMenu(fileName = "Levels", menuName = "Levels")]
     public class LevelsScriptableObject : ScriptableObject
     {
+        private const string SelectedLevelNumberKey = "SelectedLevelNumberKey";
+        
         [SerializeField] private List<LevelConfig> _levelConfigs;
 
-        public int SelectedLevelNumber { get; set; }
+        private int _selectedLevelNumber;
+        
+        public int SelectedLevelNumber => _selectedLevelNumber;
         public int LevelsCount => _levelConfigs.Count;
         
         public Level GetLevelPrefabByNumber(int number)
@@ -23,7 +27,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
 
         public bool LevelByNumberExist(int number)
         {
-            return number < _levelConfigs.Count;
+            return number <= _levelConfigs.Count;
         }
 
         public void AddLevelAsLast(Level level)
@@ -32,6 +36,28 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
             {
                 levelPrefab = level
             });
+        }
+
+        public void SetLevelByNumberPassed(int levelNumber)
+        {
+            LevelRepository levelRepository = new LevelRepository(_selectedLevelNumber);
+            levelRepository.SetLevelAsPassed();
+            
+            if (LevelByNumberExist(_selectedLevelNumber + 1))
+            {
+                _selectedLevelNumber++;
+                SaveData();
+            }
+        }
+        
+        public void LoadData()
+        {
+            _selectedLevelNumber = PlayerPrefs.GetInt(SelectedLevelNumberKey, 1);
+        }
+        
+        private void SaveData()
+        {
+            PlayerPrefs.SetInt(SelectedLevelNumberKey, SelectedLevelNumber);
         }
     }
 

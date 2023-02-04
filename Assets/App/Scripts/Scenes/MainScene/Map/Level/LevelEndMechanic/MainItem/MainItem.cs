@@ -56,7 +56,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
             _isGameOver = true;
 
             _pickableItem.SetRigidbodyVelocity(_config.gameOverNewVelocity);
-            _gameEvents.EndLevel(true);
+            _gameEvents.EndLevel(true, CurrentItemsCount);
         }
     }
 }

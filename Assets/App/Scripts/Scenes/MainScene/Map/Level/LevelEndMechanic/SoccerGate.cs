@@ -28,7 +28,7 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic
         {
             if (inputCollider.TryGetComponent(out MainItem mainItem))
             {
-                _gameEvents.EndLevel(true);
+                _gameEvents.EndLevel(true, mainItem.CurrentItemsCount);
                 _rigidbodiesForExplosive.Add(mainItem.GetComponent<Rigidbody>());
                 _explosiveGenerator.Explode(_rigidbodiesForExplosive);
             }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a79a18aba1f4062ada216141a50a654, type: 3}
   m_Name: BallsConfig
   m_EditorClassIdentifier: 
+  SelectedItemIndexKey: SelectedItemIndexKeyBalls
   _shopItemConfigs:
   - itemLotSprite: {fileID: 21300000, guid: d009700f6117e08468fa906624bb9e65, type: 3}
     price: 0
@@ -21,37 +22,37 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 66525701831aea649ab0522730ec56b2, type: 2}
     - {fileID: 2100000, guid: 4949ebd4e461b344c9535f252242a1a5, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: 44f9fe65b17e4064a8b7eb719d62c11b, type: 3}
-    price: 0
+    price: 1
     itemName: BasketBall
     BallMesh: {fileID: 1461396453565120915, guid: f67936dfe1e7f124fa53dafd7e676624, type: 3}
     Materials:
     - {fileID: 2100000, guid: c020e536065bb1540a8251ce0d0931e0, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: 2789cd87b98fc0040a3a73b29933e420, type: 3}
-    price: 0
+    price: 2
     itemName: BeachBall
     BallMesh: {fileID: 1461396453565120915, guid: f67936dfe1e7f124fa53dafd7e676624, type: 3}
     Materials:
     - {fileID: 2100000, guid: e0143acccb7940c47b318c0f7df57e9f, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: 1be077ce1c699d847bc7a55b8a0b628b, type: 3}
-    price: 0
+    price: 3
     itemName: PoolBall
     BallMesh: {fileID: 1461396453565120915, guid: f67936dfe1e7f124fa53dafd7e676624, type: 3}
     Materials:
     - {fileID: 2100000, guid: b9a6e808c5986fa4693a4a9cec3dc44f, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: eaae40f8db38e8842887bfb7f5f1c930, type: 3}
-    price: 0
+    price: 4
     itemName: SoftBall
     BallMesh: {fileID: 1461396453565120915, guid: f67936dfe1e7f124fa53dafd7e676624, type: 3}
     Materials:
     - {fileID: 2100000, guid: 36e6ae43e63cafb4890f2b208dde6396, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: 2f3429ffe2722654b877716bc54ea5d4, type: 3}
-    price: 0
+    price: 5
     itemName: TennisBall
     BallMesh: {fileID: 1461396453565120915, guid: f67936dfe1e7f124fa53dafd7e676624, type: 3}
     Materials:
     - {fileID: 2100000, guid: fbc412b022af2014980d0f8229816842, type: 2}
   - itemLotSprite: {fileID: 21300000, guid: f39fdcaf51347d04fbfbb2dbd9a3e28c, type: 3}
-    price: 0
+    price: 6
     itemName: KirbiBall
     BallMesh: {fileID: -7430997264158629248, guid: f6c51f9f4e532154faba0047e43d24ec, type: 3}
     Materials:
@@ -60,3 +61,9 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 4760c82acdc85c24295437e445379a07, type: 2}
     - {fileID: 2100000, guid: cca3d868d92023f43ad273aef9d74558, type: 2}
     - {fileID: 2100000, guid: f22e229461696bd44a4dddff771e4018, type: 2}
+  - itemLotSprite: {fileID: 21300000, guid: 85cc24c8598c31b479bd8c166ec66593, type: 3}
+    price: 7
+    itemName: VirusBall
+    BallMesh: {fileID: -2128599272216676504, guid: cc632c1d464eb5e4fa3037534b68dc37, type: 3}
+    Materials:
+    - {fileID: 2100000, guid: 18abc87a0fc3c4a4aa1208a84ff3f3b5, type: 2}

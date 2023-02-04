@@ -13,18 +13,18 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
     {
         public int CoinsBonus;
     }
-
+    
     public class GamePassedPopUp : PopUp
     {
-        [SerializeField] private LevelsScriptableObject _levelsConfig;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
-        private GamePassedPopUpConfig _config;
+        [SerializeField] private LevelsScriptableObject _levelsConfig;
 
         [SerializeField] private CustomButton _restartButton;
         [SerializeField] private TextMeshProUGUI _bonusCoinsText;
         [SerializeField] private AudioSource _audioSource;
 
         private GameEvents _gameEvents;
+        private GamePassedPopUpConfig _config;
 
         #region Events
 
@@ -43,7 +43,6 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
         public void Initialize(GameEvents gameEvents)
         {
             _config = _gameConfig.PopUpConfigs.GamePassedPopUpConfig;
-            _bonusCoinsText.text = $"+{_config.CoinsBonus.ToString()}";
             _gameEvents = gameEvents;
         }
 
@@ -51,18 +50,21 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
         {
             base.ShowPopUp();
             _audioSource.Play();
-            MoneyWallet.Instance.AddMoney(_config.CoinsBonus);
+
+            _levelsConfig.SetLevelByNumberPassed(_levelsConfig.SelectedLevelNumber);
         }
 
         private void StartNextLevel()
         {
-            if (_levelsConfig.LevelByNumberExist(_levelsConfig.SelectedLevelNumber + 1))
-            {
-                _levelsConfig.SelectedLevelNumber++;
-            }
-            
             HidePopUp();
             _gameEvents.RestartLevel();
+        }
+
+        public void AddCoinsBonus(int itemsCount)
+        {
+            int coinsBonus = itemsCount + _config.CoinsBonus;
+            _bonusCoinsText.text = $"+{coinsBonus}";
+            MoneyWallet.Instance.AddMoney(coinsBonus);
         }
     }
 }

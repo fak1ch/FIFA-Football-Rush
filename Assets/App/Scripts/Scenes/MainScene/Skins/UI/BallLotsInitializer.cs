@@ -7,7 +7,7 @@ namespace App.Scripts.Scenes.MainScene.Skins.UI
     {
         private PickableItemsSkinSetuper _pickableItemsSkinSetuper;
 
-        public void Initialize(PickableItemsSkinSetuper pickableItemsSkinSetuper)
+        public void SetPickableItemsSkinSetuper(PickableItemsSkinSetuper pickableItemsSkinSetuper)
         {
             _pickableItemsSkinSetuper = pickableItemsSkinSetuper;
         }

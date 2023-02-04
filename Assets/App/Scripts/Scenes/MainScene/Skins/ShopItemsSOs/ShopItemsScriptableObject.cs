@@ -6,6 +6,8 @@ namespace App.Scripts.Scenes.MainScene.Skins
 {
     public class ShopItemsScriptableObject<T> : ScriptableObject where T : ShopItemConfig
     {
+        [SerializeField] private string SelectedItemIndexKey = "SelectedItemIndexKey";
+        
         [SerializeField] private List<T> _shopItemConfigs;
 
         private int _selectedItemIndex = 0;
@@ -13,6 +15,16 @@ namespace App.Scripts.Scenes.MainScene.Skins
         public int SelectedItemIndex => _selectedItemIndex;
         public int ShopItemCount => _shopItemConfigs.Count;
 
+        public void LoadSaves()
+        {
+            _selectedItemIndex = PlayerPrefs.GetInt(SelectedItemIndexKey, 0);
+        }
+
+        private void SaveSaves()
+        {
+            PlayerPrefs.SetInt(SelectedItemIndexKey, _selectedItemIndex);
+        }
+        
         public virtual T GetShopItemConfigByIndex(int index)
         {
             return _shopItemConfigs[index];
@@ -27,6 +39,8 @@ namespace App.Scripts.Scenes.MainScene.Skins
                     _selectedItemIndex = i;
                 }
             }
+            
+            SaveSaves();
         }
     }
 

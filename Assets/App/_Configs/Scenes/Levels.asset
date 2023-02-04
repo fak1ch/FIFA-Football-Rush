@@ -14,3 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelConfigs:
   - levelPrefab: {fileID: 4316130872597179778, guid: 79657040fc64a844b8e05acdbbbe10a1, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 949dfb078fbf3504db3e7751ed0ab104, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 47ef38e757ad8a548804dca0e943ab2f, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: a87b4de29d80fe743a99784604fcf7e0, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 4738aead5090a8944ace0c149f4f0225, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 9664da22fefc6dd428f436cbea7e9f10, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: f8fee6f5f4d04414ab9e3815bf18ad5c, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: a70de9fcbc3f99846b36e9561a7a1015, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: e9360e71c2051334aa840dfd87811697, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: d4c54b5eab931ef4e955398926915953, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: c66bebb2869b0af4e9363be349641ead, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 1a0a97e3dbf15c043b4462bd42b427da, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 50cf08ad08529d74eb015e99d47d7533, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 1fc8e9a0b3102044faae58916336c153, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: b82a2e2c70f43fe4f9155d12729771d6, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 3735db06bf16e2746a15a9be65fc9107, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 75c6338419979c8449bfbb435682c065, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: e9ab57262eeddd34fad837060c91a24a, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: dcfebccf57ee38b4d954b6b621ba98de, type: 3}
+  - levelPrefab: {fileID: 4316130872597179778, guid: 6c99d4c0e9641424f93fa2b9b53a6edd, type: 3}

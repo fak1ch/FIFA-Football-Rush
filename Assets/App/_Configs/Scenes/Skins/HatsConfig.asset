@@ -12,40 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f6b41b2b7f4b91bf26dde1b4f64e39, type: 3}
   m_Name: HatsConfig
   m_EditorClassIdentifier: 
+  SelectedItemIndexKey: SelectedItemIndexKeyHats
   _shopItemConfigs:
   - itemLotSprite: {fileID: 21300000, guid: b69a3b0cdd7826046a6b5ad1d47d2fc0, type: 3}
     price: 0
     itemName: DefaultHat
-    hatPrefab: {fileID: 0}
+    hatPrefab: {fileID: 3288828799206772312, guid: 5b9e638892eaed6489c7ae2f9380688b, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 1a49770632737334e8f56e6987f8c94c, type: 3}
-    price: 0
+    price: 1
     itemName: CookHat
     hatPrefab: {fileID: 5567810388041205148, guid: cf0bbd56bc5f98d4b8c4aecb14446718, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: b44b69e9d2808704fa8efb9c063cbaf1, type: 3}
-    price: 0
+    price: 2
     itemName: DragonHat
     hatPrefab: {fileID: 8795752501636770978, guid: c666ed875d29b0844ba1ad5e13ee8720, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 5e0dc30050d8d554a9236d7207460334, type: 3}
-    price: 0
+    price: 3
     itemName: MexicoHat
     hatPrefab: {fileID: 6365903409658842263, guid: daa651da954751a40811b4984895bc57, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 7591a44494a053f489576449559cd318, type: 3}
-    price: 0
+    price: 4
     itemName: PlagueDoctor
     hatPrefab: {fileID: 2820218320456581670, guid: 9115c2573532c2942a8269a8ed8e6b64, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: b9b45477f0912164ca0d86ee619579c3, type: 3}
-    price: 0
+    price: 5
     itemName: SpartaHelmet
     hatPrefab: {fileID: 8124607669211427874, guid: 69c806e56fc93dd469d0dd536ae487b4, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 747099816c386b34fb8396d086f9a3cb, type: 3}
-    price: 0
+    price: 6
     itemName: VikingHelmet
     hatPrefab: {fileID: 5363162489989692693, guid: d2240e5331647f043bf9e4f7cf25cd77, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 28c152973b7403f4e84ad10ec9a6828c, type: 3}
-    price: 0
+    price: 7
     itemName: WitchHat
     hatPrefab: {fileID: 4179546638506525079, guid: f10517c46fcb8de4c8292807d3e4aada, type: 3}
   - itemLotSprite: {fileID: 21300000, guid: 063bc2b6bab405b4ca7caeddcd7ed7f4, type: 3}
-    price: 0
+    price: 8
     itemName: WolfHat
     hatPrefab: {fileID: 298950665454963349, guid: b45095ebbc47f4648a837fd7a20f6331, type: 3}

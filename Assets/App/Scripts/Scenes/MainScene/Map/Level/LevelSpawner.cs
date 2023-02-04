@@ -13,19 +13,14 @@ namespace Assets.App.Scripts.Scenes.MainScene.Map.Level
         [SerializeField] private BallLotsInitializer _ballLotsInitializer;
         [SerializeField] private ItemContainer _itemContainer;
 
-        private void Start()
-        {
-            SpawnSelectedLevel();
-        }
-
-        private void SpawnSelectedLevel()
+        public void SpawnSelectedLevel()
         {
             int levelNumber = _levelsConfig.SelectedLevelNumber;
             Level levelPrefab = _levelsConfig.GetLevelPrefabByNumber(levelNumber);
             Level level = Instantiate(levelPrefab, Vector3.zero, Quaternion.identity, _levelContainer);
             
             level.PickableItemsSkinSetuper.Initialize(_itemContainer);
-            _ballLotsInitializer.Initialize(level.PickableItemsSkinSetuper);
+            _ballLotsInitializer.SetPickableItemsSkinSetuper(level.PickableItemsSkinSetuper);
             _endLevelScene.Initialize(level.LevelGround);
         }
     }

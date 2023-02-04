@@ -240,6 +240,6 @@ MonoBehaviour:
           intervalBetweenAnims: 0.15
   PopUpConfigs:
     GameOverPopUpConfig:
-      CoinsBonus: 57
+      CoinsBonus: 47
     GamePassedPopUpConfig:
-      CoinsBonus: 421
+      CoinsBonus: 77

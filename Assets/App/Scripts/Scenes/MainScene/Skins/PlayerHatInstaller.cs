@@ -8,11 +8,6 @@ namespace App.Scripts.Scenes.MainScene.Skins
         [SerializeField] private Transform _playerHatPoint;
         
         private GameObject _currentHat;
-        
-        private void Start()
-        {
-            PutOnSelectedHat();
-        }
 
         public void PutOnSelectedHat()
         {
@@ -23,11 +18,6 @@ namespace App.Scripts.Scenes.MainScene.Skins
 
             GameObject hatPrefab = _hatsConfig.GetShopItemConfigByIndex(_hatsConfig.SelectedItemIndex).hatPrefab;
 
-            if (hatPrefab == null)
-            {
-                hatPrefab = new GameObject();
-            }
-            
             _currentHat = Instantiate(hatPrefab, _playerHatPoint);
             _currentHat.transform.localPosition = Vector3.zero;
         }

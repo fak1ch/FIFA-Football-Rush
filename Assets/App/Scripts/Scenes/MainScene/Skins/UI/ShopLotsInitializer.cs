@@ -24,7 +24,7 @@ namespace App.Scripts.Scenes.MainScene.Skins.UI
                 _shopLots.Add(shopLot);
             }
             
-            _shopLots[_shopItemsConfig.SelectedItemIndex].SetActiveItemSelectedView(true);
+            SelectShopLotItem(_shopLots[_shopItemsConfig.SelectedItemIndex]);
         }
 
         protected virtual void SelectShopLotItem(ShopLot shopLot)

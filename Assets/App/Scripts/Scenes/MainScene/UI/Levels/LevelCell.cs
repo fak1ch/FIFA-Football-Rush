@@ -37,7 +37,7 @@ namespace App.Scripts.Scenes.MainScene.UI.Levels
 
         private void StartLevel()
         {
-            _levelsConfig.SelectedLevelNumber = _levelRepository.LevelNumber;
+            //_levelsConfig.SelectedLevelNumber = _levelRepository.LevelNumber;
             SceneLoader.Instance.LoadScene(SceneEnum.MainScene);
         }
     }
