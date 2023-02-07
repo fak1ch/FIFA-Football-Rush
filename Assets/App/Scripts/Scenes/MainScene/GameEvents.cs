@@ -3,6 +3,7 @@ using System.Collections;
 using App.Scripts.General.LoadScene;
 using App.Scripts.General.PopUpSystemSpace;
 using App.Scripts.General.PopUpSystemSpace.PopUps;
+using App.Scripts.Scenes.MainScene;
 using StarterAssets;
 using StarterAssets.Animations;
 using UnityEngine;
@@ -50,6 +51,11 @@ namespace App.Scripts.Scenes.General
             SceneLoader.Instance.LoadScene(SceneEnum.MainScene);
         }
 
+        public void ContinueLevel()
+        {
+            SetPauseGame(false);
+        }
+
         private void EndLevelWithWin(int itemsCount)
         {
             GamePassedPopUp gamePassedPopUp = PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
@@ -59,6 +65,7 @@ namespace App.Scripts.Scenes.General
         private void EndLevelWithLose(int itemsCount)
         {
             PopUpSystem.Instance.ShowPopUp<GameOverPopUp>();
+            DieCounter.Instance.ClickTheCounter();
         }
 
         public void EndLevel(bool victory, int itemsCount = 0)

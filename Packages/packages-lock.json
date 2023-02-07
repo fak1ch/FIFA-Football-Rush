@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.appodeal.appodeal-unity-plugin-upm": {
+      "version": "file:C:/Users/fak1ch/Desktop/appodeal-unity-plugin-upm-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

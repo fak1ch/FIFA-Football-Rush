@@ -1,6 +1,9 @@
 ﻿using System;
+using App.Scripts.General.Ads;
+using App.Scripts.General.Google;
 using App.Scripts.General.PopUpSystemSpace;
 using App.Scripts.General.Utils;
+using App.Scripts.Scenes.MainScene;
 using App.Scripts.Scenes.MainScene.Skins;
 using App.Scripts.Scenes.MainScene.UI.Levels;
 using App.Scripts.Scenes.MainScene.UI.PopUps;
@@ -22,6 +25,10 @@ namespace App.Scripts.Installers
             PopUpSystem.Instance.enabled = true;
             DebugUtils.Instance.enabled = true;
             MoneyWallet.Instance.enabled = true;
+            GoogleInitializer.Instance.enabled = true;
+            FirebaseAnalysis.Instance.enabled = true;
+            AdsManager.Instance.enabled = true;
+            DieCounter.Instance.enabled = true;
             
             _levelsConfig.LoadData();
             _levelSpawner.SpawnSelectedLevel();

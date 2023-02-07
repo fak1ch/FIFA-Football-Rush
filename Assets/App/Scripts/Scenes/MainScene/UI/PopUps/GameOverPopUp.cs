@@ -40,7 +40,7 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         public void Initialize(GameEvents gameEvents)
         {
-            _config = _gameConfig.PopUpConfigs.GameOverPopUpConfig;
+            _config = _gameConfig.UIConfigs.GameOverPopUpConfig;
             _bonusCoinsText.text = $"+{_config.CoinsBonus.ToString()}";
             _gameEvents = gameEvents;
         }

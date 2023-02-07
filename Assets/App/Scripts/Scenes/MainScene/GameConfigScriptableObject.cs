@@ -4,8 +4,10 @@ using App.Scripts.Scenes.General;
 using App.Scripts.Scenes.General.CoinsSystem;
 using App.Scripts.Scenes.General.ItemSystem;
 using App.Scripts.Scenes.General.Map.Stickmans;
+using App.Scripts.Scenes.MainScene;
 using App.Scripts.Scenes.MainScene.Map.CloudsSystem;
 using App.Scripts.Scenes.MainScene.Map.Stickmans;
+using App.Scripts.Scenes.MainScene.UI;
 using App.Scripts.Scenes.MainScene.UI.Levels;
 using Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelEndMechanic;
 using Assets.App.Scripts.Scenes.MainScene.Map.Level.LevelObjects;
@@ -39,7 +41,10 @@ namespace App.Scripts.Scenes
  
         [Space(10)] 
         public LevelObjectConfigs levelObjectConfigs;
-        public PopUpConfigs PopUpConfigs;
+
+        [Space(10)]
+        public SingletonConfigs SingletonConfigs;
+        public UIConfigs UIConfigs;
     }
 
     [Serializable]
@@ -68,9 +73,16 @@ namespace App.Scripts.Scenes
     }
 
     [Serializable]
-    public class PopUpConfigs
+    public class UIConfigs
     {
         public GameOverPopUpConfig GameOverPopUpConfig;
         public GamePassedPopUpConfig GamePassedPopUpConfig;
+        public FreeCoinsButtonConfig FreeCoinsButtonConfig;
+    }
+
+    [Serializable]
+    public class SingletonConfigs
+    {
+        public DieCounterConfig DieCounterConfig;
     }
 }

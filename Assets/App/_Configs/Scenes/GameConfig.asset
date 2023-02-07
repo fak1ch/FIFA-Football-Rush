@@ -238,8 +238,13 @@ MonoBehaviour:
           liftUpEase: 6
           liftDownEase: 30
           intervalBetweenAnims: 0.15
-  PopUpConfigs:
+  SingletonConfigs:
+    DieCounterConfig:
+      DieCountForShowAd: 1
+  UIConfigs:
     GameOverPopUpConfig:
-      CoinsBonus: 47
+      CoinsBonus: 46
     GamePassedPopUpConfig:
-      CoinsBonus: 77
+      CoinsBonus: 112
+    FreeCoinsButtonConfig:
+      CoinsBonus: 499

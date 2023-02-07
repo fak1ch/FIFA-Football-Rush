@@ -42,7 +42,7 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         public void Initialize(GameEvents gameEvents)
         {
-            _config = _gameConfig.PopUpConfigs.GamePassedPopUpConfig;
+            _config = _gameConfig.UIConfigs.GamePassedPopUpConfig;
             _gameEvents = gameEvents;
         }
 
