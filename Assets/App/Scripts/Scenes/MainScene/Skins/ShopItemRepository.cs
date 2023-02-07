@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.Google;
 using UnityEngine;
 
 namespace App.Scripts.Scenes.MainScene.Skins
@@ -21,6 +22,7 @@ namespace App.Scripts.Scenes.MainScene.Skins
         {
             IsPurchased = true;
             SaveRepositoryData();
+            FirebaseAnalysis.Instance.SendSkinWasPurchased(_shopItemConfig.itemName);
         }
 
         private void SaveRepositoryData()

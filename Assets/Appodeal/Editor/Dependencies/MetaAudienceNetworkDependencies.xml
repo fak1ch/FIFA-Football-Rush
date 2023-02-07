@@ -1,5 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <dependencies>
+    <iosPods>
+        <iosPod name="APDMetaAudienceNetworkAdapter" version="3.0.2.1" minTargetSdk="11.0" />
+        <iosPod name="BidMachineMetaAudienceAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+    </iosPods>
     <androidPackages>
         <androidPackage spec="com.appodeal.ads.sdk.networks:facebook:3.0.2.0" />
         <androidPackage spec="com.appodeal.ads.sdk:core:3.0.2" />

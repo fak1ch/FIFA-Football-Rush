@@ -1,7 +1,9 @@
 ﻿using System;
 using App.Scripts.General.Singleton;
+using App.Scripts.General.Utils;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using UnityEngine;
 
 namespace App.Scripts.General.Google
 {
@@ -22,6 +24,11 @@ namespace App.Scripts.General.Google
             if (status == SignInStatus.Success)
             {
                 OnAuthenticationSuccess?.Invoke();
+                DebugUtils.Instance.Log("Google initialize finished");
+            }
+            else
+            {
+                DebugUtils.Instance.Log($"Google initialize error: {status}");
             }
         }
     }

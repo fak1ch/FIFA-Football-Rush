@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections;
+using App.Scripts.General.Google;
 using App.Scripts.General.LoadScene;
 using App.Scripts.General.PopUpSystemSpace;
 using App.Scripts.General.PopUpSystemSpace.PopUps;
 using App.Scripts.Scenes.MainScene;
+using Assets.App.Scripts.Scenes.MainScene.Map.Level;
 using StarterAssets;
 using StarterAssets.Animations;
 using UnityEngine;
@@ -18,6 +20,7 @@ namespace App.Scripts.Scenes.General
     
     public class GameEvents : MonoBehaviour
     {
+        [SerializeField] private LevelsScriptableObject _levelsConfig;
         [SerializeField] private GameConfigScriptableObject _gameConfig;
         private GameEventsConfig _config;
         
@@ -44,6 +47,7 @@ namespace App.Scripts.Scenes.General
             _mainMenuUI.gameObject.SetActive(false);
             _gameProcessUI.gameObject.SetActive(true);
             SetPauseGame(false);
+            FirebaseAnalysis.Instance.SendLevelStartEvent(_levelsConfig.SelectedLevelNumber);
         }
 
         public void RestartLevel()
@@ -51,26 +55,23 @@ namespace App.Scripts.Scenes.General
             SceneLoader.Instance.LoadScene(SceneEnum.MainScene);
         }
 
-        public void ContinueLevel()
-        {
-            SetPauseGame(false);
-        }
-
         private void EndLevelWithWin(int itemsCount)
         {
+            FirebaseAnalysis.Instance.SendLevelEndEvent(_levelsConfig.SelectedLevelNumber);
             GamePassedPopUp gamePassedPopUp = PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
             gamePassedPopUp.AddCoinsBonus(itemsCount);
         }
 
         private void EndLevelWithLose(int itemsCount)
         {
+            FirebaseAnalysis.Instance.SendPlayerDieOnLevel(_levelsConfig.SelectedLevelNumber);
             PopUpSystem.Instance.ShowPopUp<GameOverPopUp>();
-            DieCounter.Instance.ClickTheCounter();
         }
 
         public void EndLevel(bool victory, int itemsCount = 0)
         {
             SetPauseGame(true);
+            DieCounter.Instance.ClickTheCounter();
 
             if (victory)
             {

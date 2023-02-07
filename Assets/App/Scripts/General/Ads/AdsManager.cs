@@ -15,11 +15,9 @@ namespace App.Scripts.General.Ads
 
         private void Start()
         {
-            return;
-            
             _adInitializer = new AppodealInitializer();
-            _rewardAd = new AppodealRewardAd();
-            _interstitialAd = new AppodealInterstitialAd();
+            _rewardAd = new AppodealRewardVideo();
+            _interstitialAd = new AppodealInterstitialVideo();
             
             _adInitializer.Initialize();
             _rewardAd.Initialize();

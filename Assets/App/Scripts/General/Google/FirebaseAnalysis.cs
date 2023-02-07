@@ -41,7 +41,7 @@ namespace App.Scripts.General.Google
                 new Parameter("level_start_index", levelIndex));
         }
         
-        public void SendLevelEndEvent(int levelIndex, string completionTime)
+        public void SendLevelEndEvent(int levelIndex)
         {
             FirebaseAnalytics.LogEvent("level_end",
                 new Parameter("level_end_index", levelIndex));

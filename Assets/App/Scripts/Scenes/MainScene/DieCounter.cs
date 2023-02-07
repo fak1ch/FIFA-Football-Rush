@@ -17,7 +17,8 @@ namespace App.Scripts.Scenes.MainScene
         private DieCounterConfig _config;
 
         private int _dieCount = 0;
-        
+        private bool _needShowAd;
+
         private void Start()
         {
             _config = _gameConfig.SingletonConfigs.DieCounterConfig;
@@ -27,10 +28,15 @@ namespace App.Scripts.Scenes.MainScene
         {
             _dieCount++;
 
-            if (_dieCount == _config.DieCountForShowAd)
+            _needShowAd = _dieCount == _config.DieCountForShowAd;
+        }
+
+        public void TryShowAd()
+        {
+            if (_needShowAd)
             {
                 _dieCount = 0;
-                AdsManager.Instance.RewardAd.TryShowAd();
+                AdsManager.Instance.InterstitialAd.TryShowAd();
             }
         }
     }

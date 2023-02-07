@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.Utils;
 using AppodealStack.Monetization.Api;
 using AppodealStack.Monetization.Common;
  
@@ -16,7 +17,7 @@ namespace App.Scripts.General.Ads.AppodealAdvertisement
             AppodealCallbacks.Sdk.OnInitialized += InitializeFinishedCallback;
 
             int adTypes = AppodealAdType.Interstitial | AppodealAdType.RewardedVideo;
-            string appKey = "e5d8073f1aeddb5b7b88159308648938b1fe881c20bdc50e";
+            string appKey = "2d45e6977d8a584d64bd6f890425116bcd648f7948aa7fa8";
             
             Appodeal.Initialize(appKey, adTypes);
         }
@@ -24,6 +25,7 @@ namespace App.Scripts.General.Ads.AppodealAdvertisement
         private void InitializeFinishedCallback(object sender, SdkInitializedEventArgs e)
         {
             OnInitializeFinished?.Invoke();
+            DebugUtils.Instance.Log("Appodeal initialize finished");
         }
     }
 }

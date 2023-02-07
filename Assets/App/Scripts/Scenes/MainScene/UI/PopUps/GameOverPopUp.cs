@@ -2,6 +2,7 @@
 using App.Scripts.General.UI.ButtonSpace;
 using App.Scripts.Scenes;
 using App.Scripts.Scenes.General;
+using App.Scripts.Scenes.MainScene;
 using TMPro;
 using UnityEngine;
 
@@ -54,6 +55,8 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         private void RestartGame()
         {
+            DieCounter.Instance.TryShowAd();
+
             HidePopUp();
             _gameEvents.RestartLevel();
         }

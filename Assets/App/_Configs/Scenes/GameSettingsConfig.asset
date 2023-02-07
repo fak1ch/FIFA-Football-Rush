@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d43cb41e6a48aeaeb7ea81abe80042, type: 3}
   m_Name: GameSettingsConfig
   m_EditorClassIdentifier: 
-  IsFirstGameLaunch: 1
-  IsAdsDeactivate: 0
-  CanUsePlayerAdData: 1
-  CanCollectPlayerStats: 1
-  OnCustomConsole: 0
-  OnFpsRenderer: 0
+  onCustomConsole: 1
+  onFpsRenderer: 0
+  onVibration: 1
+  onSounds: 1

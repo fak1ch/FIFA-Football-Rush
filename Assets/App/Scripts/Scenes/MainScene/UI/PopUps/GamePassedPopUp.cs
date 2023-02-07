@@ -1,4 +1,5 @@
 ﻿using System;
+using App.Scripts.General.Ads;
 using App.Scripts.General.UI.ButtonSpace;
 using App.Scripts.Scenes;
 using App.Scripts.Scenes.General;
@@ -56,6 +57,7 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         private void StartNextLevel()
         {
+            AdsManager.Instance.InterstitialAd.TryShowAd();
             HidePopUp();
             _gameEvents.RestartLevel();
         }

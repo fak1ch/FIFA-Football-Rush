@@ -72,16 +72,16 @@
     <package>org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4</package>
   </packages>
   <files>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/10.4.0/firebase-analytics-unity-10.4.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/10.4.0/firebase-analytics-unity-10.4.0.pom</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.4.0/firebase-app-unity-10.4.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.4.0/firebase-app-unity-10.4.0.pom</file>
-    <file>Assets/GeneratedLocalRepo/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.aar</file>
-    <file>Assets/GeneratedLocalRepo/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.pom</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/10.4.0/firebase-analytics-unity-10.4.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/10.4.0/firebase-analytics-unity-10.4.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.4.0/firebase-app-unity-10.4.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.4.0/firebase-app-unity-10.4.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.aar</file>
+    <file>Assets/GeneratedLocalRepo/ImportedPackages/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.pom</file>
   </files>
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.fak1ch.FIFAFootballRush" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="bundleId" value="com.fak1ch.SoccerRun.CollectAllBalls" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

@@ -1,5 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <dependencies>
+    <iosPods>
+        <iosPod name="APDMyTargetAdapter" version="3.0.2.1" minTargetSdk="11.0" />
+        <iosPod name="BidMachineMyTargetAdapter" version="~> 2.0.0.2" minTargetSdk="11.0" />
+    </iosPods>
     <androidPackages>
         <androidPackage spec="com.appodeal.ads.sdk.networks:my_target:3.0.2.0" />
         <androidPackage spec="com.appodeal.ads.sdk:core:3.0.2" />

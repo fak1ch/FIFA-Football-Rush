@@ -1,5 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <dependencies>
+    <iosPods>
+        <iosPod name="APDBidMachineAdapter" version="3.0.2.1" minTargetSdk="11.0" />
+        <iosPod name="BidMachineAmazonAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+        <iosPod name="BidMachineCriteoAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+        <iosPod name="BidMachineNotsyAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+        <iosPod name="BidMachinePangleAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+        <iosPod name="BidMachineSmaatoAdapter" version="~> 2.0.0" minTargetSdk="11.0" />
+        <iosPod name="BidMachineTapjoyAdapter" version="~> 2.0.0.0" minTargetSdk="11.0" />
+    </iosPods>
     <androidPackages>
         <androidPackage spec="com.appodeal.ads.sdk.networks:bidmachine:3.0.2.0" />
         <androidPackage spec="com.appodeal.ads.sdk:core:3.0.2" />
