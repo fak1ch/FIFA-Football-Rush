@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1067624992155",
+    "project_id": "soccer-run-collect-all-bal-479",
+    "storage_bucket": "soccer-run-collect-all-bal-479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067624992155:android:1f8c7ef7aaf02954be653e",
+        "android_client_info": {
+          "package_name": "com.fak1ch.SoccerRun.CollectAllBalls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067624992155-un9b31nvl4khho0mr9g1udqpms5e56oe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fak1ch.SoccerRun.CollectAllBalls",
+            "certificate_hash": "6015330b3ad077850de59e6ffe0fe3a779e30cc9"
+          }
+        },
+        {
+          "client_id": "1067624992155-d1h714to4renbkdieg396ink8quuv7uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo2LqBfqbeqHrsmEEOYsTCJMQGCj8Zuys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067624992155-d1h714to4renbkdieg396ink8quuv7uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,665 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+// 0x00000001 System.Int32 AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::NativeYAxisPosForUnityViewPos(System.Int32)
+extern void AndroidAppodealClient_NativeYAxisPosForUnityViewPos_m4E079040EE263F7A26293422282255A998072B3F (void);
+// 0x00000002 System.Int32 AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::NativeAdTypesForType(System.Int32)
+extern void AndroidAppodealClient_NativeAdTypesForType_mF50D56E5CF82CB5F7CF4934A9272FF854C5D3CD9 (void);
+// 0x00000003 System.Int32 AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::NativeShowStyleForType(System.Int32)
+extern void AndroidAppodealClient_NativeShowStyleForType_mFDF1BB48C487EEDB54E427688FE270B4A901BBF2 (void);
+// 0x00000004 UnityEngine.AndroidJavaClass AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetAppodealClass()
+extern void AndroidAppodealClient_GetAppodealClass_m9F7C395D3A36DBB1BCD43E7716DC80142C496841 (void);
+// 0x00000005 UnityEngine.AndroidJavaClass AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetAppodealUnityClass()
+extern void AndroidAppodealClient_GetAppodealUnityClass_mF50B725BDAC44637D8142A6970203FDC6A8A680C (void);
+// 0x00000006 UnityEngine.AndroidJavaObject AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetAppodealBannerInstance()
+extern void AndroidAppodealClient_GetAppodealBannerInstance_mC8144BD0699A451A293269235644B84B0AFC1856 (void);
+// 0x00000007 UnityEngine.AndroidJavaObject AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetActivity()
+extern void AndroidAppodealClient_GetActivity_m79A4F50B2DC0EA9C4ABE896CD547C03380F1210A (void);
+// 0x00000008 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetCallbacks()
+extern void AndroidAppodealClient_SetCallbacks_mC821BC2377D3A776FD8E48504A18D05E53DAAB2D (void);
+// 0x00000009 AppodealStack.Monetization.Platforms.Android.AppodealInitializationCallback AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetInitCallback(AppodealStack.Monetization.Common.IAppodealInitializationListener)
+extern void AndroidAppodealClient_GetInitCallback_m403904FFB3AFCEF1B191F544C24E1B4202CA5BBE (void);
+// 0x0000000A AppodealStack.Monetization.Platforms.Android.InAppPurchaseValidationCallbacks AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetPurchaseCallback(AppodealStack.Monetization.Common.IInAppPurchaseValidationListener)
+extern void AndroidAppodealClient_GetPurchaseCallback_m4569F264BAE52987308E5B4001967CA5CF14CAAA (void);
+// 0x0000000B System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Initialize(System.String,System.Int32,AppodealStack.Monetization.Common.IAppodealInitializationListener)
+extern void AndroidAppodealClient_Initialize_m4E4ABD6E4DCA2156B883E194643E18888C9CE689 (void);
+// 0x0000000C System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::initialize(System.String,System.Int32)
+extern void AndroidAppodealClient_initialize_m03AE43BCC7AC176E3A78D0C50B9ED063821EEF1F (void);
+// 0x0000000D System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::initialize(System.String,System.Int32,System.Boolean)
+extern void AndroidAppodealClient_initialize_m172A4612861E79CB483D9D119BDD7EE32C5574AC (void);
+// 0x0000000E System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::initialize(System.String,System.Int32,AppodealStack.ConsentManagement.Common.IConsent)
+extern void AndroidAppodealClient_initialize_m301F94CD20503917CA05D0EB0DF11E1C7B28C415 (void);
+// 0x0000000F System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::IsInitialized(System.Int32)
+extern void AndroidAppodealClient_IsInitialized_mCC33659D7B421B0554241311AF51C92705A4BC7B (void);
+// 0x00000010 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Show(System.Int32)
+extern void AndroidAppodealClient_Show_mC470EACF8FB174C0A9E4F0D147D11852CA11E7ED (void);
+// 0x00000011 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Show(System.Int32,System.String)
+extern void AndroidAppodealClient_Show_mC2E07555507B5BE4D9224518924BA5F2C6421811 (void);
+// 0x00000012 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ShowBannerView(System.Int32,System.Int32,System.String)
+extern void AndroidAppodealClient_ShowBannerView_m407BA13ECABF1C611809184BCFDC3CBBBFD867D8 (void);
+// 0x00000013 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ShowMrecView(System.Int32,System.Int32,System.String)
+extern void AndroidAppodealClient_ShowMrecView_m233089A1828DEC3D141728E9A4362E99F7CDB390 (void);
+// 0x00000014 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::IsLoaded(System.Int32)
+extern void AndroidAppodealClient_IsLoaded_mD839D0E4358180D9E051F776FBD86A200FA67D5E (void);
+// 0x00000015 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Cache(System.Int32)
+extern void AndroidAppodealClient_Cache_m742DDAD09479DC5A70C8825B7734B463C976B4EA (void);
+// 0x00000016 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Hide(System.Int32)
+extern void AndroidAppodealClient_Hide_m71E95E7FEAADF999A9F849B09D8DB94BDA4E122A (void);
+// 0x00000017 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::HideBannerView()
+extern void AndroidAppodealClient_HideBannerView_m87AC435B51D153B89E6C832368E8DD0ED5C38E50 (void);
+// 0x00000018 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::HideMrecView()
+extern void AndroidAppodealClient_HideMrecView_mFE58CF3373205F23DB4F4885F9A12A86D35B1BEC (void);
+// 0x00000019 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::IsPrecache(System.Int32)
+extern void AndroidAppodealClient_IsPrecache_m40F1731403C70DEE048A7806F109721A7F732616 (void);
+// 0x0000001A System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetAutoCache(System.Int32,System.Boolean)
+extern void AndroidAppodealClient_SetAutoCache_m6CBFA26E93C04D497A67C5CFF08AD0859B759FA5 (void);
+// 0x0000001B System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetSmartBanners(System.Boolean)
+extern void AndroidAppodealClient_SetSmartBanners_mFA31ADDED16BA5BA2BAA89DE068BA466AB033999 (void);
+// 0x0000001C System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::IsSmartBannersEnabled()
+extern void AndroidAppodealClient_IsSmartBannersEnabled_m0F4A6D9F1C07382DEE827C32ABDA908DF4BC43D3 (void);
+// 0x0000001D System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetBannerAnimation(System.Boolean)
+extern void AndroidAppodealClient_SetBannerAnimation_m6A8C59440B8BA365DC38F128DEBE0E1F6FF4DF0F (void);
+// 0x0000001E System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetTabletBanners(System.Boolean)
+extern void AndroidAppodealClient_SetTabletBanners_mEA66DAD42FA49E6AD193E06A3FA83BC12AA041E8 (void);
+// 0x0000001F System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetBannerRotation(System.Int32,System.Int32)
+extern void AndroidAppodealClient_SetBannerRotation_m15447DC73E36E1B23E49D034E65EDBCB094EDDC4 (void);
+// 0x00000020 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetTesting(System.Boolean)
+extern void AndroidAppodealClient_SetTesting_m5B9FF63CF872D4AD7333ADFA5C25B5BE0C4DD236 (void);
+// 0x00000021 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetLogLevel(AppodealStack.Monetization.Common.AppodealLogLevel)
+extern void AndroidAppodealClient_SetLogLevel_mF9BE2EC3305C996B031E4312823687052C5CB19C (void);
+// 0x00000022 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetChildDirectedTreatment(System.Boolean)
+extern void AndroidAppodealClient_SetChildDirectedTreatment_m3B621675B947CA1162C72936FC33AC759FCCCE5A (void);
+// 0x00000023 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::updateConsent(System.Boolean)
+extern void AndroidAppodealClient_updateConsent_m7593E81AB8C4A7038DB2EFEE096C6C0DA2E4B7EF (void);
+// 0x00000024 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::UpdateConsent(AppodealStack.ConsentManagement.Common.IConsent)
+extern void AndroidAppodealClient_UpdateConsent_m38BD176CAA73FB8CA63F9FC80568656124E7B611 (void);
+// 0x00000025 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::UpdateGdprConsent(AppodealStack.Monetization.Common.GdprUserConsent)
+extern void AndroidAppodealClient_UpdateGdprConsent_mD858BAEBA54DF3E035A29E1126135CB835996A6F (void);
+// 0x00000026 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::UpdateCcpaConsent(AppodealStack.Monetization.Common.CcpaUserConsent)
+extern void AndroidAppodealClient_UpdateCcpaConsent_m97F1BBA2C9928769367C27849062D4C8B7E66C3D (void);
+// 0x00000027 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::DisableNetwork(System.String)
+extern void AndroidAppodealClient_DisableNetwork_m4D0B5D546323D228AB06B0232F7A125E6B6DC2AA (void);
+// 0x00000028 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::DisableNetwork(System.String,System.Int32)
+extern void AndroidAppodealClient_DisableNetwork_mC3012E5C6952E05C8A57AED8F658C03656EBD49B (void);
+// 0x00000029 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetTriggerOnLoadedOnPrecache(System.Int32,System.Boolean)
+extern void AndroidAppodealClient_SetTriggerOnLoadedOnPrecache_m8208C8B958E9635A3EA538307E9592CD54B661CC (void);
+// 0x0000002A System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::MuteVideosIfCallsMuted(System.Boolean)
+extern void AndroidAppodealClient_MuteVideosIfCallsMuted_m37F7EA3E1192CD85D4D2CE950B0FC7C3219F2C55 (void);
+// 0x0000002B System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ShowTestScreen()
+extern void AndroidAppodealClient_ShowTestScreen_mE8AEA74AF57862CD25FDFCAEA06F17C1A52B23F6 (void);
+// 0x0000002C System.String AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetVersion()
+extern void AndroidAppodealClient_GetVersion_m58342D00F601C47543E1948D84A2127DBB5C111F (void);
+// 0x0000002D System.Int64 AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetSegmentId()
+extern void AndroidAppodealClient_GetSegmentId_m9FD7E0CB0928537D2FF668EE5C730B5E15064A4B (void);
+// 0x0000002E System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::CanShow(System.Int32)
+extern void AndroidAppodealClient_CanShow_mDBD267E482BC37B80DA7601C3BD5AE7F82A7CDC6 (void);
+// 0x0000002F System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::CanShow(System.Int32,System.String)
+extern void AndroidAppodealClient_CanShow_mE9A526CA7FE6876171D42BB92F3630EB390EE33D (void);
+// 0x00000030 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetCustomFilter(System.String,System.Boolean)
+extern void AndroidAppodealClient_SetCustomFilter_mCECA34AA4B312F4D5B692FA6977BDB5EC1A10EEF (void);
+// 0x00000031 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetCustomFilter(System.String,System.Int32)
+extern void AndroidAppodealClient_SetCustomFilter_m15C2D3FAD2FBB581069744E4B8838B043587264C (void);
+// 0x00000032 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetCustomFilter(System.String,System.Double)
+extern void AndroidAppodealClient_SetCustomFilter_m407A4C8CBF85B5AA02084AA83BF7C6D7972D18E2 (void);
+// 0x00000033 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetCustomFilter(System.String,System.String)
+extern void AndroidAppodealClient_SetCustomFilter_mAB19970B7C9F11EEA618B14ACB359E8784247582 (void);
+// 0x00000034 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ResetCustomFilter(System.String)
+extern void AndroidAppodealClient_ResetCustomFilter_mC6D94F1EE3E7642EDEDB0E0B69101017FE653F88 (void);
+// 0x00000035 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetExtraData(System.String,System.Boolean)
+extern void AndroidAppodealClient_SetExtraData_m7BB661A218A4CD9CA2FC8CD3149F3C63183E5C3E (void);
+// 0x00000036 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetExtraData(System.String,System.Int32)
+extern void AndroidAppodealClient_SetExtraData_m159C91C8355DA7F4A439077FED1268E506DA2991 (void);
+// 0x00000037 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetExtraData(System.String,System.Double)
+extern void AndroidAppodealClient_SetExtraData_mC5ED1E1FDD307C66730E76CEB67E503E9C51EEF5 (void);
+// 0x00000038 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetExtraData(System.String,System.String)
+extern void AndroidAppodealClient_SetExtraData_mC34AC60F587CF17ACD091006C32B09ADEAE7BE63 (void);
+// 0x00000039 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ResetExtraData(System.String)
+extern void AndroidAppodealClient_ResetExtraData_m48F88B03F1760A24E20F6590D6A073C39E3DC4A9 (void);
+// 0x0000003A System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::TrackInAppPurchase(System.Double,System.String)
+extern void AndroidAppodealClient_TrackInAppPurchase_m1028982BCAAA969D5CDB53F05956F2C9BAFDB4BC (void);
+// 0x0000003B System.Collections.Generic.List`1<System.String> AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetNetworks(System.Int32)
+extern void AndroidAppodealClient_GetNetworks_mAAFDFAE77E13CAC720CE0711666B3B8E2139C033 (void);
+// 0x0000003C AppodealStack.Monetization.Common.AppodealReward AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetReward(System.String)
+extern void AndroidAppodealClient_GetReward_m45064DFDFA28985213DC1EDF5F717E1CC323D53F (void);
+// 0x0000003D System.Collections.Generic.KeyValuePair`2<System.String,System.Double> AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetRewardParameters()
+extern void AndroidAppodealClient_GetRewardParameters_m77063B26C811ABB7358443A6A5471368F33494BB (void);
+// 0x0000003E System.Collections.Generic.KeyValuePair`2<System.String,System.Double> AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetRewardParameters(System.String)
+extern void AndroidAppodealClient_GetRewardParameters_mCCC4E5CEE7F3A6BECE76E3CB498451F29B2E56A2 (void);
+// 0x0000003F System.Double AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetPredictedEcpm(System.Int32)
+extern void AndroidAppodealClient_GetPredictedEcpm_m01E4BE57CC93895C420FBB3BC9C99BD0CCE79670 (void);
+// 0x00000040 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::Destroy(System.Int32)
+extern void AndroidAppodealClient_Destroy_m0C6E3D9B63BB45008E4CF2286B6A5A9B9150C2AB (void);
+// 0x00000041 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetUserId(System.String)
+extern void AndroidAppodealClient_SetUserId_m959C3894AB04F456DAFD64312A3F0A1E675FAC84 (void);
+// 0x00000042 System.String AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::GetUserId()
+extern void AndroidAppodealClient_GetUserId_mEA7A8D1EF095D900E846020690CAA293881D7E9D (void);
+// 0x00000043 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::setUserAge(System.Int32)
+extern void AndroidAppodealClient_setUserAge_m738AF970EFF3906B9A361D378EBB6470EF183DEA (void);
+// 0x00000044 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::setUserGender(AppodealStack.Monetization.Common.AppodealUserGender)
+extern void AndroidAppodealClient_setUserGender_m856E923830808F080161E948F471118B1B0F6F7A (void);
+// 0x00000045 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetInterstitialCallbacks(AppodealStack.Monetization.Common.IInterstitialAdListener)
+extern void AndroidAppodealClient_SetInterstitialCallbacks_m86E03C6291F32CBA7268162EE34ADBF05EED8E4D (void);
+// 0x00000046 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetRewardedVideoCallbacks(AppodealStack.Monetization.Common.IRewardedVideoAdListener)
+extern void AndroidAppodealClient_SetRewardedVideoCallbacks_mE1C2A37DCECC7FB0F23884112C99EFFCD91F3136 (void);
+// 0x00000047 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetBannerCallbacks(AppodealStack.Monetization.Common.IBannerAdListener)
+extern void AndroidAppodealClient_SetBannerCallbacks_mEC5276B8EFC7A0F8F9A67EB1B286A5D3CE8B4498 (void);
+// 0x00000048 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetMrecCallbacks(AppodealStack.Monetization.Common.IMrecAdListener)
+extern void AndroidAppodealClient_SetMrecCallbacks_mB822FC03D2E6D54895E962A8C21F8BE17DC7B0AF (void);
+// 0x00000049 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetAdRevenueCallback(AppodealStack.Monetization.Common.IAdRevenueListener)
+extern void AndroidAppodealClient_SetAdRevenueCallback_m98F0BE665663D2C8D7154CF615BB771BAAFEAE3B (void);
+// 0x0000004A System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::setSharedAdsInstanceAcrossActivities(System.Boolean)
+extern void AndroidAppodealClient_setSharedAdsInstanceAcrossActivities_mDB7D5B83949D5962BDE710E7243BADFB73216864 (void);
+// 0x0000004B System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetUseSafeArea(System.Boolean)
+extern void AndroidAppodealClient_SetUseSafeArea_m168991CAAF5ACD6312E21858A9779203DA12BD29 (void);
+// 0x0000004C System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::IsAutoCacheEnabled(System.Int32)
+extern void AndroidAppodealClient_IsAutoCacheEnabled_m9EBD1E7B097942A14E8F247F3B6198C8F720470E (void);
+// 0x0000004D System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::LogEvent(System.String,System.Collections.Generic.Dictionary`2<System.String,System.Object>)
+extern void AndroidAppodealClient_LogEvent_m436633CD35F9FB796A69B4E930506A6B0FDBF428 (void);
+// 0x0000004E System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ValidatePlayStoreInAppPurchase(AppodealStack.Monetization.Common.IPlayStoreInAppPurchase,AppodealStack.Monetization.Common.IInAppPurchaseValidationListener)
+extern void AndroidAppodealClient_ValidatePlayStoreInAppPurchase_mA8A5B97590841B8C33E650894C83BFEB7682F3FB (void);
+// 0x0000004F System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::SetLocationTracking(System.Boolean)
+extern void AndroidAppodealClient_SetLocationTracking_m5543C4CDFC565FBC0E8BE0DE01EF1312B285ED09 (void);
+// 0x00000050 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::disableLocationPermissionCheck()
+extern void AndroidAppodealClient_disableLocationPermissionCheck_m5BD12CEE38DFA10E34196E86E788666EA54E66C4 (void);
+// 0x00000051 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::ValidateAppStoreInAppPurchase(AppodealStack.Monetization.Common.IAppStoreInAppPurchase,AppodealStack.Monetization.Common.IInAppPurchaseValidationListener)
+extern void AndroidAppodealClient_ValidateAppStoreInAppPurchase_m3E56AB021C0770D34909D07650C4FE43BD9A5BF0 (void);
+// 0x00000052 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient::.ctor()
+extern void AndroidAppodealClient__ctor_m7FA1FC90017A0AED05DE92A2589747DE6C58A6F8 (void);
+// 0x00000053 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient/<>c__DisplayClass90_0::.ctor()
+extern void U3CU3Ec__DisplayClass90_0__ctor_m42D77D9A30DDEEF3680260A8B3F165C7EC9E8B8C (void);
+// 0x00000054 System.Boolean AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient/<>c__DisplayClass90_0::<LogEvent>b__0(System.String)
+extern void U3CU3Ec__DisplayClass90_0_U3CLogEventU3Eb__0_m05CDE9053DF31B9C37940233EBAB71721D62C04D (void);
+// 0x00000055 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient/<>c__DisplayClass90_1::.ctor()
+extern void U3CU3Ec__DisplayClass90_1__ctor_mAC2711B0985D0A2226E0A07EBE0BCBCCA112144C (void);
+// 0x00000056 System.Void AppodealStack.Monetization.Platforms.Android.AndroidAppodealClient/<>c__DisplayClass90_1::<LogEvent>b__1(System.String)
+extern void U3CU3Ec__DisplayClass90_1_U3CLogEventU3Eb__1_mD6B72A4F4A76C0551D016B89F0838279B43D21AD (void);
+// 0x00000057 System.Object AppodealStack.Monetization.Platforms.Android.Helper::GetJavaObject(System.Object)
+extern void Helper_GetJavaObject_m77F3F6B904F2B14F34C79519CBC1D56F023AD55D (void);
+// 0x00000058 AppodealStack.Monetization.Common.IPlayStoreInAppPurchase AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::get_NativeInAppPurchase()
+extern void AndroidPlayStoreInAppPurchase_get_NativeInAppPurchase_m005675D1662F562FBB28C21437E2669562A5CE1B (void);
+// 0x00000059 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::.ctor(UnityEngine.AndroidJavaObject)
+extern void AndroidPlayStoreInAppPurchase__ctor_m0B64D80D65E10CA66E478B66EDA954BB118E03EF (void);
+// 0x0000005A UnityEngine.AndroidJavaObject AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetInAppPurchase()
+extern void AndroidPlayStoreInAppPurchase_GetInAppPurchase_m0C335F46A61CAF31670DE3916C3EBB47D4DD6240 (void);
+// 0x0000005B AppodealStack.Monetization.Common.PlayStorePurchaseType AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPurchaseType()
+extern void AndroidPlayStoreInAppPurchase_GetPurchaseType_mF844EBFDE6AB345DCC5D9E84016C410BB8FC10A7 (void);
+// 0x0000005C System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPublicKey()
+extern void AndroidPlayStoreInAppPurchase_GetPublicKey_m07EACA89116ED2B48E50D97EA214F3A51B6426C4 (void);
+// 0x0000005D System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetSignature()
+extern void AndroidPlayStoreInAppPurchase_GetSignature_m42F76F0821F21C061DD4F8BF793BEC315D24DB84 (void);
+// 0x0000005E System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPurchaseData()
+extern void AndroidPlayStoreInAppPurchase_GetPurchaseData_m0DC659FF59B486347564236F77276549A81EB41A (void);
+// 0x0000005F System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPrice()
+extern void AndroidPlayStoreInAppPurchase_GetPrice_m69ABF5700FECC5A1DF8091AEA0F5F14E6B35B3EE (void);
+// 0x00000060 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetCurrency()
+extern void AndroidPlayStoreInAppPurchase_GetCurrency_m93AB53316DED324D2A008B4E299468575B239FF8 (void);
+// 0x00000061 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetSku()
+extern void AndroidPlayStoreInAppPurchase_GetSku_mDDD2E7E72E4FB9B6932F7B31F06A66432B50526D (void);
+// 0x00000062 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetOrderId()
+extern void AndroidPlayStoreInAppPurchase_GetOrderId_m0FFAF3DB8934509FFB5605F1DB66B66F4F794147 (void);
+// 0x00000063 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPurchaseToken()
+extern void AndroidPlayStoreInAppPurchase_GetPurchaseToken_mADB9ADF1D47D7400C20E19E1D27E9BF82E2D93D6 (void);
+// 0x00000064 System.Int64 AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetPurchaseTimestamp()
+extern void AndroidPlayStoreInAppPurchase_GetPurchaseTimestamp_mF67E438520E0F5D619659BCEBD921C9D066DD11E (void);
+// 0x00000065 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetAdditionalParameters()
+extern void AndroidPlayStoreInAppPurchase_GetAdditionalParameters_m963CD58DC00897BF70DA3C609000F08088E95052 (void);
+// 0x00000066 System.String AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchase::GetDeveloperPayload()
+extern void AndroidPlayStoreInAppPurchase_GetDeveloperPayload_mB7E1FD5B1BFE371120FA76CC406FF2A2CCF3C3A9 (void);
+// 0x00000067 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::.ctor(AppodealStack.Monetization.Common.PlayStorePurchaseType)
+extern void AndroidPlayStoreInAppPurchaseBuilder__ctor_mB7B3262D941010D3F053B07B4CFDB816AAF89BCA (void);
+// 0x00000068 UnityEngine.AndroidJavaObject AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::GetBuilder()
+extern void AndroidPlayStoreInAppPurchaseBuilder_GetBuilder_m0695D77C42936E81B7DDD5E9D2553E95D93CF31E (void);
+// 0x00000069 AppodealStack.Monetization.Common.IPlayStoreInAppPurchase AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::Build()
+extern void AndroidPlayStoreInAppPurchaseBuilder_Build_mCD008607B1D9E7BB93069DBD0D918CC08B852074 (void);
+// 0x0000006A System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithPublicKey(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithPublicKey_m466ABC3F2F008628D1601400AB6FE80DC9AF7779 (void);
+// 0x0000006B System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithSignature(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithSignature_mADE24A0EE6CE27B07284DDC1FD4AA89B5FE33486 (void);
+// 0x0000006C System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithPurchaseData(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseData_m59AAD76CA2F2A7D1EECB1B9043794AC20D92FF74 (void);
+// 0x0000006D System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithPrice(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithPrice_m6567EA4194EC25AD01FD90CCF801FA554D8F4685 (void);
+// 0x0000006E System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithCurrency(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithCurrency_m4945E024AD2B674B111AA3B369EF6DED605327DF (void);
+// 0x0000006F System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithSku(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithSku_m4065883FD5052BFD0039D4B462C264ED16D7D781 (void);
+// 0x00000070 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithOrderId(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithOrderId_m96E0BB0CDA568E2E60335445FEF538D5B5DB4572 (void);
+// 0x00000071 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithDeveloperPayload(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithDeveloperPayload_mF28C73CB15B646CC73767921618C79FFE0764200 (void);
+// 0x00000072 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithPurchaseToken(System.String)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseToken_m64FB5D5AA307DAEA3E61C274F68E4CA33F416342 (void);
+// 0x00000073 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithPurchaseTimestamp(System.Int64)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseTimestamp_m23BC75298CA7E5A159144B388294A4AC07AF3345 (void);
+// 0x00000074 System.Void AppodealStack.Monetization.Platforms.Android.AndroidPlayStoreInAppPurchaseBuilder::WithAdditionalParameters(System.Collections.Generic.Dictionary`2<System.String,System.String>)
+extern void AndroidPlayStoreInAppPurchaseBuilder_WithAdditionalParameters_m9D510A627670A8DE52111676F087A92E7ABE5418 (void);
+// 0x00000075 System.Void AppodealStack.Monetization.Platforms.Android.AppodealAdRevenueCallback::.ctor(AppodealStack.Monetization.Common.IAdRevenueListener)
+extern void AppodealAdRevenueCallback__ctor_mA12299998BD70D33F9CA73AA41BBD3BDD6CE5297 (void);
+// 0x00000076 System.Void AppodealStack.Monetization.Platforms.Android.AppodealAdRevenueCallback::onAdRevenueReceive(UnityEngine.AndroidJavaObject)
+extern void AppodealAdRevenueCallback_onAdRevenueReceive_mB4FEA9EF2A0E4540029CF7BA3CA2BB39197F54CC (void);
+// 0x00000077 System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::.ctor(AppodealStack.Monetization.Common.IBannerAdListener)
+extern void AppodealBannerCallbacks__ctor_m4853C650FD4C4AC0372AC434B054962FB809355A (void);
+// 0x00000078 System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerLoaded(System.Int32,System.Boolean)
+extern void AppodealBannerCallbacks_onBannerLoaded_m489F0C82C9853D4C47341DF678768EC0A8B4EE96 (void);
+// 0x00000079 System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerFailedToLoad()
+extern void AppodealBannerCallbacks_onBannerFailedToLoad_m07AA049F5B02771D1B1D5B7B75DAE441B11C5F44 (void);
+// 0x0000007A System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerShown()
+extern void AppodealBannerCallbacks_onBannerShown_mB2934A32E3646DA0C8856E2AF6297C1D9111BC7B (void);
+// 0x0000007B System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerShowFailed()
+extern void AppodealBannerCallbacks_onBannerShowFailed_mDFE1F7D4B838153C644E9CADB0D76428147664A6 (void);
+// 0x0000007C System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerClicked()
+extern void AppodealBannerCallbacks_onBannerClicked_mFC58F36D5602D868479FCC2A6E3E1849F5593531 (void);
+// 0x0000007D System.Void AppodealStack.Monetization.Platforms.Android.AppodealBannerCallbacks::onBannerExpired()
+extern void AppodealBannerCallbacks_onBannerExpired_m53B977C3FB2BDCEF4C0567D1C40EEAF58DD25098 (void);
+// 0x0000007E System.Void AppodealStack.Monetization.Platforms.Android.AppodealInitializationCallback::.ctor(AppodealStack.Monetization.Common.IAppodealInitializationListener)
+extern void AppodealInitializationCallback__ctor_m6CFF2F48F8264054D6619186216CFAEC16EB1081 (void);
+// 0x0000007F System.Void AppodealStack.Monetization.Platforms.Android.AppodealInitializationCallback::onInitializationFinished(UnityEngine.AndroidJavaObject)
+extern void AppodealInitializationCallback_onInitializationFinished_mE3CCDE2632E8A74B9208E3E4FF692DDC2887323F (void);
+// 0x00000080 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::.ctor(AppodealStack.Monetization.Common.IInterstitialAdListener)
+extern void AppodealInterstitialCallbacks__ctor_mA21E178A2DE273825DD3272B89579052E3494323 (void);
+// 0x00000081 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialLoaded(System.Boolean)
+extern void AppodealInterstitialCallbacks_onInterstitialLoaded_mFEBA0D46D72FE7E9B1D21832777616559EEE1336 (void);
+// 0x00000082 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialFailedToLoad()
+extern void AppodealInterstitialCallbacks_onInterstitialFailedToLoad_m6083DC200C74117502502253339F4EC31D5B42FA (void);
+// 0x00000083 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialShowFailed()
+extern void AppodealInterstitialCallbacks_onInterstitialShowFailed_m47881B5931321BE8E4B3B89498CDDC5D6B2CF24A (void);
+// 0x00000084 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialShown()
+extern void AppodealInterstitialCallbacks_onInterstitialShown_m0891E433CE9F9BD0C765AB0A330771D94C2D72C4 (void);
+// 0x00000085 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialClicked()
+extern void AppodealInterstitialCallbacks_onInterstitialClicked_m4D32311EA00194501C90F3B19B53D13EF76A802F (void);
+// 0x00000086 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialClosed()
+extern void AppodealInterstitialCallbacks_onInterstitialClosed_mD4E481AC739FDD818F96EC678A5813615E75298D (void);
+// 0x00000087 System.Void AppodealStack.Monetization.Platforms.Android.AppodealInterstitialCallbacks::onInterstitialExpired()
+extern void AppodealInterstitialCallbacks_onInterstitialExpired_m25C25FE5A07EE05B6435CA37FB8D7329D268B995 (void);
+// 0x00000088 System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::.ctor(AppodealStack.Monetization.Common.IMrecAdListener)
+extern void AppodealMrecCallbacks__ctor_mEF1D604955C81EEA599901E06898251B8D4932DB (void);
+// 0x00000089 System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecLoaded(System.Boolean)
+extern void AppodealMrecCallbacks_onMrecLoaded_mAFADA507EF13D37F9FC7275EBCF425A8B3F4D195 (void);
+// 0x0000008A System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecFailedToLoad()
+extern void AppodealMrecCallbacks_onMrecFailedToLoad_mC7997B2C23577D69E6092518427FF83432BAF550 (void);
+// 0x0000008B System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecShown()
+extern void AppodealMrecCallbacks_onMrecShown_m7A78A7FC80E4D1B78423B4F62C73BE32AF3451C6 (void);
+// 0x0000008C System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecShowFailed()
+extern void AppodealMrecCallbacks_onMrecShowFailed_m10752CBF2053924FE0A3D94C86AC2FEA27C3E71D (void);
+// 0x0000008D System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecClicked()
+extern void AppodealMrecCallbacks_onMrecClicked_mCEEED1E1EE52B786B9C3613EA58D7107A9C93200 (void);
+// 0x0000008E System.Void AppodealStack.Monetization.Platforms.Android.AppodealMrecCallbacks::onMrecExpired()
+extern void AppodealMrecCallbacks_onMrecExpired_m247A6824E5244E024223BB87F8F9027C62F521E4 (void);
+// 0x0000008F System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::.ctor(AppodealStack.Monetization.Common.IRewardedVideoAdListener)
+extern void AppodealRewardedVideoCallbacks__ctor_m604E18990CDDE819AD43B355C3D2F8368819330C (void);
+// 0x00000090 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoLoaded(System.Boolean)
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoLoaded_m3396C383C8B9E04D9C3B5562651A4BEDDC0421AB (void);
+// 0x00000091 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoFailedToLoad()
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoFailedToLoad_mAF2430A8744A1B45D1AF729CBF8B3C95852056F7 (void);
+// 0x00000092 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoShowFailed()
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoShowFailed_mAF116471CE654B22548EE753B17216531943851E (void);
+// 0x00000093 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoShown()
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoShown_m7D9EAFDCB72AAB69C134CDC89BC3CFAD255FAAED (void);
+// 0x00000094 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoFinished(System.Double,UnityEngine.AndroidJavaObject)
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoFinished_m481C341ABC5B9D06C4B69757AC86410591BA4619 (void);
+// 0x00000095 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoFinished(System.Double,System.String)
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoFinished_mB72CFA9CD0F29D55AFA8752234DAA9829FD6054F (void);
+// 0x00000096 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoClosed(System.Boolean)
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoClosed_m3242CC5B2B0A367FA11AF3BD385659BF0B5DF4B8 (void);
+// 0x00000097 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoExpired()
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoExpired_m22C57A584E5B00008AF57BFE6DB049785A2642C6 (void);
+// 0x00000098 System.Void AppodealStack.Monetization.Platforms.Android.AppodealRewardedVideoCallbacks::onRewardedVideoClicked()
+extern void AppodealRewardedVideoCallbacks_onRewardedVideoClicked_m40CBDA50754BCB4C26E16BDED269F87A6704A18C (void);
+// 0x00000099 System.Void AppodealStack.Monetization.Platforms.Android.InAppPurchaseValidationCallbacks::.ctor(AppodealStack.Monetization.Common.IInAppPurchaseValidationListener)
+extern void InAppPurchaseValidationCallbacks__ctor_mD3E8CF58A333111C59A561EB22E0D78953604DF8 (void);
+// 0x0000009A System.Void AppodealStack.Monetization.Platforms.Android.InAppPurchaseValidationCallbacks::onInAppPurchaseValidateSuccess(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject)
+extern void InAppPurchaseValidationCallbacks_onInAppPurchaseValidateSuccess_mB8226E213ADBACE45DEFB98BE922107A82CEB0C8 (void);
+// 0x0000009B System.Void AppodealStack.Monetization.Platforms.Android.InAppPurchaseValidationCallbacks::onInAppPurchaseValidateFail(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject)
+extern void InAppPurchaseValidationCallbacks_onInAppPurchaseValidateFail_m8C253C013BA691B7C87432E3B84E43494BE59C06 (void);
+// 0x0000009C System.String AppodealStack.Monetization.Platforms.Android.InAppPurchaseValidationCallbacks::CreateResponse(UnityEngine.AndroidJavaObject,UnityEngine.AndroidJavaObject)
+extern void InAppPurchaseValidationCallbacks_CreateResponse_m07195589767399373A925542F0F4A8C751B85CBB (void);
+static Il2CppMethodPointer s_methodPointers[156] = 
+{
+	AndroidAppodealClient_NativeYAxisPosForUnityViewPos_m4E079040EE263F7A26293422282255A998072B3F,
+	AndroidAppodealClient_NativeAdTypesForType_mF50D56E5CF82CB5F7CF4934A9272FF854C5D3CD9,
+	AndroidAppodealClient_NativeShowStyleForType_mFDF1BB48C487EEDB54E427688FE270B4A901BBF2,
+	AndroidAppodealClient_GetAppodealClass_m9F7C395D3A36DBB1BCD43E7716DC80142C496841,
+	AndroidAppodealClient_GetAppodealUnityClass_mF50B725BDAC44637D8142A6970203FDC6A8A680C,
+	AndroidAppodealClient_GetAppodealBannerInstance_mC8144BD0699A451A293269235644B84B0AFC1856,
+	AndroidAppodealClient_GetActivity_m79A4F50B2DC0EA9C4ABE896CD547C03380F1210A,
+	AndroidAppodealClient_SetCallbacks_mC821BC2377D3A776FD8E48504A18D05E53DAAB2D,
+	AndroidAppodealClient_GetInitCallback_m403904FFB3AFCEF1B191F544C24E1B4202CA5BBE,
+	AndroidAppodealClient_GetPurchaseCallback_m4569F264BAE52987308E5B4001967CA5CF14CAAA,
+	AndroidAppodealClient_Initialize_m4E4ABD6E4DCA2156B883E194643E18888C9CE689,
+	AndroidAppodealClient_initialize_m03AE43BCC7AC176E3A78D0C50B9ED063821EEF1F,
+	AndroidAppodealClient_initialize_m172A4612861E79CB483D9D119BDD7EE32C5574AC,
+	AndroidAppodealClient_initialize_m301F94CD20503917CA05D0EB0DF11E1C7B28C415,
+	AndroidAppodealClient_IsInitialized_mCC33659D7B421B0554241311AF51C92705A4BC7B,
+	AndroidAppodealClient_Show_mC470EACF8FB174C0A9E4F0D147D11852CA11E7ED,
+	AndroidAppodealClient_Show_mC2E07555507B5BE4D9224518924BA5F2C6421811,
+	AndroidAppodealClient_ShowBannerView_m407BA13ECABF1C611809184BCFDC3CBBBFD867D8,
+	AndroidAppodealClient_ShowMrecView_m233089A1828DEC3D141728E9A4362E99F7CDB390,
+	AndroidAppodealClient_IsLoaded_mD839D0E4358180D9E051F776FBD86A200FA67D5E,
+	AndroidAppodealClient_Cache_m742DDAD09479DC5A70C8825B7734B463C976B4EA,
+	AndroidAppodealClient_Hide_m71E95E7FEAADF999A9F849B09D8DB94BDA4E122A,
+	AndroidAppodealClient_HideBannerView_m87AC435B51D153B89E6C832368E8DD0ED5C38E50,
+	AndroidAppodealClient_HideMrecView_mFE58CF3373205F23DB4F4885F9A12A86D35B1BEC,
+	AndroidAppodealClient_IsPrecache_m40F1731403C70DEE048A7806F109721A7F732616,
+	AndroidAppodealClient_SetAutoCache_m6CBFA26E93C04D497A67C5CFF08AD0859B759FA5,
+	AndroidAppodealClient_SetSmartBanners_mFA31ADDED16BA5BA2BAA89DE068BA466AB033999,
+	AndroidAppodealClient_IsSmartBannersEnabled_m0F4A6D9F1C07382DEE827C32ABDA908DF4BC43D3,
+	AndroidAppodealClient_SetBannerAnimation_m6A8C59440B8BA365DC38F128DEBE0E1F6FF4DF0F,
+	AndroidAppodealClient_SetTabletBanners_mEA66DAD42FA49E6AD193E06A3FA83BC12AA041E8,
+	AndroidAppodealClient_SetBannerRotation_m15447DC73E36E1B23E49D034E65EDBCB094EDDC4,
+	AndroidAppodealClient_SetTesting_m5B9FF63CF872D4AD7333ADFA5C25B5BE0C4DD236,
+	AndroidAppodealClient_SetLogLevel_mF9BE2EC3305C996B031E4312823687052C5CB19C,
+	AndroidAppodealClient_SetChildDirectedTreatment_m3B621675B947CA1162C72936FC33AC759FCCCE5A,
+	AndroidAppodealClient_updateConsent_m7593E81AB8C4A7038DB2EFEE096C6C0DA2E4B7EF,
+	AndroidAppodealClient_UpdateConsent_m38BD176CAA73FB8CA63F9FC80568656124E7B611,
+	AndroidAppodealClient_UpdateGdprConsent_mD858BAEBA54DF3E035A29E1126135CB835996A6F,
+	AndroidAppodealClient_UpdateCcpaConsent_m97F1BBA2C9928769367C27849062D4C8B7E66C3D,
+	AndroidAppodealClient_DisableNetwork_m4D0B5D546323D228AB06B0232F7A125E6B6DC2AA,
+	AndroidAppodealClient_DisableNetwork_mC3012E5C6952E05C8A57AED8F658C03656EBD49B,
+	AndroidAppodealClient_SetTriggerOnLoadedOnPrecache_m8208C8B958E9635A3EA538307E9592CD54B661CC,
+	AndroidAppodealClient_MuteVideosIfCallsMuted_m37F7EA3E1192CD85D4D2CE950B0FC7C3219F2C55,
+	AndroidAppodealClient_ShowTestScreen_mE8AEA74AF57862CD25FDFCAEA06F17C1A52B23F6,
+	AndroidAppodealClient_GetVersion_m58342D00F601C47543E1948D84A2127DBB5C111F,
+	AndroidAppodealClient_GetSegmentId_m9FD7E0CB0928537D2FF668EE5C730B5E15064A4B,
+	AndroidAppodealClient_CanShow_mDBD267E482BC37B80DA7601C3BD5AE7F82A7CDC6,
+	AndroidAppodealClient_CanShow_mE9A526CA7FE6876171D42BB92F3630EB390EE33D,
+	AndroidAppodealClient_SetCustomFilter_mCECA34AA4B312F4D5B692FA6977BDB5EC1A10EEF,
+	AndroidAppodealClient_SetCustomFilter_m15C2D3FAD2FBB581069744E4B8838B043587264C,
+	AndroidAppodealClient_SetCustomFilter_m407A4C8CBF85B5AA02084AA83BF7C6D7972D18E2,
+	AndroidAppodealClient_SetCustomFilter_mAB19970B7C9F11EEA618B14ACB359E8784247582,
+	AndroidAppodealClient_ResetCustomFilter_mC6D94F1EE3E7642EDEDB0E0B69101017FE653F88,
+	AndroidAppodealClient_SetExtraData_m7BB661A218A4CD9CA2FC8CD3149F3C63183E5C3E,
+	AndroidAppodealClient_SetExtraData_m159C91C8355DA7F4A439077FED1268E506DA2991,
+	AndroidAppodealClient_SetExtraData_mC5ED1E1FDD307C66730E76CEB67E503E9C51EEF5,
+	AndroidAppodealClient_SetExtraData_mC34AC60F587CF17ACD091006C32B09ADEAE7BE63,
+	AndroidAppodealClient_ResetExtraData_m48F88B03F1760A24E20F6590D6A073C39E3DC4A9,
+	AndroidAppodealClient_TrackInAppPurchase_m1028982BCAAA969D5CDB53F05956F2C9BAFDB4BC,
+	AndroidAppodealClient_GetNetworks_mAAFDFAE77E13CAC720CE0711666B3B8E2139C033,
+	AndroidAppodealClient_GetReward_m45064DFDFA28985213DC1EDF5F717E1CC323D53F,
+	AndroidAppodealClient_GetRewardParameters_m77063B26C811ABB7358443A6A5471368F33494BB,
+	AndroidAppodealClient_GetRewardParameters_mCCC4E5CEE7F3A6BECE76E3CB498451F29B2E56A2,
+	AndroidAppodealClient_GetPredictedEcpm_m01E4BE57CC93895C420FBB3BC9C99BD0CCE79670,
+	AndroidAppodealClient_Destroy_m0C6E3D9B63BB45008E4CF2286B6A5A9B9150C2AB,
+	AndroidAppodealClient_SetUserId_m959C3894AB04F456DAFD64312A3F0A1E675FAC84,
+	AndroidAppodealClient_GetUserId_mEA7A8D1EF095D900E846020690CAA293881D7E9D,
+	AndroidAppodealClient_setUserAge_m738AF970EFF3906B9A361D378EBB6470EF183DEA,
+	AndroidAppodealClient_setUserGender_m856E923830808F080161E948F471118B1B0F6F7A,
+	AndroidAppodealClient_SetInterstitialCallbacks_m86E03C6291F32CBA7268162EE34ADBF05EED8E4D,
+	AndroidAppodealClient_SetRewardedVideoCallbacks_mE1C2A37DCECC7FB0F23884112C99EFFCD91F3136,
+	AndroidAppodealClient_SetBannerCallbacks_mEC5276B8EFC7A0F8F9A67EB1B286A5D3CE8B4498,
+	AndroidAppodealClient_SetMrecCallbacks_mB822FC03D2E6D54895E962A8C21F8BE17DC7B0AF,
+	AndroidAppodealClient_SetAdRevenueCallback_m98F0BE665663D2C8D7154CF615BB771BAAFEAE3B,
+	AndroidAppodealClient_setSharedAdsInstanceAcrossActivities_mDB7D5B83949D5962BDE710E7243BADFB73216864,
+	AndroidAppodealClient_SetUseSafeArea_m168991CAAF5ACD6312E21858A9779203DA12BD29,
+	AndroidAppodealClient_IsAutoCacheEnabled_m9EBD1E7B097942A14E8F247F3B6198C8F720470E,
+	AndroidAppodealClient_LogEvent_m436633CD35F9FB796A69B4E930506A6B0FDBF428,
+	AndroidAppodealClient_ValidatePlayStoreInAppPurchase_mA8A5B97590841B8C33E650894C83BFEB7682F3FB,
+	AndroidAppodealClient_SetLocationTracking_m5543C4CDFC565FBC0E8BE0DE01EF1312B285ED09,
+	AndroidAppodealClient_disableLocationPermissionCheck_m5BD12CEE38DFA10E34196E86E788666EA54E66C4,
+	AndroidAppodealClient_ValidateAppStoreInAppPurchase_m3E56AB021C0770D34909D07650C4FE43BD9A5BF0,
+	AndroidAppodealClient__ctor_m7FA1FC90017A0AED05DE92A2589747DE6C58A6F8,
+	U3CU3Ec__DisplayClass90_0__ctor_m42D77D9A30DDEEF3680260A8B3F165C7EC9E8B8C,
+	U3CU3Ec__DisplayClass90_0_U3CLogEventU3Eb__0_m05CDE9053DF31B9C37940233EBAB71721D62C04D,
+	U3CU3Ec__DisplayClass90_1__ctor_mAC2711B0985D0A2226E0A07EBE0BCBCCA112144C,
+	U3CU3Ec__DisplayClass90_1_U3CLogEventU3Eb__1_mD6B72A4F4A76C0551D016B89F0838279B43D21AD,
+	Helper_GetJavaObject_m77F3F6B904F2B14F34C79519CBC1D56F023AD55D,
+	AndroidPlayStoreInAppPurchase_get_NativeInAppPurchase_m005675D1662F562FBB28C21437E2669562A5CE1B,
+	AndroidPlayStoreInAppPurchase__ctor_m0B64D80D65E10CA66E478B66EDA954BB118E03EF,
+	AndroidPlayStoreInAppPurchase_GetInAppPurchase_m0C335F46A61CAF31670DE3916C3EBB47D4DD6240,
+	AndroidPlayStoreInAppPurchase_GetPurchaseType_mF844EBFDE6AB345DCC5D9E84016C410BB8FC10A7,
+	AndroidPlayStoreInAppPurchase_GetPublicKey_m07EACA89116ED2B48E50D97EA214F3A51B6426C4,
+	AndroidPlayStoreInAppPurchase_GetSignature_m42F76F0821F21C061DD4F8BF793BEC315D24DB84,
+	AndroidPlayStoreInAppPurchase_GetPurchaseData_m0DC659FF59B486347564236F77276549A81EB41A,
+	AndroidPlayStoreInAppPurchase_GetPrice_m69ABF5700FECC5A1DF8091AEA0F5F14E6B35B3EE,
+	AndroidPlayStoreInAppPurchase_GetCurrency_m93AB53316DED324D2A008B4E299468575B239FF8,
+	AndroidPlayStoreInAppPurchase_GetSku_mDDD2E7E72E4FB9B6932F7B31F06A66432B50526D,
+	AndroidPlayStoreInAppPurchase_GetOrderId_m0FFAF3DB8934509FFB5605F1DB66B66F4F794147,
+	AndroidPlayStoreInAppPurchase_GetPurchaseToken_mADB9ADF1D47D7400C20E19E1D27E9BF82E2D93D6,
+	AndroidPlayStoreInAppPurchase_GetPurchaseTimestamp_mF67E438520E0F5D619659BCEBD921C9D066DD11E,
+	AndroidPlayStoreInAppPurchase_GetAdditionalParameters_m963CD58DC00897BF70DA3C609000F08088E95052,
+	AndroidPlayStoreInAppPurchase_GetDeveloperPayload_mB7E1FD5B1BFE371120FA76CC406FF2A2CCF3C3A9,
+	AndroidPlayStoreInAppPurchaseBuilder__ctor_mB7B3262D941010D3F053B07B4CFDB816AAF89BCA,
+	AndroidPlayStoreInAppPurchaseBuilder_GetBuilder_m0695D77C42936E81B7DDD5E9D2553E95D93CF31E,
+	AndroidPlayStoreInAppPurchaseBuilder_Build_mCD008607B1D9E7BB93069DBD0D918CC08B852074,
+	AndroidPlayStoreInAppPurchaseBuilder_WithPublicKey_m466ABC3F2F008628D1601400AB6FE80DC9AF7779,
+	AndroidPlayStoreInAppPurchaseBuilder_WithSignature_mADE24A0EE6CE27B07284DDC1FD4AA89B5FE33486,
+	AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseData_m59AAD76CA2F2A7D1EECB1B9043794AC20D92FF74,
+	AndroidPlayStoreInAppPurchaseBuilder_WithPrice_m6567EA4194EC25AD01FD90CCF801FA554D8F4685,
+	AndroidPlayStoreInAppPurchaseBuilder_WithCurrency_m4945E024AD2B674B111AA3B369EF6DED605327DF,
+	AndroidPlayStoreInAppPurchaseBuilder_WithSku_m4065883FD5052BFD0039D4B462C264ED16D7D781,
+	AndroidPlayStoreInAppPurchaseBuilder_WithOrderId_m96E0BB0CDA568E2E60335445FEF538D5B5DB4572,
+	AndroidPlayStoreInAppPurchaseBuilder_WithDeveloperPayload_mF28C73CB15B646CC73767921618C79FFE0764200,
+	AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseToken_m64FB5D5AA307DAEA3E61C274F68E4CA33F416342,
+	AndroidPlayStoreInAppPurchaseBuilder_WithPurchaseTimestamp_m23BC75298CA7E5A159144B388294A4AC07AF3345,
+	AndroidPlayStoreInAppPurchaseBuilder_WithAdditionalParameters_m9D510A627670A8DE52111676F087A92E7ABE5418,
+	AppodealAdRevenueCallback__ctor_mA12299998BD70D33F9CA73AA41BBD3BDD6CE5297,
+	AppodealAdRevenueCallback_onAdRevenueReceive_mB4FEA9EF2A0E4540029CF7BA3CA2BB39197F54CC,
+	AppodealBannerCallbacks__ctor_m4853C650FD4C4AC0372AC434B054962FB809355A,
+	AppodealBannerCallbacks_onBannerLoaded_m489F0C82C9853D4C47341DF678768EC0A8B4EE96,
+	AppodealBannerCallbacks_onBannerFailedToLoad_m07AA049F5B02771D1B1D5B7B75DAE441B11C5F44,
+	AppodealBannerCallbacks_onBannerShown_mB2934A32E3646DA0C8856E2AF6297C1D9111BC7B,
+	AppodealBannerCallbacks_onBannerShowFailed_mDFE1F7D4B838153C644E9CADB0D76428147664A6,
+	AppodealBannerCallbacks_onBannerClicked_mFC58F36D5602D868479FCC2A6E3E1849F5593531,
+	AppodealBannerCallbacks_onBannerExpired_m53B977C3FB2BDCEF4C0567D1C40EEAF58DD25098,
+	AppodealInitializationCallback__ctor_m6CFF2F48F8264054D6619186216CFAEC16EB1081,
+	AppodealInitializationCallback_onInitializationFinished_mE3CCDE2632E8A74B9208E3E4FF692DDC2887323F,
+	AppodealInterstitialCallbacks__ctor_mA21E178A2DE273825DD3272B89579052E3494323,
+	AppodealInterstitialCallbacks_onInterstitialLoaded_mFEBA0D46D72FE7E9B1D21832777616559EEE1336,
+	AppodealInterstitialCallbacks_onInterstitialFailedToLoad_m6083DC200C74117502502253339F4EC31D5B42FA,
+	AppodealInterstitialCallbacks_onInterstitialShowFailed_m47881B5931321BE8E4B3B89498CDDC5D6B2CF24A,
+	AppodealInterstitialCallbacks_onInterstitialShown_m0891E433CE9F9BD0C765AB0A330771D94C2D72C4,
+	AppodealInterstitialCallbacks_onInterstitialClicked_m4D32311EA00194501C90F3B19B53D13EF76A802F,
+	AppodealInterstitialCallbacks_onInterstitialClosed_mD4E481AC739FDD818F96EC678A5813615E75298D,
+	AppodealInterstitialCallbacks_onInterstitialExpired_m25C25FE5A07EE05B6435CA37FB8D7329D268B995,
+	AppodealMrecCallbacks__ctor_mEF1D604955C81EEA599901E06898251B8D4932DB,
+	AppodealMrecCallbacks_onMrecLoaded_mAFADA507EF13D37F9FC7275EBCF425A8B3F4D195,
+	AppodealMrecCallbacks_onMrecFailedToLoad_mC7997B2C23577D69E6092518427FF83432BAF550,
+	AppodealMrecCallbacks_onMrecShown_m7A78A7FC80E4D1B78423B4F62C73BE32AF3451C6,
+	AppodealMrecCallbacks_onMrecShowFailed_m10752CBF2053924FE0A3D94C86AC2FEA27C3E71D,
+	AppodealMrecCallbacks_onMrecClicked_mCEEED1E1EE52B786B9C3613EA58D7107A9C93200,
+	AppodealMrecCallbacks_onMrecExpired_m247A6824E5244E024223BB87F8F9027C62F521E4,
+	AppodealRewardedVideoCallbacks__ctor_m604E18990CDDE819AD43B355C3D2F8368819330C,
+	AppodealRewardedVideoCallbacks_onRewardedVideoLoaded_m3396C383C8B9E04D9C3B5562651A4BEDDC0421AB,
+	AppodealRewardedVideoCallbacks_onRewardedVideoFailedToLoad_mAF2430A8744A1B45D1AF729CBF8B3C95852056F7,
+	AppodealRewardedVideoCallbacks_onRewardedVideoShowFailed_mAF116471CE654B22548EE753B17216531943851E,
+	AppodealRewardedVideoCallbacks_onRewardedVideoShown_m7D9EAFDCB72AAB69C134CDC89BC3CFAD255FAAED,
+	AppodealRewardedVideoCallbacks_onRewardedVideoFinished_m481C341ABC5B9D06C4B69757AC86410591BA4619,
+	AppodealRewardedVideoCallbacks_onRewardedVideoFinished_mB72CFA9CD0F29D55AFA8752234DAA9829FD6054F,
+	AppodealRewardedVideoCallbacks_onRewardedVideoClosed_m3242CC5B2B0A367FA11AF3BD385659BF0B5DF4B8,
+	AppodealRewardedVideoCallbacks_onRewardedVideoExpired_m22C57A584E5B00008AF57BFE6DB049785A2642C6,
+	AppodealRewardedVideoCallbacks_onRewardedVideoClicked_m40CBDA50754BCB4C26E16BDED269F87A6704A18C,
+	InAppPurchaseValidationCallbacks__ctor_mD3E8CF58A333111C59A561EB22E0D78953604DF8,
+	InAppPurchaseValidationCallbacks_onInAppPurchaseValidateSuccess_mB8226E213ADBACE45DEFB98BE922107A82CEB0C8,
+	InAppPurchaseValidationCallbacks_onInAppPurchaseValidateFail_m8C253C013BA691B7C87432E3B84E43494BE59C06,
+	InAppPurchaseValidationCallbacks_CreateResponse_m07195589767399373A925542F0F4A8C751B85CBB,
+};
+static const int32_t s_InvokerIndices[156] = 
+{
+	8285,
+	8285,
+	8285,
+	5589,
+	5589,
+	5589,
+	5589,
+	5714,
+	4145,
+	4145,
+	1537,
+	2730,
+	1531,
+	1537,
+	3345,
+	3345,
+	1701,
+	1182,
+	1182,
+	3345,
+	4620,
+	4620,
+	5714,
+	5714,
+	3345,
+	2465,
+	4555,
+	5501,
+	4555,
+	4555,
+	2501,
+	4555,
+	4620,
+	4555,
+	4555,
+	4645,
+	4620,
+	4620,
+	4645,
+	2730,
+	2465,
+	4555,
+	5714,
+	5589,
+	5562,
+	3345,
+	1701,
+	2722,
+	2730,
+	2728,
+	2734,
+	4645,
+	2722,
+	2730,
+	2728,
+	2734,
+	4645,
+	2319,
+	4141,
+	4145,
+	5361,
+	2928,
+	3648,
+	4620,
+	4645,
+	5589,
+	4620,
+	4620,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4555,
+	4555,
+	3345,
+	2734,
+	2734,
+	4555,
+	5714,
+	2734,
+	5714,
+	5714,
+	3371,
+	5714,
+	4645,
+	8396,
+	5589,
+	4645,
+	5589,
+	5561,
+	5589,
+	5589,
+	5589,
+	5589,
+	5589,
+	5589,
+	5589,
+	5589,
+	5562,
+	5589,
+	5589,
+	4620,
+	5589,
+	5589,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4645,
+	4621,
+	4645,
+	4645,
+	4645,
+	4645,
+	2465,
+	5714,
+	5714,
+	5714,
+	5714,
+	5714,
+	4645,
+	4645,
+	4645,
+	4555,
+	5714,
+	5714,
+	5714,
+	5714,
+	5714,
+	5714,
+	4645,
+	4555,
+	5714,
+	5714,
+	5714,
+	5714,
+	5714,
+	4645,
+	4555,
+	5714,
+	5714,
+	5714,
+	2319,
+	2319,
+	4555,
+	5714,
+	5714,
+	4645,
+	2734,
+	2734,
+	2182,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AppodealStack_Monetization_Platforms_Android_CodeGenModule;
+const Il2CppCodeGenModule g_AppodealStack_Monetization_Platforms_Android_CodeGenModule = 
+{
+	"AppodealStack.Monetization.Platforms.Android.dll",
+	156,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL, // module initializer,
+	NULL,
+	NULL,
+	NULL,
+};

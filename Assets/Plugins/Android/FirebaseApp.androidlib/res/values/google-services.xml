@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">1067624992155</string>
+  <string name="google_storage_bucket" translatable="false">soccer-run-collect-all-bal-479.appspot.com</string>
+  <string name="project_id" translatable="false">soccer-run-collect-all-bal-479</string>
+  <string name="google_api_key" translatable="false">AIzaSyAo2LqBfqbeqHrsmEEOYsTCJMQGCj8Zuys</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAo2LqBfqbeqHrsmEEOYsTCJMQGCj8Zuys</string>
+  <string name="google_app_id" translatable="false">1:1067624992155:android:1f8c7ef7aaf02954be653e</string>
+  <string name="default_android_client_id" translatable="false">1067624992155-un9b31nvl4khho0mr9g1udqpms5e56oe.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">1067624992155-d1h714to4renbkdieg396ink8quuv7uj.apps.googleusercontent.com</string>
+</resources>
