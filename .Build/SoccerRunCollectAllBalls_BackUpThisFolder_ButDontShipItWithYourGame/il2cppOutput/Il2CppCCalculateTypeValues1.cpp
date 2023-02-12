@@ -5632,8 +5632,10 @@ struct GameOverPopUpConfig_tDD20F63D9E2B083718BEC79BDF9ED9C3F455BA30  : public R
 // App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig
 struct GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887  : public RuntimeObject
 {
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::LevelsCountForAd
+	int32_t ___LevelsCountForAd_0;
 	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::CoinsBonus
-	int32_t ___CoinsBonus_0;
+	int32_t ___CoinsBonus_1;
 };
 
 // Unity.Services.Analytics.Internal.GeoAPI
@@ -35951,6 +35953,8 @@ struct GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645  : public PopUp
 	GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* ____gameEvents_16;
 	// App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::_config
 	GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* ____config_17;
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::levelsCountForAdTemp
+	int32_t ___levelsCountForAdTemp_18;
 };
 
 // App.Scripts.General.Google.GoogleInitializer

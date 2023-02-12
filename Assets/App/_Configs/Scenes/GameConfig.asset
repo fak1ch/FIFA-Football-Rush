@@ -245,6 +245,7 @@ MonoBehaviour:
     GameOverPopUpConfig:
       CoinsBonus: 46
     GamePassedPopUpConfig:
+      LevelsCountForAd: 3
       CoinsBonus: 112
     FreeCoinsButtonConfig:
       CoinsBonus: 499

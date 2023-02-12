@@ -16,10 +16,12 @@ namespace App.Scripts.General.Ads.AppodealAdvertisement
             Appodeal.MuteVideosIfCallsMuted(true);
             AppodealCallbacks.Sdk.OnInitialized += InitializeFinishedCallback;
 
-            int adTypes = AppodealAdType.Interstitial | AppodealAdType.RewardedVideo;
+            int adTypes = AppodealAdType.Interstitial | AppodealAdType.Banner | AppodealAdType.RewardedVideo;
             string appKey = "2d45e6977d8a584d64bd6f890425116bcd648f7948aa7fa8";
             
             Appodeal.Initialize(appKey, adTypes);
+
+            Appodeal.Show(AppodealShowStyle.BannerBottom);
         }
 
         private void InitializeFinishedCallback(object sender, SdkInitializedEventArgs e)

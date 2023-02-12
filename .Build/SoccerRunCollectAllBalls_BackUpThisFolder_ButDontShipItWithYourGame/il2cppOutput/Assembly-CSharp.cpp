@@ -7089,6 +7089,8 @@ struct GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645  : public PopUp
 	GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* ____gameEvents_16;
 	// App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::_config
 	GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* ____config_17;
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::levelsCountForAdTemp
+	int32_t ___levelsCountForAdTemp_18;
 };
 
 // App.Scripts.General.Google.GoogleInitializer

@@ -2,6 +2,7 @@
 using App.Scripts.General.Google;
 using AppodealStack.Monetization.Api;
 using AppodealStack.Monetization.Common;
+using UnityEngine;
 
 namespace App.Scripts.General.Ads.AppodealAdvertisement
 {
@@ -19,7 +20,7 @@ namespace App.Scripts.General.Ads.AppodealAdvertisement
 
         public void ShowAd()
         {
-            Appodeal.Show(AppodealAdType.RewardedVideo);
+            Appodeal.Show(AppodealShowStyle.RewardedVideo);
         }
 
         #region Callbacks

@@ -1479,8 +1479,10 @@ struct GameOverPopUpConfig_tDD20F63D9E2B083718BEC79BDF9ED9C3F455BA30  : public R
 // App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig
 struct GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887  : public RuntimeObject
 {
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::LevelsCountForAd
+	int32_t ___LevelsCountForAd_0;
 	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::CoinsBonus
-	int32_t ___CoinsBonus_0;
+	int32_t ___CoinsBonus_1;
 };
 
 // App.Scripts.General.DoTweenAnimations.InfinityWorldMoveXConfig
@@ -4669,6 +4671,8 @@ struct GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645  : public PopUp
 	GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* ____gameEvents_16;
 	// App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::_config
 	GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* ____config_17;
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::levelsCountForAdTemp
+	int32_t ___levelsCountForAdTemp_18;
 };
 
 // App.Scripts.General.Google.GoogleInitializer
@@ -6902,12 +6906,12 @@ inline void EventHandler_1__ctor_mA69FA904AF151EE3FC7A711CCB2E76EB34219FFC (Even
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Sdk_add_OnInitialized_m7267112BBA8E34B99F29F2766E3BB8BB89C182CD (EventHandler_1_t75FD414C2DB363F6CE1DD82DF2863EA2A54BA80B* ___value0, const RuntimeMethod* method) ;
 // System.Void AppodealStack.Monetization.Api.Appodeal::Initialize(System.String,System.Int32,AppodealStack.Monetization.Common.IAppodealInitializationListener)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Appodeal_Initialize_m1C96EEAD1246DC0EDAD1BE63AB8EE2F51FCAE48A (String_t* ___appKey0, int32_t ___adTypes1, RuntimeObject* ___listener2, const RuntimeMethod* method) ;
+// System.Boolean AppodealStack.Monetization.Api.Appodeal::Show(System.Int32)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Appodeal_Show_m7C3001E77E7F76107494053AE07CF886685753AB (int32_t ___showStyle0, const RuntimeMethod* method) ;
 // System.Boolean AppodealStack.Monetization.Api.Appodeal::CanShow(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Appodeal_CanShow_m68206191A78F40A3CE2913E959939FF0E1EF6963 (int32_t ___adType0, const RuntimeMethod* method) ;
 // System.Void AppodealStack.Monetization.Api.Appodeal::SetInterstitialCallbacks(AppodealStack.Monetization.Common.IInterstitialAdListener)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Appodeal_SetInterstitialCallbacks_m76ACAD3994308E0F024754A9F05A15339C503F40 (RuntimeObject* ___listener0, const RuntimeMethod* method) ;
-// System.Boolean AppodealStack.Monetization.Api.Appodeal::Show(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Appodeal_Show_m7C3001E77E7F76107494053AE07CF886685753AB (int32_t ___showStyle0, const RuntimeMethod* method) ;
 // System.Void AppodealStack.Monetization.Api.Appodeal::SetRewardedVideoCallbacks(AppodealStack.Monetization.Common.IRewardedVideoAdListener)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Appodeal_SetRewardedVideoCallbacks_m3EB2B039931B4279C1B55CC74ECB7BDC613DB852 (RuntimeObject* ___listener0, const RuntimeMethod* method) ;
 // System.Void App.Scripts.General.Google.FirebaseAnalysis::SendFinishedRewardAdEventTrue()
@@ -13439,20 +13443,40 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GamePassedPopUp_StartNextLevel_mF9B6A3B6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
+		// levelsCountForAdTemp++;
+		int32_t L_0 = __this->___levelsCountForAdTemp_18;
+		__this->___levelsCountForAdTemp_18 = ((int32_t)il2cpp_codegen_add(L_0, 1));
+		// if (levelsCountForAdTemp >= _config.LevelsCountForAd)
+		int32_t L_1 = __this->___levelsCountForAdTemp_18;
+		GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* L_2 = __this->____config_17;
+		NullCheck(L_2);
+		int32_t L_3 = L_2->___LevelsCountForAd_0;
+		if ((((int32_t)L_1) < ((int32_t)L_3)))
+		{
+			goto IL_0037;
+		}
+	}
+	{
 		// AdsManager.Instance.InterstitialAd.TryShowAd();
-		AdsManager_t35B3C9901CE4A68788DE2D5456147FF1D4014A27* L_0;
-		L_0 = MonoSingleton_1_get_Instance_mDEFEF5FCC7BCB0182C018380F68A23E17A358ED1(MonoSingleton_1_get_Instance_mDEFEF5FCC7BCB0182C018380F68A23E17A358ED1_RuntimeMethod_var);
-		NullCheck(L_0);
-		RuntimeObject* L_1;
-		L_1 = AdsManager_get_InterstitialAd_m764DAFC370FFD7508A3BCFA09E0473CA4AAE6D1C_inline(L_0, NULL);
-		NullCheck(L_1);
-		InterfaceActionInvoker0::Invoke(6 /* System.Void App.Scripts.General.Ads.IAd::TryShowAd() */, IAd_t1143F7DBD09805FF2A85B8AD1248AEE9E361DE61_il2cpp_TypeInfo_var, L_1);
+		AdsManager_t35B3C9901CE4A68788DE2D5456147FF1D4014A27* L_4;
+		L_4 = MonoSingleton_1_get_Instance_mDEFEF5FCC7BCB0182C018380F68A23E17A358ED1(MonoSingleton_1_get_Instance_mDEFEF5FCC7BCB0182C018380F68A23E17A358ED1_RuntimeMethod_var);
+		NullCheck(L_4);
+		RuntimeObject* L_5;
+		L_5 = AdsManager_get_InterstitialAd_m764DAFC370FFD7508A3BCFA09E0473CA4AAE6D1C_inline(L_4, NULL);
+		NullCheck(L_5);
+		InterfaceActionInvoker0::Invoke(6 /* System.Void App.Scripts.General.Ads.IAd::TryShowAd() */, IAd_t1143F7DBD09805FF2A85B8AD1248AEE9E361DE61_il2cpp_TypeInfo_var, L_5);
+		// levelsCountForAdTemp = 0;
+		__this->___levelsCountForAdTemp_18 = 0;
+	}
+
+IL_0037:
+	{
 		// HidePopUp();
 		VirtualActionInvoker0::Invoke(5 /* System.Void App.Scripts.General.PopUpSystemSpace.PopUp::HidePopUp() */, __this);
 		// _gameEvents.RestartLevel();
-		GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* L_2 = __this->____gameEvents_16;
-		NullCheck(L_2);
-		GameEvents_RestartLevel_m2BCF7459A27C3F9AE99002A98B1E6F6B90074C75(L_2, NULL);
+		GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* L_6 = __this->____gameEvents_16;
+		NullCheck(L_6);
+		GameEvents_RestartLevel_m2BCF7459A27C3F9AE99002A98B1E6F6B90074C75(L_6, NULL);
 		// }
 		return;
 	}
@@ -13474,7 +13498,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GamePassedPopUp_AddCoinsBonus_m1AFE5853D
 		int32_t L_0 = ___itemsCount0;
 		GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* L_1 = __this->____config_17;
 		NullCheck(L_1);
-		int32_t L_2 = L_1->___CoinsBonus_0;
+		int32_t L_2 = L_1->___CoinsBonus_1;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_0, L_2));
 		// _bonusCoinsText.text = $"+{coinsBonus}";
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_3 = __this->____bonusCoinsText_14;
@@ -16786,12 +16810,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppodealInitializer_Initialize_mFC3A0227
 		EventHandler_1__ctor_mA69FA904AF151EE3FC7A711CCB2E76EB34219FFC(L_0, __this, (intptr_t)((void*)AppodealInitializer_InitializeFinishedCallback_mCBF903183945725CCD9417A861FA836C35B06262_RuntimeMethod_var), NULL);
 		il2cpp_codegen_runtime_class_init_inline(Sdk_t92817F011CC064D29CDDC8BD66E4C6517BA5C594_il2cpp_TypeInfo_var);
 		Sdk_add_OnInitialized_m7267112BBA8E34B99F29F2766E3BB8BB89C182CD(L_0, NULL);
-		// int adTypes = AppodealAdType.Interstitial | AppodealAdType.RewardedVideo;
-		V_0 = 5;
+		// int adTypes = AppodealAdType.Interstitial | AppodealAdType.Banner | AppodealAdType.RewardedVideo;
+		V_0 = 7;
 		// string appKey = "2d45e6977d8a584d64bd6f890425116bcd648f7948aa7fa8";
 		// Appodeal.Initialize(appKey, adTypes);
 		int32_t L_1 = V_0;
 		Appodeal_Initialize_m1C96EEAD1246DC0EDAD1BE63AB8EE2F51FCAE48A(_stringLiteralF4787073AF43442256555D8C1EDCD891288DB717, L_1, (RuntimeObject*)NULL, NULL);
+		// Appodeal.Show(AppodealShowStyle.BannerBottom);
+		bool L_2;
+		L_2 = Appodeal_Show_m7C3001E77E7F76107494053AE07CF886685753AB(2, NULL);
 		// }
 		return;
 	}
@@ -17347,9 +17374,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppodealRewardVideo_Initialize_mFB43E5B2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void AppodealRewardVideo_ShowAd_m40A75839E01ADC403ED2828A60A6DA2E983BD17E (AppodealRewardVideo_t3517A066491F07E07B4A9159564A4EF96A3D6DC2* __this, const RuntimeMethod* method) 
 {
 	{
-		// Appodeal.Show(AppodealAdType.RewardedVideo);
+		// Appodeal.Show(AppodealShowStyle.RewardedVideo);
 		bool L_0;
-		L_0 = Appodeal_Show_m7C3001E77E7F76107494053AE07CF886685753AB(4, NULL);
+		L_0 = Appodeal_Show_m7C3001E77E7F76107494053AE07CF886685753AB(((int32_t)32), NULL);
 		// }
 		return;
 	}

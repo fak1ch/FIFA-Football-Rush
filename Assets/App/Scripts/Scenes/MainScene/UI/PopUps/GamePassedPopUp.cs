@@ -12,6 +12,7 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
     [Serializable]
     public class GamePassedPopUpConfig
     {
+        public int LevelsCountForAd;
         public int CoinsBonus;
     }
     
@@ -26,6 +27,7 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         private GameEvents _gameEvents;
         private GamePassedPopUpConfig _config;
+        private int levelsCountForAdTemp = 0;
 
         #region Events
 
@@ -57,7 +59,13 @@ namespace App.Scripts.General.PopUpSystemSpace.PopUps
 
         private void StartNextLevel()
         {
-            AdsManager.Instance.InterstitialAd.TryShowAd();
+            levelsCountForAdTemp++;
+            if (levelsCountForAdTemp >= _config.LevelsCountForAd)
+            {
+                AdsManager.Instance.InterstitialAd.TryShowAd();
+                levelsCountForAdTemp = 0;
+            }
+            
             HidePopUp();
             _gameEvents.RestartLevel();
         }

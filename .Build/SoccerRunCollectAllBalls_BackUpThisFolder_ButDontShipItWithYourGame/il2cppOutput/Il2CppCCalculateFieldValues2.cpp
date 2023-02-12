@@ -4394,8 +4394,10 @@ struct GameOverPopUpConfig_tDD20F63D9E2B083718BEC79BDF9ED9C3F455BA30  : public R
 // App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig
 struct GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887  : public RuntimeObject
 {
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::LevelsCountForAd
+	int32_t ___LevelsCountForAd_0;
 	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig::CoinsBonus
-	int32_t ___CoinsBonus_0;
+	int32_t ___CoinsBonus_1;
 };
 
 // Unity.Services.Analytics.Internal.GeoAPI
@@ -27448,6 +27450,8 @@ struct GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645  : public PopUp
 	GameEvents_tD3CB126AE7851AD593FC12A3083E788930BDC579* ____gameEvents_16;
 	// App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUpConfig App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::_config
 	GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887* ____config_17;
+	// System.Int32 App.Scripts.General.PopUpSystemSpace.PopUps.GamePassedPopUp::levelsCountForAdTemp
+	int32_t ___levelsCountForAdTemp_18;
 };
 
 // App.Scripts.General.Google.GoogleInitializer
@@ -31312,12 +31316,12 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7143[1] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7144[6] = 
 {
 	static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____gameConfig_11)),static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____config_12)),static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____restartButton_13)),static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____bonusCoinsText_14)),static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____audioSource_15)),static_cast<int32_t>(offsetof(GameOverPopUp_t5D56A9F0862061303045C7049054E8282F76DD2C, ____gameEvents_16)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7145[1] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7145[2] = 
 {
-	static_cast<int32_t>(offsetof(GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887, ___CoinsBonus_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7146[7] = 
+	static_cast<int32_t>(offsetof(GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887, ___LevelsCountForAd_0)),static_cast<int32_t>(offsetof(GamePassedPopUpConfig_t8E838C4D8ADBF6EF3DE932BEFABD265D01B26887, ___CoinsBonus_1)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7146[8] = 
 {
-	static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____gameConfig_11)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____levelsConfig_12)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____restartButton_13)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____bonusCoinsText_14)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____audioSource_15)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____gameEvents_16)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____config_17)),};
+	static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____gameConfig_11)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____levelsConfig_12)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____restartButton_13)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____bonusCoinsText_14)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____audioSource_15)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____gameEvents_16)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ____config_17)),static_cast<int32_t>(offsetof(GamePassedPopUp_t70750AAEF52B5BB5325452B019301A151F7A1645, ___levelsCountForAdTemp_18)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable7147[3] = 
 {
 	static_cast<int32_t>(offsetof(CustomAnimation_t8BBC0474F23FD26B54B40125616967533622DBB7, ___OnStart_4)),static_cast<int32_t>(offsetof(CustomAnimation_t8BBC0474F23FD26B54B40125616967533622DBB7, ___OnEnd_5)),static_cast<int32_t>(offsetof(CustomAnimation_t8BBC0474F23FD26B54B40125616967533622DBB7, ___U3CIsPlayU3Ek__BackingField_6)),};

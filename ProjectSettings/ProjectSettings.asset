@@ -162,7 +162,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 32
   AndroidPreferredInstallLocation: 1
@@ -821,7 +821,7 @@ PlayerSettings:
   cloudProjectId: 1973354a-3eca-44bd-b187-7379811f141f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: FIFA Football Rush
+  projectName: Soccer Run. Collect All Balls!
   organizationId: fak1chcompany
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
