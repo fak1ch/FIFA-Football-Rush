@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using App.Scripts.General.Google;
 using App.Scripts.General.LoadScene;
 using App.Scripts.General.PopUpSystemSpace;
 using App.Scripts.General.PopUpSystemSpace.PopUps;
@@ -47,7 +46,6 @@ namespace App.Scripts.Scenes.General
             _mainMenuUI.gameObject.SetActive(false);
             _gameProcessUI.gameObject.SetActive(true);
             SetPauseGame(false);
-            FirebaseAnalysis.Instance.SendLevelStartEvent(_levelsConfig.SelectedLevelNumber);
         }
 
         public void RestartLevel()
@@ -57,14 +55,12 @@ namespace App.Scripts.Scenes.General
 
         private void EndLevelWithWin(int itemsCount)
         {
-            FirebaseAnalysis.Instance.SendLevelEndEvent(_levelsConfig.SelectedLevelNumber);
             GamePassedPopUp gamePassedPopUp = PopUpSystem.Instance.ShowPopUp<GamePassedPopUp>();
             gamePassedPopUp.AddCoinsBonus(itemsCount);
         }
 
         private void EndLevelWithLose(int itemsCount)
         {
-            FirebaseAnalysis.Instance.SendPlayerDieOnLevel(_levelsConfig.SelectedLevelNumber);
             PopUpSystem.Instance.ShowPopUp<GameOverPopUp>();
         }
 
