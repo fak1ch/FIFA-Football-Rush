@@ -20,7 +20,7 @@ namespace App.Scripts.Scenes.MainScene.Skins
         public void SetItemAsPurchased()
         {
             IsPurchased = true;
-            SaveRepositoryData(); 
+            SaveRepositoryData();
         }
 
         private void SaveRepositoryData()

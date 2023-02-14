@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace App.Scripts.General.Ads.AppodealAdvertisement
+namespace App.Scripts.General.Ads
 {
     public interface IAdInitializer
     {

@@ -26,7 +26,7 @@ namespace App.Scripts.General.VibrateSystem
             }
             else
             {
-                Handheld.Vibrate();
+                //Handheld.Vibrate();
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using App.Scripts.General.Ads.AppodealAdvertisement;
+﻿using App.Scripts.General.Ads.YandexAdvertisement;
 using App.Scripts.General.Singleton;
 
 
@@ -15,9 +15,9 @@ namespace App.Scripts.General.Ads
 
         private void Start()
         {
-            // _adInitializer = new AppodealInitializer();
-            // _rewardAd = new AppodealRewardVideo();
-            // _interstitialAd = new AppodealInterstitialVideo();
+            _adInitializer = new YandexInitializer();
+            _rewardAd = new YandexRewarded();
+            _interstitialAd = new YandexInterstitial();
             
             _adInitializer.Initialize();
             _rewardAd.Initialize();

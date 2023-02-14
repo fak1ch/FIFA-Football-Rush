@@ -28,7 +28,7 @@ namespace App.Scripts.Scenes.MainScene
         {
             _dieCount++;
 
-            _needShowAd = _dieCount == _config.DieCountForShowAd;
+            _needShowAd = _dieCount >= _config.DieCountForShowAd;
         }
 
         public void TryShowAd()

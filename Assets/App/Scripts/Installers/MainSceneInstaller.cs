@@ -16,7 +16,7 @@ namespace App.Scripts.Installers
         [SerializeField] private BallsScriptableObject _ballsConfig;
         [SerializeField] private LevelsScriptableObject _levelsConfig;
         [SerializeField] private LevelSpawner _levelSpawner;
-        
+
         private void Awake()
         {
             PopUpSystem.Instance.enabled = true;
