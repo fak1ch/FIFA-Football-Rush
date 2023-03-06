@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hats
+  m_text: "\u0428\u0430\u043F\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -1760,7 +1760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAP TO START
+  m_text: "\u0416\u041C\u0418 \u0427\u0422\u041E\u0411\u042B \u041D\u0410\u0427\u0410\u0422\u042C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -3701,7 +3701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SHOP
+  m_text: "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -3790,7 +3790,6 @@ GameObject:
   - component: {fileID: 956638051}
   - component: {fileID: 956638050}
   - component: {fileID: 956638054}
-  - component: {fileID: 956638053}
   - component: {fileID: 956638052}
   m_Layer: 5
   m_Name: DonateButton
@@ -3798,7 +3797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &956638048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3879,30 +3878,6 @@ MonoBehaviour:
   onClickOccurred:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &956638053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956638047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: com.fak1ch.donate
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!114 &956638054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4446,7 +4421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL 1
+  m_text: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C 1"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -5229,7 +5204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balls
+  m_text: "\u041C\u044F\u0447\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -5576,7 +5551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: free
+  m_text: "\u0425\u0410\u041B\u042F\u0412\u0410"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -5603,7 +5578,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.6
+  m_fontSize: 29.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

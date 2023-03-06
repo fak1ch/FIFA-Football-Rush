@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME OVER
+  m_text: "\u0412\u042B \u041F\u0420\u041E\u0418\u0413\u0420\u0410\u041B\u0418"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}

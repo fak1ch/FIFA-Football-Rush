@@ -30,6 +30,7 @@ namespace App.Scripts.General.Ads.YandexAdvertisement
         public void SendRewardedAdClosedEvent()
         {
             OnRewardedAdClosed?.Invoke(_rewarded);
+            _rewarded = false;
         }
 
         public void SendRewardedAdRewarded()

@@ -7,7 +7,7 @@ namespace App.Scripts.Scenes.MainScene.UI
 {
     public class LevelNumberView : MonoBehaviour
     {
-        private const string Level = "Level ";
+        private const string Level = "УРОВЕНЬ ";
         
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private LevelsScriptableObject _levelsConfig;

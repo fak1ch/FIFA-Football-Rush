@@ -500,8 +500,8 @@ MonoBehaviour:
   _customAnimatorHide: {fileID: 0}
   _buttons:
   - {fileID: 7473749928588264261}
-  _levelsConfig: {fileID: 11400000, guid: 1ce11a80b0170e04a9705a8a5072abfa, type: 2}
   _gameConfig: {fileID: 11400000, guid: a1aad920267f66b48ad30f08954e9ee9, type: 2}
+  _levelsConfig: {fileID: 11400000, guid: 1ce11a80b0170e04a9705a8a5072abfa, type: 2}
   _restartButton: {fileID: 7473749928588264261}
   _bonusCoinsText: {fileID: 7473749928043010791}
   _audioSource: {fileID: 3586644829131977657}
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: victory
+  m_text: "\u043F\u043E\u0431\u0435\u0434\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next level
+  m_text: "\u0434\u0430\u043B\u0435\u0435"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}
   m_sharedMaterial: {fileID: 8008641557708730087, guid: 56a39875b943a304781bfdb0797d4f0e, type: 2}

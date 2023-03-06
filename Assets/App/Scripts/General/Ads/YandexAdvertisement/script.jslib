@@ -64,7 +64,6 @@
     },
 
     ShowRewardedAd : function(){
-        var rewarded = false;
         ysdk.adv.showRewardedVideo({
             callbacks: {
                 onOpen: () => {
